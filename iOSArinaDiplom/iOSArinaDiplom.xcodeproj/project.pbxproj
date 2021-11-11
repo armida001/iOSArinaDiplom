@@ -13,6 +13,11 @@
 		63DEA37C270C7F68008108D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37A270C7F68008108D5 /* Main.storyboard */; };
 		63DEA37E270C7F6A008108D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37D270C7F6A008108D5 /* Assets.xcassets */; };
 		63DEA381270C7F6A008108D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37F270C7F6A008108D5 /* LaunchScreen.storyboard */; };
+		DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D2273C101C007B9634 /* PersonParameters.swift */; };
+		DDCDB8D6273C101C007B9634 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D3273C101C007B9634 /* Person.swift */; };
+		DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D4273C101C007B9634 /* Swifty.swift */; };
+		DDCDB8D9273D71FA007B9634 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D8273D71FA007B9634 /* Pattern.swift */; };
+		DDCDB8DB273D7362007B9634 /* PersonPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8DA273D7362007B9634 /* PersonPattern.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		63DEA37D270C7F6A008108D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63DEA380270C7F6A008108D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63DEA382270C7F6A008108D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDCDB8D2273C101C007B9634 /* PersonParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonParameters.swift; sourceTree = "<group>"; };
+		DDCDB8D3273C101C007B9634 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DDCDB8D4273C101C007B9634 /* Swifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swifty.swift; sourceTree = "<group>"; };
+		DDCDB8D8273D71FA007B9634 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
+		DDCDB8DA273D7362007B9634 /* PersonPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPattern.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,8 @@
 		63DEA373270C7F68008108D5 /* iOSArinaDiplom */ = {
 			isa = PBXGroup;
 			children = (
+				DDCDB8D1273C0F89007B9634 /* Model */,
+				DDCDB8D0273C0F57007B9634 /* UILayer */,
 				63DEA374270C7F68008108D5 /* AppDelegate.swift */,
 				63DEA376270C7F68008108D5 /* SceneDelegate.swift */,
 				63DEA378270C7F68008108D5 /* ViewController.swift */,
@@ -65,6 +77,25 @@
 				63DEA382270C7F6A008108D5 /* Info.plist */,
 			);
 			path = iOSArinaDiplom;
+			sourceTree = "<group>";
+		};
+		DDCDB8D0273C0F57007B9634 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		DDCDB8D1273C0F89007B9634 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB8D3273C101C007B9634 /* Person.swift */,
+				DDCDB8D2273C101C007B9634 /* PersonParameters.swift */,
+				DDCDB8D4273C101C007B9634 /* Swifty.swift */,
+				DDCDB8D8273D71FA007B9634 /* Pattern.swift */,
+				DDCDB8DA273D7362007B9634 /* PersonPattern.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCDB8D6273C101C007B9634 /* Person.swift in Sources */,
+				DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */,
 				63DEA379270C7F68008108D5 /* ViewController.swift in Sources */,
+				DDCDB8DB273D7362007B9634 /* PersonPattern.swift in Sources */,
+				DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */,
 				63DEA375270C7F68008108D5 /* AppDelegate.swift in Sources */,
+				DDCDB8D9273D71FA007B9634 /* Pattern.swift in Sources */,
 				63DEA377270C7F68008108D5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
