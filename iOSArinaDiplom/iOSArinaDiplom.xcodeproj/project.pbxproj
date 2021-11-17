@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		63DEA375270C7F68008108D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA374270C7F68008108D5 /* AppDelegate.swift */; };
 		63DEA377270C7F68008108D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA376270C7F68008108D5 /* SceneDelegate.swift */; };
-		63DEA379270C7F68008108D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA378270C7F68008108D5 /* ViewController.swift */; };
-		63DEA37C270C7F68008108D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37A270C7F68008108D5 /* Main.storyboard */; };
+		63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA378270C7F68008108D5 /* TabBarController.swift */; };
 		63DEA37E270C7F6A008108D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37D270C7F6A008108D5 /* Assets.xcassets */; };
 		63DEA381270C7F6A008108D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37F270C7F6A008108D5 /* LaunchScreen.storyboard */; };
 		DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D2273C101C007B9634 /* PersonParameters.swift */; };
@@ -18,14 +17,48 @@
 		DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D4273C101C007B9634 /* Swifty.swift */; };
 		DDCDB8D9273D71FA007B9634 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D8273D71FA007B9634 /* Pattern.swift */; };
 		DDCDB8DB273D7362007B9634 /* PersonPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8DA273D7362007B9634 /* PersonPattern.swift */; };
+		DDCDB8E22740FDDC007B9634 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8E12740FDDC007B9634 /* Coordinator.swift */; };
+		DDCDB8E527410088007B9634 /* PatternsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8E427410088007B9634 /* PatternsCoordinator.swift */; };
+		DDCDB8E7274100F7007B9634 /* PersonsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8E6274100F7007B9634 /* PersonsCoordinator.swift */; };
+		DDCDB8E92741010B007B9634 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8E82741010B007B9634 /* SettingsCoordinator.swift */; };
+		DDCDB8EB2741063E007B9634 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8EA2741063E007B9634 /* RootCoordinator.swift */; };
+		DDCDB8EE27410A18007B9634 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCDB8EC27410A18007B9634 /* Main.storyboard */; };
+		DDCDB8F02741128E007B9634 /* PatternsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8EF2741128E007B9634 /* PatternsListController.swift */; };
+		DDCDB8F22741129E007B9634 /* PersonsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8F12741129E007B9634 /* PersonsListController.swift */; };
+		DDCDB8F4274112D2007B9634 /* PatternsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8F3274112D2007B9634 /* PatternsListPresenter.swift */; };
+		DDCDB8F7274112EE007B9634 /* PatternsListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8F6274112EE007B9634 /* PatternsListPresenterImp.swift */; };
+		DDCDB8FB27411332007B9634 /* PersonsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8F927411332007B9634 /* PersonsListPresenter.swift */; };
+		DDCDB8FC27411332007B9634 /* PersonsListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8FA27411332007B9634 /* PersonsListPresenterImp.swift */; };
+		DDCDB90027411339007B9634 /* SettingsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8FE27411339007B9634 /* SettingsListPresenter.swift */; };
+		DDCDB90127411339007B9634 /* SettingsListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8FF27411339007B9634 /* SettingsListPresenterImp.swift */; };
+		DDCDB90327412212007B9634 /* PersonsListPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB90227412212007B9634 /* PersonsListPresenterState.swift */; };
+		DDCDB9052741226A007B9634 /* PatternsListPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9042741226A007B9634 /* PatternsListPresenterState.swift */; };
+		DDCDB90727412273007B9634 /* SettingsListPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB90627412273007B9634 /* SettingsListPresenterState.swift */; };
+		DDCDB90A274122D7007B9634 /* PatternsListDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB909274122D7007B9634 /* PatternsListDisplayManager.swift */; };
+		DDCDB90C274122EC007B9634 /* PatternsListDisplayManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB90B274122EC007B9634 /* PatternsListDisplayManagerImp.swift */; };
+		DDCDB90F27412314007B9634 /* PatternsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB90E27412314007B9634 /* PatternsListView.swift */; };
+		DDCDB914274123B9007B9634 /* PersonsListDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB912274123B9007B9634 /* PersonsListDisplayManager.swift */; };
+		DDCDB915274123B9007B9634 /* PersonsListDisplayManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB913274123B9007B9634 /* PersonsListDisplayManagerImp.swift */; };
+		DDCDB919274123D1007B9634 /* SettingsListDisplayManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB917274123D1007B9634 /* SettingsListDisplayManagerImp.swift */; };
+		DDCDB91A274123D1007B9634 /* SettingsListDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB918274123D1007B9634 /* SettingsListDisplayManager.swift */; };
+		DDCDB91D274123FE007B9634 /* PersonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB91C274123FE007B9634 /* PersonsListView.swift */; };
+		DDCDB91F27412407007B9634 /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB91E27412407007B9634 /* SettingsListView.swift */; };
+		DDCDB92127412418007B9634 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB92027412418007B9634 /* SettingsViewController.swift */; };
+		DDCDB9242743D675007B9634 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9232743D675007B9634 /* NetworkService.swift */; };
+		DDCDB9272743D6B7007B9634 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9262743D6B7007B9634 /* NetworkServiceProtocol.swift */; };
+		DDCDB9292743D705007B9634 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9282743D705007B9634 /* NetworkServiceError.swift */; };
+		DDCDB92B2743D77A007B9634 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB92A2743D77A007B9634 /* Constants.swift */; };
+		DDCDB92D2743D858007B9634 /* AuthorizeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB92C2743D858007B9634 /* AuthorizeResponse.swift */; };
+		DDCDB92F2743D8F1007B9634 /* GetPatternsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB92E2743D8F1007B9634 /* GetPatternsResponse.swift */; };
+		DDCDB93127448B06007B9634 /* PatternCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB93027448B06007B9634 /* PatternCell.swift */; };
+		DDCDB933274490AA007B9634 /* PatternsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB932274490AA007B9634 /* PatternsNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63DEA371270C7F68008108D5 /* iOSArinaDiplom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArinaDiplom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DEA374270C7F68008108D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63DEA376270C7F68008108D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63DEA378270C7F68008108D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		63DEA37B270C7F68008108D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63DEA378270C7F68008108D5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		63DEA37D270C7F6A008108D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63DEA380270C7F6A008108D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63DEA382270C7F6A008108D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +67,41 @@
 		DDCDB8D4273C101C007B9634 /* Swifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swifty.swift; sourceTree = "<group>"; };
 		DDCDB8D8273D71FA007B9634 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		DDCDB8DA273D7362007B9634 /* PersonPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPattern.swift; sourceTree = "<group>"; };
+		DDCDB8E12740FDDC007B9634 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DDCDB8E427410088007B9634 /* PatternsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsCoordinator.swift; sourceTree = "<group>"; };
+		DDCDB8E6274100F7007B9634 /* PersonsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsCoordinator.swift; sourceTree = "<group>"; };
+		DDCDB8E82741010B007B9634 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		DDCDB8EA2741063E007B9634 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		DDCDB8ED27410A18007B9634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDCDB8EF2741128E007B9634 /* PatternsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsListController.swift; sourceTree = "<group>"; };
+		DDCDB8F12741129E007B9634 /* PersonsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListController.swift; sourceTree = "<group>"; };
+		DDCDB8F3274112D2007B9634 /* PatternsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsListPresenter.swift; sourceTree = "<group>"; };
+		DDCDB8F6274112EE007B9634 /* PatternsListPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsListPresenterImp.swift; sourceTree = "<group>"; };
+		DDCDB8F927411332007B9634 /* PersonsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsListPresenter.swift; sourceTree = "<group>"; };
+		DDCDB8FA27411332007B9634 /* PersonsListPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsListPresenterImp.swift; sourceTree = "<group>"; };
+		DDCDB8FE27411339007B9634 /* SettingsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListPresenter.swift; sourceTree = "<group>"; };
+		DDCDB8FF27411339007B9634 /* SettingsListPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListPresenterImp.swift; sourceTree = "<group>"; };
+		DDCDB90227412212007B9634 /* PersonsListPresenterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListPresenterState.swift; sourceTree = "<group>"; };
+		DDCDB9042741226A007B9634 /* PatternsListPresenterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternsListPresenterState.swift; sourceTree = "<group>"; };
+		DDCDB90627412273007B9634 /* SettingsListPresenterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListPresenterState.swift; sourceTree = "<group>"; };
+		DDCDB909274122D7007B9634 /* PatternsListDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsListDisplayManager.swift; sourceTree = "<group>"; };
+		DDCDB90B274122EC007B9634 /* PatternsListDisplayManagerImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsListDisplayManagerImp.swift; sourceTree = "<group>"; };
+		DDCDB90E27412314007B9634 /* PatternsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsListView.swift; sourceTree = "<group>"; };
+		DDCDB912274123B9007B9634 /* PersonsListDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsListDisplayManager.swift; sourceTree = "<group>"; };
+		DDCDB913274123B9007B9634 /* PersonsListDisplayManagerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsListDisplayManagerImp.swift; sourceTree = "<group>"; };
+		DDCDB917274123D1007B9634 /* SettingsListDisplayManagerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListDisplayManagerImp.swift; sourceTree = "<group>"; };
+		DDCDB918274123D1007B9634 /* SettingsListDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListDisplayManager.swift; sourceTree = "<group>"; };
+		DDCDB91C274123FE007B9634 /* PersonsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsListView.swift; sourceTree = "<group>"; };
+		DDCDB91E27412407007B9634 /* SettingsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListView.swift; sourceTree = "<group>"; };
+		DDCDB92027412418007B9634 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DDCDB9232743D675007B9634 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DDCDB9262743D6B7007B9634 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		DDCDB9282743D705007B9634 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		DDCDB92A2743D77A007B9634 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DDCDB92C2743D858007B9634 /* AuthorizeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeResponse.swift; sourceTree = "<group>"; };
+		DDCDB92E2743D8F1007B9634 /* GetPatternsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPatternsResponse.swift; sourceTree = "<group>"; };
+		DDCDB93027448B06007B9634 /* PatternCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternCell.swift; sourceTree = "<group>"; };
+		DDCDB932274490AA007B9634 /* PatternsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +134,14 @@
 		63DEA373270C7F68008108D5 /* iOSArinaDiplom */ = {
 			isa = PBXGroup;
 			children = (
+				DDCDB9222743D664007B9634 /* Services */,
+				DDCDB8E02740FDC1007B9634 /* Protocols */,
 				DDCDB8D1273C0F89007B9634 /* Model */,
 				DDCDB8D0273C0F57007B9634 /* UILayer */,
 				63DEA374270C7F68008108D5 /* AppDelegate.swift */,
 				63DEA376270C7F68008108D5 /* SceneDelegate.swift */,
-				63DEA378270C7F68008108D5 /* ViewController.swift */,
-				63DEA37A270C7F68008108D5 /* Main.storyboard */,
 				63DEA37D270C7F6A008108D5 /* Assets.xcassets */,
+				DDCDB8EC27410A18007B9634 /* Main.storyboard */,
 				63DEA37F270C7F6A008108D5 /* LaunchScreen.storyboard */,
 				63DEA382270C7F6A008108D5 /* Info.plist */,
 			);
@@ -82,6 +151,10 @@
 		DDCDB8D0273C0F57007B9634 /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
+				DDCDB8DF273D7DB1007B9634 /* Main */,
+				DDCDB8DC273D7D84007B9634 /* Patterns */,
+				DDCDB8DD273D7D9D007B9634 /* Persons */,
+				DDCDB8DE273D7DA4007B9634 /* Settings */,
 			);
 			path = UILayer;
 			sourceTree = "<group>";
@@ -89,13 +162,170 @@
 		DDCDB8D1273C0F89007B9634 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DDCDB9252743D69B007B9634 /* Responses */,
 				DDCDB8D3273C101C007B9634 /* Person.swift */,
 				DDCDB8D2273C101C007B9634 /* PersonParameters.swift */,
 				DDCDB8D4273C101C007B9634 /* Swifty.swift */,
 				DDCDB8D8273D71FA007B9634 /* Pattern.swift */,
 				DDCDB8DA273D7362007B9634 /* PersonPattern.swift */,
+				DDCDB92A2743D77A007B9634 /* Constants.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DDCDB8DC273D7D84007B9634 /* Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB90D274122FC007B9634 /* View */,
+				DDCDB908274122AD007B9634 /* DisplayManager */,
+				DDCDB8F5274112E0007B9634 /* Presenter */,
+				DDCDB8E427410088007B9634 /* PatternsCoordinator.swift */,
+			);
+			path = Patterns;
+			sourceTree = "<group>";
+		};
+		DDCDB8DD273D7D9D007B9634 /* Persons */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB911274123B9007B9634 /* DisplayManager */,
+				DDCDB910274123AA007B9634 /* View */,
+				DDCDB8F827411332007B9634 /* Presenter */,
+				DDCDB8E6274100F7007B9634 /* PersonsCoordinator.swift */,
+			);
+			path = Persons;
+			sourceTree = "<group>";
+		};
+		DDCDB8DE273D7DA4007B9634 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB91B274123D7007B9634 /* View */,
+				DDCDB916274123D1007B9634 /* DisplayManager */,
+				DDCDB8FD27411339007B9634 /* Presenter */,
+				DDCDB8E82741010B007B9634 /* SettingsCoordinator.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DDCDB8DF273D7DB1007B9634 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63DEA378270C7F68008108D5 /* TabBarController.swift */,
+				DDCDB8EA2741063E007B9634 /* RootCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DDCDB8E02740FDC1007B9634 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB8E12740FDDC007B9634 /* Coordinator.swift */,
+				DDCDB9262743D6B7007B9634 /* NetworkServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DDCDB8F5274112E0007B9634 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB9042741226A007B9634 /* PatternsListPresenterState.swift */,
+				DDCDB8F3274112D2007B9634 /* PatternsListPresenter.swift */,
+				DDCDB8F6274112EE007B9634 /* PatternsListPresenterImp.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DDCDB8F827411332007B9634 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB8F927411332007B9634 /* PersonsListPresenter.swift */,
+				DDCDB8FA27411332007B9634 /* PersonsListPresenterImp.swift */,
+				DDCDB90227412212007B9634 /* PersonsListPresenterState.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DDCDB8FD27411339007B9634 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB90627412273007B9634 /* SettingsListPresenterState.swift */,
+				DDCDB8FE27411339007B9634 /* SettingsListPresenter.swift */,
+				DDCDB8FF27411339007B9634 /* SettingsListPresenterImp.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DDCDB908274122AD007B9634 /* DisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB909274122D7007B9634 /* PatternsListDisplayManager.swift */,
+				DDCDB90B274122EC007B9634 /* PatternsListDisplayManagerImp.swift */,
+			);
+			path = DisplayManager;
+			sourceTree = "<group>";
+		};
+		DDCDB90D274122FC007B9634 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB8EF2741128E007B9634 /* PatternsListController.swift */,
+				DDCDB90E27412314007B9634 /* PatternsListView.swift */,
+				DDCDB93027448B06007B9634 /* PatternCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDCDB910274123AA007B9634 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB91C274123FE007B9634 /* PersonsListView.swift */,
+				DDCDB8F12741129E007B9634 /* PersonsListController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDCDB911274123B9007B9634 /* DisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB912274123B9007B9634 /* PersonsListDisplayManager.swift */,
+				DDCDB913274123B9007B9634 /* PersonsListDisplayManagerImp.swift */,
+			);
+			path = DisplayManager;
+			sourceTree = "<group>";
+		};
+		DDCDB916274123D1007B9634 /* DisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB917274123D1007B9634 /* SettingsListDisplayManagerImp.swift */,
+				DDCDB918274123D1007B9634 /* SettingsListDisplayManager.swift */,
+			);
+			path = DisplayManager;
+			sourceTree = "<group>";
+		};
+		DDCDB91B274123D7007B9634 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB91E27412407007B9634 /* SettingsListView.swift */,
+				DDCDB92027412418007B9634 /* SettingsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDCDB9222743D664007B9634 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB9232743D675007B9634 /* NetworkService.swift */,
+				DDCDB932274490AA007B9634 /* PatternsNetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DDCDB9252743D69B007B9634 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				DDCDB9282743D705007B9634 /* NetworkServiceError.swift */,
+				DDCDB92C2743D858007B9634 /* AuthorizeResponse.swift */,
+				DDCDB92E2743D8F1007B9634 /* GetPatternsResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +385,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCDB8EE27410A18007B9634 /* Main.storyboard in Resources */,
 				63DEA381270C7F6A008108D5 /* LaunchScreen.storyboard in Resources */,
 				63DEA37E270C7F6A008108D5 /* Assets.xcassets in Resources */,
-				63DEA37C270C7F68008108D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,34 +398,68 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCDB8F7274112EE007B9634 /* PatternsListPresenterImp.swift in Sources */,
 				DDCDB8D6273C101C007B9634 /* Person.swift in Sources */,
+				DDCDB8E92741010B007B9634 /* SettingsCoordinator.swift in Sources */,
+				DDCDB91A274123D1007B9634 /* SettingsListDisplayManager.swift in Sources */,
+				DDCDB92D2743D858007B9634 /* AuthorizeResponse.swift in Sources */,
+				DDCDB933274490AA007B9634 /* PatternsNetworkService.swift in Sources */,
+				DDCDB915274123B9007B9634 /* PersonsListDisplayManagerImp.swift in Sources */,
+				DDCDB919274123D1007B9634 /* SettingsListDisplayManagerImp.swift in Sources */,
+				DDCDB90F27412314007B9634 /* PatternsListView.swift in Sources */,
+				DDCDB90027411339007B9634 /* SettingsListPresenter.swift in Sources */,
+				DDCDB92B2743D77A007B9634 /* Constants.swift in Sources */,
 				DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */,
-				63DEA379270C7F68008108D5 /* ViewController.swift in Sources */,
+				63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */,
+				DDCDB8F02741128E007B9634 /* PatternsListController.swift in Sources */,
 				DDCDB8DB273D7362007B9634 /* PersonPattern.swift in Sources */,
+				DDCDB8FB27411332007B9634 /* PersonsListPresenter.swift in Sources */,
+				DDCDB91F27412407007B9634 /* SettingsListView.swift in Sources */,
 				DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */,
+				DDCDB90727412273007B9634 /* SettingsListPresenterState.swift in Sources */,
 				63DEA375270C7F68008108D5 /* AppDelegate.swift in Sources */,
+				DDCDB8F22741129E007B9634 /* PersonsListController.swift in Sources */,
+				DDCDB91D274123FE007B9634 /* PersonsListView.swift in Sources */,
 				DDCDB8D9273D71FA007B9634 /* Pattern.swift in Sources */,
+				DDCDB9242743D675007B9634 /* NetworkService.swift in Sources */,
+				DDCDB8FC27411332007B9634 /* PersonsListPresenterImp.swift in Sources */,
+				DDCDB90A274122D7007B9634 /* PatternsListDisplayManager.swift in Sources */,
+				DDCDB8E7274100F7007B9634 /* PersonsCoordinator.swift in Sources */,
+				DDCDB8F4274112D2007B9634 /* PatternsListPresenter.swift in Sources */,
 				63DEA377270C7F68008108D5 /* SceneDelegate.swift in Sources */,
+				DDCDB92F2743D8F1007B9634 /* GetPatternsResponse.swift in Sources */,
+				DDCDB90327412212007B9634 /* PersonsListPresenterState.swift in Sources */,
+				DDCDB914274123B9007B9634 /* PersonsListDisplayManager.swift in Sources */,
+				DDCDB90C274122EC007B9634 /* PatternsListDisplayManagerImp.swift in Sources */,
+				DDCDB93127448B06007B9634 /* PatternCell.swift in Sources */,
+				DDCDB9292743D705007B9634 /* NetworkServiceError.swift in Sources */,
+				DDCDB8EB2741063E007B9634 /* RootCoordinator.swift in Sources */,
+				DDCDB92127412418007B9634 /* SettingsViewController.swift in Sources */,
+				DDCDB9052741226A007B9634 /* PatternsListPresenterState.swift in Sources */,
+				DDCDB9272743D6B7007B9634 /* NetworkServiceProtocol.swift in Sources */,
+				DDCDB90127411339007B9634 /* SettingsListPresenterImp.swift in Sources */,
+				DDCDB8E527410088007B9634 /* PatternsCoordinator.swift in Sources */,
+				DDCDB8E22740FDDC007B9634 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		63DEA37A270C7F68008108D5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63DEA37B270C7F68008108D5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		63DEA37F270C7F6A008108D5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				63DEA380270C7F6A008108D5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DDCDB8EC27410A18007B9634 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDCDB8ED27410A18007B9634 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

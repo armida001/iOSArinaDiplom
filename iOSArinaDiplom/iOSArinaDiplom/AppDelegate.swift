@@ -10,10 +10,37 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    var window: UIWindow?
+    private var rootCoordinator: RootCoordinator?
+    private let service = NetworkService.init()
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard
+            let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController,
+              let navigationController = storyboard.instantiateViewController(withIdentifier: "MainNavigation") as? UINavigationController
+        else { return true }
+        
+        navigationController.setViewControllers([tabBarController], animated: true)
+        self.window?.rootViewController = navigationController
+        
+        self.rootCoordinator = RootCoordinator(navigationController: navigationController)
+        service.authorize { authResponse in
+            switch authResponse {
+            case .success():
+                self.rootCoordinator?.start()
+                break
+            case .failure(let error):
+                self.rootCoordinator?.startWithError(error: error)
+                break
+            }
+        }
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

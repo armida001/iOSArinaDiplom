@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum PatternType: String {
+enum PatternType: String, Decodable {
     ///блузка
     case blouse
     ///бикини
@@ -61,9 +61,9 @@ enum PatternType: String {
     case waistcoat
 }
 
-class Patern: NSObject {
-    var name: String!
-    var instruction: String!
-    var image: UIImage?
-    var type: PatternType!
+struct Pattern {
+    let name: String!
+    let instruction: String!
+    let image: UIImage?
+    let type: PatternType!
 }
