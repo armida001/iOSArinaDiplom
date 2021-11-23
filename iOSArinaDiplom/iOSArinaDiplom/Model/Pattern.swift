@@ -62,8 +62,9 @@ enum PatternType: String, Decodable {
 }
 
 struct Pattern {
+    let id: String!
     let name: String!
     let instruction: String!
-    let image: UIImage?
+    let image: GetPatternsImageResponse?
     let type: PatternType!
 }

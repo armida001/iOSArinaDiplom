@@ -48,14 +48,7 @@ extension NetworkService: NetworkServiceProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        //        #if DEBUG
-        //        print(request.url)
-        //        #endif
         let handler: Handler = { rawData, response, error in
-            //            #if DEBUG
-            //            print(response)
-            //            print(error)
-            //            #endif
             if let errorObject = error {
                 completion(.failure((errorObject as? NetworkServiceError) ?? .unknown))
             } else {
@@ -82,12 +75,12 @@ extension NetworkService: NetworkServiceProtocol {
         request.httpMethod = httpMethod?.rawValue ?? HttpMethodType.GET.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         #if DEBUG
-        print(request.url)
+        print(request.url ?? "")
         #endif
         let handler: Handler = { rawData, response, error in
             guard error == nil else {
                 #if DEBUG
-                print(error)
+                print(error ?? "")
                 #endif
                 completion(.failure((error as? NetworkServiceError) ?? .unknown))
                 return
@@ -97,24 +90,22 @@ extension NetworkService: NetworkServiceProtocol {
                 #if DEBUG
                 print(respData)
                 #endif
-                let jsonResponse = try? self.decoder.decode(decodeType.self, from: respData)
-                #if DEBUG
-                print(jsonResponse)
-                #endif
-                completion(.success(jsonResponse))
-                
-            } else {
-                completion(.success([]))
+                if let jsonResponse = try? self.decoder.decode(decodeType.self, from: respData) {
+                    #if DEBUG
+                    print(jsonResponse)
+                    #endif
+                    completion(.success(jsonResponse))
+                    return
+                }
             }
+            completion(.failure(.unknown))
         }
         
         session.dataTask(with: request, completionHandler: handler).resume()
     }
     
     func loadImage(imageUrl: String, completion: @escaping (Data?) -> Void) {
-        let imageUrlWithSize = imageUrl.replacingOccurrences(of: "{width}x{height}", with: "320x520")
-        
-        guard let url = URL(string: imageUrlWithSize) else { return completion(nil) }
+        guard let url = URL(string: imageUrl) else { return completion(nil) }
         
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData)
         
@@ -124,5 +115,4 @@ extension NetworkService: NetworkServiceProtocol {
         
         session.dataTask(with: request, completionHandler: handler).resume()
     }
-    
 }

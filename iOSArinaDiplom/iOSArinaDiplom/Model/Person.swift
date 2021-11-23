@@ -11,17 +11,17 @@ import UIKit
 class Person: NSObject {
     private var name: String!
     private var comments: String?
-    private var parameters: [PersonParameterType : NSNumber]!
+    private var baseParameters: [PersonParameterType : NSNumber]!
     
     init(name: String, comments: String? = nil, parameters: [PersonParameterType : NSNumber] = [:]) {
         self.name = name
         self.comments = comments
-        self.parameters = parameters
+        self.baseParameters = parameters
     }
     
     override init() {
         super.init()
         self.name = ""
-        self.parameters = [PersonParameterType : NSNumber]()
+        self.baseParameters = [PersonParameterType : NSNumber]()
     }
 }

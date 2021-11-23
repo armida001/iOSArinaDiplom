@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct PersonPattern {
+    let patterId: String!
+    let personId: String!
+    let comments: String?
+    let parameters: [PersonParameterType : NSNumber]!
+}

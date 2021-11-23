@@ -8,7 +8,9 @@
 import UIKit
 
 class PersonsListController: UITableViewController {
-    
+    static func create() -> PersonsListController {
+        PersonsListController.init()
+    }
 }
 
 extension PersonsListController: PersonsListView {

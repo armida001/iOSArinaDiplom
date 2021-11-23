@@ -42,7 +42,16 @@ extension PatternsListDisplayManagerImp: UICollectionViewDelegate, UICollectionV
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PatternCell", for: indexPath) as? PatternCell else { return PatternCell() }
         let pattern = array[indexPath.row]
-        cell.configure(title: pattern.name, image: pattern.image)
+        let imageUrl = pattern.image?.url
+        let width = pattern.image?.width
+        let height = pattern.image?.height
+                
+        var imageInfo: (url: String, width: Int?, height: Int?)? = nil
+        if let url = imageUrl {
+            imageInfo = (url: url, width: width, height: height)
+        }
+        cell.configure(with: PatternCellItem(title: pattern.name,
+                                             imageInfo: imageInfo))
         return cell
-    }
+    }        
 }

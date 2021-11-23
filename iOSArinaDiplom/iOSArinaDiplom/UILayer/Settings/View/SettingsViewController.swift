@@ -8,7 +8,9 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    
+    static func create() -> SettingsViewController {
+        SettingsViewController.init()
+    }
 }
 
 extension SettingsViewController: SettingsListView {

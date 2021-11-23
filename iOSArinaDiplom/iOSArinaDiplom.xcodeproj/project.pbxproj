@@ -12,6 +12,7 @@
 		63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA378270C7F68008108D5 /* TabBarController.swift */; };
 		63DEA37E270C7F6A008108D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37D270C7F6A008108D5 /* Assets.xcassets */; };
 		63DEA381270C7F6A008108D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37F270C7F6A008108D5 /* LaunchScreen.storyboard */; };
+		DD0DF87A274A8F8300D864B5 /* PersonsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DF879274A8F8200D864B5 /* PersonsDataService.swift */; };
 		DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D2273C101C007B9634 /* PersonParameters.swift */; };
 		DDCDB8D6273C101C007B9634 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D3273C101C007B9634 /* Person.swift */; };
 		DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D4273C101C007B9634 /* Swifty.swift */; };
@@ -62,6 +63,7 @@
 		63DEA37D270C7F6A008108D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63DEA380270C7F6A008108D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63DEA382270C7F6A008108D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD0DF879274A8F8200D864B5 /* PersonsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsDataService.swift; sourceTree = "<group>"; };
 		DDCDB8D2273C101C007B9634 /* PersonParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonParameters.swift; sourceTree = "<group>"; };
 		DDCDB8D3273C101C007B9634 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		DDCDB8D4273C101C007B9634 /* Swifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swifty.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		DDCDB9222743D664007B9634 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DD0DF879274A8F8200D864B5 /* PersonsDataService.swift */,
 				DDCDB9232743D675007B9634 /* NetworkService.swift */,
 				DDCDB932274490AA007B9634 /* PatternsNetworkService.swift */,
 			);
@@ -437,6 +440,7 @@
 				DDCDB92127412418007B9634 /* SettingsViewController.swift in Sources */,
 				DDCDB9052741226A007B9634 /* PatternsListPresenterState.swift in Sources */,
 				DDCDB9272743D6B7007B9634 /* NetworkServiceProtocol.swift in Sources */,
+				DD0DF87A274A8F8300D864B5 /* PersonsDataService.swift in Sources */,
 				DDCDB90127411339007B9634 /* SettingsListPresenterImp.swift in Sources */,
 				DDCDB8E527410088007B9634 /* PatternsCoordinator.swift in Sources */,
 				DDCDB8E22740FDDC007B9634 /* Coordinator.swift in Sources */,

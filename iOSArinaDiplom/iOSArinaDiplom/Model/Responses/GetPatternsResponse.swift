@@ -19,6 +19,25 @@ struct GetPatternsDataResponse: Decodable {
 struct GetPatternsFieldsResponse: Decodable {
     let name: String!
     let instruction: String!
-//    let image: String?
+    let image: [GetPatternsImageResponse]?
     let type: PatternType?
+}
+
+struct GetPatternsImageResponse: Decodable {
+    let url: String
+    let width: Int
+    let height: Int
+    let thumbnails: ThumbnailsResponse?
+}
+
+struct ThumbnailsResponse: Decodable {
+    let small: ImageThumbnailsResponse?
+    let large: ImageThumbnailsResponse?
+    let full: ImageThumbnailsResponse?
+}
+
+struct ImageThumbnailsResponse: Decodable {
+    let url: String
+    let width: Int
+    let height: Int
 }
