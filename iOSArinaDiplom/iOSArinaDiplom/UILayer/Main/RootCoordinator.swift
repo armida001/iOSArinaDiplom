@@ -15,7 +15,7 @@ class RootCoordinator: Coordinator {
         
     }
     
-    func startWithError(error: NetworkServiceError) {
+    func startWithError(error: NetworkError) {
         
     }
     

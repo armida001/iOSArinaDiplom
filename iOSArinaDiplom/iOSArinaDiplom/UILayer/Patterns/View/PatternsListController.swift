@@ -33,7 +33,7 @@ final class PatternsListController: UICollectionViewController {
 }
 
 extension PatternsListController: PatternsListView {
-    func showError(_ error: NetworkServiceError) {
+    func showError(_ error: NetworkError) {
         
     }
     

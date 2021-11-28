@@ -9,5 +9,5 @@ import Foundation
 
 protocol PatternsListView: NSObjectProtocol {
     func reloadData(_ data: [Pattern])
-    func showError(_ error: NetworkServiceError)
+    func showError(_ error: NetworkError)
 }

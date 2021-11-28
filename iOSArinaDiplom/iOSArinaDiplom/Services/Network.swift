@@ -16,7 +16,7 @@ enum BaseKey: String {
     case apikey = "api_key"
 }
 
-class NetworkService {
+class Network {
     private let session: URLSession = .shared
     private let decoder: JSONDecoder = {
         $0.keyDecodingStrategy = .convertFromSnakeCase
@@ -29,13 +29,13 @@ class NetworkService {
         guard let httpResponse = response as? HTTPURLResponse,
               (200..<300).contains(httpResponse.statusCode),
               let data = data else {
-            throw NetworkServiceError.network
+            throw NetworkError.network
         }
         return data
     }
 }
 
-extension NetworkService: NetworkServiceProtocol {
+extension Network: NetworkProtocol {
     
     typealias Handler = (Data?, URLResponse?, Error?) -> Void
     
@@ -50,7 +50,7 @@ extension NetworkService: NetworkServiceProtocol {
         
         let handler: Handler = { rawData, response, error in
             if let errorObject = error {
-                completion(.failure((errorObject as? NetworkServiceError) ?? .unknown))
+                completion(.failure((errorObject as? NetworkError) ?? .unknown))
             } else {
                 completion(.success(()))
             }
@@ -59,7 +59,8 @@ extension NetworkService: NetworkServiceProtocol {
         session.dataTask(with: request, completionHandler: handler).resume()
     }
     
-    func request<T: Decodable>(decodeType: T.Type, parameters: [String : String?]?, httpMethod: HttpMethodType?, completion: @escaping (Result<Any, NetworkServiceError>) -> Void) {
+    func request<T: Decodable>(decodeType: T.Type, parameters: [String : String?]?, httpMethod: HttpMethodType?, completion: @escaping (Result<Any, NetworkError>) -> Void) {
+        
         var components = URLComponents(string: Constants.apiBaseUrl + Constants.ApiMethods.getPatterns)
         components?.queryItems = []
         components?.queryItems?.append(URLQueryItem(name: BaseKey.apikey.rawValue,
@@ -74,6 +75,7 @@ extension NetworkService: NetworkServiceProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod?.rawValue ?? HttpMethodType.GET.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         #if DEBUG
         print(request.url ?? "")
         #endif
@@ -82,7 +84,7 @@ extension NetworkService: NetworkServiceProtocol {
                 #if DEBUG
                 print(error ?? "")
                 #endif
-                completion(.failure((error as? NetworkServiceError) ?? .unknown))
+                completion(.failure((error as? NetworkError) ?? .unknown))
                 return
             }
             

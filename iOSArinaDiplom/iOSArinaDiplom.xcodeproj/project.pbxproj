@@ -13,6 +13,7 @@
 		63DEA37E270C7F6A008108D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37D270C7F6A008108D5 /* Assets.xcassets */; };
 		63DEA381270C7F6A008108D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37F270C7F6A008108D5 /* LaunchScreen.storyboard */; };
 		DD0DF87A274A8F8300D864B5 /* PersonsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DF879274A8F8200D864B5 /* PersonsDataService.swift */; };
+		DD6AD6D7274E654000FC3801 /* iOSArinaDiplomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6AD6D6274E654000FC3801 /* iOSArinaDiplomTests.swift */; };
 		DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D2273C101C007B9634 /* PersonParameters.swift */; };
 		DDCDB8D6273C101C007B9634 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D3273C101C007B9634 /* Person.swift */; };
 		DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D4273C101C007B9634 /* Swifty.swift */; };
@@ -45,15 +46,25 @@
 		DDCDB91D274123FE007B9634 /* PersonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB91C274123FE007B9634 /* PersonsListView.swift */; };
 		DDCDB91F27412407007B9634 /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB91E27412407007B9634 /* SettingsListView.swift */; };
 		DDCDB92127412418007B9634 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB92027412418007B9634 /* SettingsViewController.swift */; };
-		DDCDB9242743D675007B9634 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9232743D675007B9634 /* NetworkService.swift */; };
-		DDCDB9272743D6B7007B9634 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9262743D6B7007B9634 /* NetworkServiceProtocol.swift */; };
-		DDCDB9292743D705007B9634 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9282743D705007B9634 /* NetworkServiceError.swift */; };
+		DDCDB9242743D675007B9634 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9232743D675007B9634 /* Network.swift */; };
+		DDCDB9272743D6B7007B9634 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9262743D6B7007B9634 /* NetworkProtocol.swift */; };
+		DDCDB9292743D705007B9634 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB9282743D705007B9634 /* NetworkError.swift */; };
 		DDCDB92B2743D77A007B9634 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB92A2743D77A007B9634 /* Constants.swift */; };
 		DDCDB92D2743D858007B9634 /* AuthorizeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB92C2743D858007B9634 /* AuthorizeResponse.swift */; };
 		DDCDB92F2743D8F1007B9634 /* GetPatternsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB92E2743D8F1007B9634 /* GetPatternsResponse.swift */; };
 		DDCDB93127448B06007B9634 /* PatternCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB93027448B06007B9634 /* PatternCell.swift */; };
-		DDCDB933274490AA007B9634 /* PatternsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB932274490AA007B9634 /* PatternsNetworkService.swift */; };
+		DDCDB933274490AA007B9634 /* PatternsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB932274490AA007B9634 /* PatternsService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD6AD6D9274E654000FC3801 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63DEA369270C7F68008108D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63DEA370270C7F68008108D5;
+			remoteInfo = iOSArinaDiplom;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		63DEA371270C7F68008108D5 /* iOSArinaDiplom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArinaDiplom.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +75,9 @@
 		63DEA380270C7F6A008108D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63DEA382270C7F6A008108D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD0DF879274A8F8200D864B5 /* PersonsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsDataService.swift; sourceTree = "<group>"; };
+		DD6AD6D4274E654000FC3801 /* iOSArinaDiplomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSArinaDiplomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD6AD6D6274E654000FC3801 /* iOSArinaDiplomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSArinaDiplomTests.swift; sourceTree = "<group>"; };
+		DD6AD6D8274E654000FC3801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCDB8D2273C101C007B9634 /* PersonParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonParameters.swift; sourceTree = "<group>"; };
 		DDCDB8D3273C101C007B9634 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		DDCDB8D4273C101C007B9634 /* Swifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swifty.swift; sourceTree = "<group>"; };
@@ -96,18 +110,25 @@
 		DDCDB91C274123FE007B9634 /* PersonsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsListView.swift; sourceTree = "<group>"; };
 		DDCDB91E27412407007B9634 /* SettingsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsListView.swift; sourceTree = "<group>"; };
 		DDCDB92027412418007B9634 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		DDCDB9232743D675007B9634 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		DDCDB9262743D6B7007B9634 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
-		DDCDB9282743D705007B9634 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		DDCDB9232743D675007B9634 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DDCDB9262743D6B7007B9634 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		DDCDB9282743D705007B9634 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		DDCDB92A2743D77A007B9634 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DDCDB92C2743D858007B9634 /* AuthorizeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeResponse.swift; sourceTree = "<group>"; };
 		DDCDB92E2743D8F1007B9634 /* GetPatternsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPatternsResponse.swift; sourceTree = "<group>"; };
 		DDCDB93027448B06007B9634 /* PatternCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternCell.swift; sourceTree = "<group>"; };
-		DDCDB932274490AA007B9634 /* PatternsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsNetworkService.swift; sourceTree = "<group>"; };
+		DDCDB932274490AA007B9634 /* PatternsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		63DEA36E270C7F68008108D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD6AD6D1274E654000FC3801 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -121,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				63DEA373270C7F68008108D5 /* iOSArinaDiplom */,
+				DD6AD6D5274E654000FC3801 /* iOSArinaDiplomTests */,
 				63DEA372270C7F68008108D5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				63DEA371270C7F68008108D5 /* iOSArinaDiplom.app */,
+				DD6AD6D4274E654000FC3801 /* iOSArinaDiplomTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +171,15 @@
 				63DEA382270C7F6A008108D5 /* Info.plist */,
 			);
 			path = iOSArinaDiplom;
+			sourceTree = "<group>";
+		};
+		DD6AD6D5274E654000FC3801 /* iOSArinaDiplomTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD6AD6D6274E654000FC3801 /* iOSArinaDiplomTests.swift */,
+				DD6AD6D8274E654000FC3801 /* Info.plist */,
+			);
+			path = iOSArinaDiplomTests;
 			sourceTree = "<group>";
 		};
 		DDCDB8D0273C0F57007B9634 /* UILayer */ = {
@@ -221,7 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				DDCDB8E12740FDDC007B9634 /* Coordinator.swift */,
-				DDCDB9262743D6B7007B9634 /* NetworkServiceProtocol.swift */,
+				DDCDB9262743D6B7007B9634 /* NetworkProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -315,8 +347,8 @@
 			isa = PBXGroup;
 			children = (
 				DD0DF879274A8F8200D864B5 /* PersonsDataService.swift */,
-				DDCDB9232743D675007B9634 /* NetworkService.swift */,
-				DDCDB932274490AA007B9634 /* PatternsNetworkService.swift */,
+				DDCDB9232743D675007B9634 /* Network.swift */,
+				DDCDB932274490AA007B9634 /* PatternsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -324,7 +356,7 @@
 		DDCDB9252743D69B007B9634 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				DDCDB9282743D705007B9634 /* NetworkServiceError.swift */,
+				DDCDB9282743D705007B9634 /* NetworkError.swift */,
 				DDCDB92C2743D858007B9634 /* AuthorizeResponse.swift */,
 				DDCDB92E2743D8F1007B9634 /* GetPatternsResponse.swift */,
 			);
@@ -351,6 +383,24 @@
 			productReference = 63DEA371270C7F68008108D5 /* iOSArinaDiplom.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DD6AD6D3274E654000FC3801 /* iOSArinaDiplomTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD6AD6DD274E654000FC3801 /* Build configuration list for PBXNativeTarget "iOSArinaDiplomTests" */;
+			buildPhases = (
+				DD6AD6D0274E654000FC3801 /* Sources */,
+				DD6AD6D1274E654000FC3801 /* Frameworks */,
+				DD6AD6D2274E654000FC3801 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD6AD6DA274E654000FC3801 /* PBXTargetDependency */,
+			);
+			name = iOSArinaDiplomTests;
+			productName = iOSArinaDiplomTests;
+			productReference = DD6AD6D4274E654000FC3801 /* iOSArinaDiplomTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -362,6 +412,10 @@
 				TargetAttributes = {
 					63DEA370270C7F68008108D5 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					DD6AD6D3274E654000FC3801 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 63DEA370270C7F68008108D5;
 					};
 				};
 			};
@@ -379,6 +433,7 @@
 			projectRoot = "";
 			targets = (
 				63DEA370270C7F68008108D5 /* iOSArinaDiplom */,
+				DD6AD6D3274E654000FC3801 /* iOSArinaDiplomTests */,
 			);
 		};
 /* End PBXProject section */
@@ -394,6 +449,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD6AD6D2274E654000FC3801 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -406,7 +468,7 @@
 				DDCDB8E92741010B007B9634 /* SettingsCoordinator.swift in Sources */,
 				DDCDB91A274123D1007B9634 /* SettingsListDisplayManager.swift in Sources */,
 				DDCDB92D2743D858007B9634 /* AuthorizeResponse.swift in Sources */,
-				DDCDB933274490AA007B9634 /* PatternsNetworkService.swift in Sources */,
+				DDCDB933274490AA007B9634 /* PatternsService.swift in Sources */,
 				DDCDB915274123B9007B9634 /* PersonsListDisplayManagerImp.swift in Sources */,
 				DDCDB919274123D1007B9634 /* SettingsListDisplayManagerImp.swift in Sources */,
 				DDCDB90F27412314007B9634 /* PatternsListView.swift in Sources */,
@@ -424,7 +486,7 @@
 				DDCDB8F22741129E007B9634 /* PersonsListController.swift in Sources */,
 				DDCDB91D274123FE007B9634 /* PersonsListView.swift in Sources */,
 				DDCDB8D9273D71FA007B9634 /* Pattern.swift in Sources */,
-				DDCDB9242743D675007B9634 /* NetworkService.swift in Sources */,
+				DDCDB9242743D675007B9634 /* Network.swift in Sources */,
 				DDCDB8FC27411332007B9634 /* PersonsListPresenterImp.swift in Sources */,
 				DDCDB90A274122D7007B9634 /* PatternsListDisplayManager.swift in Sources */,
 				DDCDB8E7274100F7007B9634 /* PersonsCoordinator.swift in Sources */,
@@ -435,11 +497,11 @@
 				DDCDB914274123B9007B9634 /* PersonsListDisplayManager.swift in Sources */,
 				DDCDB90C274122EC007B9634 /* PatternsListDisplayManagerImp.swift in Sources */,
 				DDCDB93127448B06007B9634 /* PatternCell.swift in Sources */,
-				DDCDB9292743D705007B9634 /* NetworkServiceError.swift in Sources */,
+				DDCDB9292743D705007B9634 /* NetworkError.swift in Sources */,
 				DDCDB8EB2741063E007B9634 /* RootCoordinator.swift in Sources */,
 				DDCDB92127412418007B9634 /* SettingsViewController.swift in Sources */,
 				DDCDB9052741226A007B9634 /* PatternsListPresenterState.swift in Sources */,
-				DDCDB9272743D6B7007B9634 /* NetworkServiceProtocol.swift in Sources */,
+				DDCDB9272743D6B7007B9634 /* NetworkProtocol.swift in Sources */,
 				DD0DF87A274A8F8300D864B5 /* PersonsDataService.swift in Sources */,
 				DDCDB90127411339007B9634 /* SettingsListPresenterImp.swift in Sources */,
 				DDCDB8E527410088007B9634 /* PatternsCoordinator.swift in Sources */,
@@ -447,7 +509,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD6AD6D0274E654000FC3801 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD6AD6D7274E654000FC3801 /* iOSArinaDiplomTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD6AD6DA274E654000FC3801 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63DEA370270C7F68008108D5 /* iOSArinaDiplom */;
+			targetProxy = DD6AD6D9274E654000FC3801 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		63DEA37F270C7F6A008108D5 /* LaunchScreen.storyboard */ = {
@@ -621,6 +699,44 @@
 			};
 			name = Release;
 		};
+		DD6AD6DB274E654000FC3801 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = iOSArinaDiplomTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.TestChaint.iOSArinaDiplomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSArinaDiplom.app/iOSArinaDiplom";
+			};
+			name = Debug;
+		};
+		DD6AD6DC274E654000FC3801 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = iOSArinaDiplomTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.TestChaint.iOSArinaDiplomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSArinaDiplom.app/iOSArinaDiplom";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -638,6 +754,15 @@
 			buildConfigurations = (
 				63DEA386270C7F6A008108D5 /* Debug */,
 				63DEA387270C7F6A008108D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD6AD6DD274E654000FC3801 /* Build configuration list for PBXNativeTarget "iOSArinaDiplomTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD6AD6DB274E654000FC3801 /* Debug */,
+				DD6AD6DC274E654000FC3801 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
