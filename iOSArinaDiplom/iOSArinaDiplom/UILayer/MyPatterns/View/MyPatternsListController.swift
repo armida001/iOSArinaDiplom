@@ -13,7 +13,7 @@ final class MyPatternsListController: UICollectionViewController {
     
     static func create() -> MyPatternsListController {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-        layout.minimumLineSpacing = 0        
+        layout.minimumLineSpacing = 0
         let width = UIScreen.main.bounds.size.width
         layout.itemSize = CGSize.init(width: width, height: width)
         let controller = MyPatternsListController.init(collectionViewLayout: layout)
@@ -32,7 +32,7 @@ final class MyPatternsListController: UICollectionViewController {
 }
 
 extension MyPatternsListController: MyPatternsListView {
-    func showError(_ error: NetworkServiceError) {
+    func showError(_ error: NetworkError) {
         
     }
     

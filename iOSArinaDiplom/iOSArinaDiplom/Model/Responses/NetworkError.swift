@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NetworkServiceError: Error {
+enum NetworkError: Error {
     case unauthorize
     case network
     case decodable

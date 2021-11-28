@@ -10,12 +10,12 @@ import UIKit
 
 protocol PersonsDataServiceProtocol {
     func getPersons(completion: @escaping ([Pattern]) -> Void,
-                     errorCompletion: @escaping (NetworkServiceError)->Void)
+                     errorCompletion: @escaping (NetworkError)->Void)
 }
 
 final class PersonsDataService: NSObject, PersonsDataServiceProtocol {
     
     func getPersons(completion: @escaping ([Pattern]) -> Void,
-                    errorCompletion: @escaping (NetworkServiceError)->Void) {
+                    errorCompletion: @escaping (NetworkError)->Void) {
     }
 }

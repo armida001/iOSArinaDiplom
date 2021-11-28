@@ -8,19 +8,20 @@
 import Foundation
 import UIKit
 
-protocol PatternsNetworkServiceProtocol {
+protocol PatternsServiceProtocol {
     func getPatterns(after cursor: String?,
                      completion: @escaping ([Pattern]) -> Void,
-                     errorCompletion: @escaping (NetworkServiceError)->Void)
+                     errorCompletion: @escaping (NetworkError)->Void)
 }
 
-final class PatternsNetworkService: NetworkService, PatternsNetworkServiceProtocol {
-    private static let shared = PatternsNetworkService()
+final class PatternsService: PatternsServiceProtocol {
+    private var network = Network()
+    private static let shared = PatternsService()
     
     func getPatterns(after cursor: String?,
                      completion: @escaping ([Pattern]) -> Void,
-                     errorCompletion: @escaping (NetworkServiceError)->Void) {
-        super.request(decodeType: GetPatternsResponse.self, parameters: [:], httpMethod: HttpMethodType.GET) { result in
+                     errorCompletion: @escaping (NetworkError)->Void) {
+        network.request(decodeType: GetPatternsResponse.self, parameters: [:], httpMethod: HttpMethodType.GET) { result in
             switch result {
             case .success(let data):
                 if let response = data as? GetPatternsResponse {
@@ -39,7 +40,7 @@ final class PatternsNetworkService: NetworkService, PatternsNetworkServiceProtoc
     }
     
     static func loadImage(image: String, completion: @escaping (UIImage) -> Void) {
-        PatternsNetworkService.shared.loadImage(imageUrl: image) { imageData in
+        PatternsService.shared.network.loadImage(imageUrl: image) { imageData in
             if let data = imageData, let image = UIImage.init(data: data) {
                 completion(image)
             }

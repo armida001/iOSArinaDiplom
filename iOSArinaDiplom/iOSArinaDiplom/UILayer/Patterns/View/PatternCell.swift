@@ -57,7 +57,7 @@ final class PatternCell: UICollectionViewCell {
         self.value = info
         self.nameLabel.text = self.value.title
         if let url = self.value.imageInfo?.url {
-            PatternsNetworkService.loadImage(image: url) { [weak self] image in
+            PatternsService.loadImage(image: url) { [weak self] image in
                 DispatchQueue.main.async { [weak self] in
                     self?.imageView.image = image
                 }
