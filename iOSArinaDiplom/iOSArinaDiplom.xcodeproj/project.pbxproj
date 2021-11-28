@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63B1CE2D274D1B02007AE5CB /* MyPatternsListDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE22274D1B02007AE5CB /* MyPatternsListDisplayManager.swift */; };
+		63B1CE2E274D1B02007AE5CB /* MyPatternsListDisplayManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE23274D1B02007AE5CB /* MyPatternsListDisplayManagerImp.swift */; };
+		63B1CE2F274D1B02007AE5CB /* MyPatternsListPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE25274D1B02007AE5CB /* MyPatternsListPresenterState.swift */; };
+		63B1CE30274D1B02007AE5CB /* MyPatternsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE26274D1B02007AE5CB /* MyPatternsListPresenter.swift */; };
+		63B1CE31274D1B02007AE5CB /* MyPatternsListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE27274D1B02007AE5CB /* MyPatternsListPresenterImp.swift */; };
+		63B1CE32274D1B02007AE5CB /* MyPatternsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE29274D1B02007AE5CB /* MyPatternsListView.swift */; };
+		63B1CE33274D1B02007AE5CB /* MyPatternsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE2A274D1B02007AE5CB /* MyPatternsListController.swift */; };
+		63B1CE34274D1B02007AE5CB /* MyPatternCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE2B274D1B02007AE5CB /* MyPatternCell.swift */; };
+		63B1CE35274D1B02007AE5CB /* MyPatternsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE2C274D1B02007AE5CB /* MyPatternsCoordinator.swift */; };
 		63DEA375270C7F68008108D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA374270C7F68008108D5 /* AppDelegate.swift */; };
 		63DEA377270C7F68008108D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA376270C7F68008108D5 /* SceneDelegate.swift */; };
 		63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA378270C7F68008108D5 /* TabBarController.swift */; };
@@ -56,6 +65,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63B1CE22274D1B02007AE5CB /* MyPatternsListDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListDisplayManager.swift; sourceTree = "<group>"; };
+		63B1CE23274D1B02007AE5CB /* MyPatternsListDisplayManagerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListDisplayManagerImp.swift; sourceTree = "<group>"; };
+		63B1CE25274D1B02007AE5CB /* MyPatternsListPresenterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListPresenterState.swift; sourceTree = "<group>"; };
+		63B1CE26274D1B02007AE5CB /* MyPatternsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListPresenter.swift; sourceTree = "<group>"; };
+		63B1CE27274D1B02007AE5CB /* MyPatternsListPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListPresenterImp.swift; sourceTree = "<group>"; };
+		63B1CE29274D1B02007AE5CB /* MyPatternsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListView.swift; sourceTree = "<group>"; };
+		63B1CE2A274D1B02007AE5CB /* MyPatternsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListController.swift; sourceTree = "<group>"; };
+		63B1CE2B274D1B02007AE5CB /* MyPatternCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternCell.swift; sourceTree = "<group>"; };
+		63B1CE2C274D1B02007AE5CB /* MyPatternsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsCoordinator.swift; sourceTree = "<group>"; };
 		63DEA371270C7F68008108D5 /* iOSArinaDiplom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArinaDiplom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DEA374270C7F68008108D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63DEA376270C7F68008108D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +135,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63B1CE20274D1B02007AE5CB /* MyPatterns */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE21274D1B02007AE5CB /* DisplayManager */,
+				63B1CE24274D1B02007AE5CB /* Presenter */,
+				63B1CE28274D1B02007AE5CB /* View */,
+				63B1CE2C274D1B02007AE5CB /* MyPatternsCoordinator.swift */,
+			);
+			path = MyPatterns;
+			sourceTree = "<group>";
+		};
+		63B1CE21274D1B02007AE5CB /* DisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE22274D1B02007AE5CB /* MyPatternsListDisplayManager.swift */,
+				63B1CE23274D1B02007AE5CB /* MyPatternsListDisplayManagerImp.swift */,
+			);
+			path = DisplayManager;
+			sourceTree = "<group>";
+		};
+		63B1CE24274D1B02007AE5CB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE25274D1B02007AE5CB /* MyPatternsListPresenterState.swift */,
+				63B1CE26274D1B02007AE5CB /* MyPatternsListPresenter.swift */,
+				63B1CE27274D1B02007AE5CB /* MyPatternsListPresenterImp.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		63B1CE28274D1B02007AE5CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE29274D1B02007AE5CB /* MyPatternsListView.swift */,
+				63B1CE2A274D1B02007AE5CB /* MyPatternsListController.swift */,
+				63B1CE2B274D1B02007AE5CB /* MyPatternCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		63DEA368270C7F68008108D5 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +211,7 @@
 		DDCDB8D0273C0F57007B9634 /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
+				63B1CE20274D1B02007AE5CB /* MyPatterns */,
 				DDCDB8DF273D7DB1007B9634 /* Main */,
 				DDCDB8DC273D7D84007B9634 /* Patterns */,
 				DDCDB8DD273D7D9D007B9634 /* Persons */,
@@ -414,8 +473,10 @@
 				DDCDB92B2743D77A007B9634 /* Constants.swift in Sources */,
 				DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */,
 				63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */,
+				63B1CE2D274D1B02007AE5CB /* MyPatternsListDisplayManager.swift in Sources */,
 				DDCDB8F02741128E007B9634 /* PatternsListController.swift in Sources */,
 				DDCDB8DB273D7362007B9634 /* PersonPattern.swift in Sources */,
+				63B1CE33274D1B02007AE5CB /* MyPatternsListController.swift in Sources */,
 				DDCDB8FB27411332007B9634 /* PersonsListPresenter.swift in Sources */,
 				DDCDB91F27412407007B9634 /* SettingsListView.swift in Sources */,
 				DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */,
@@ -424,23 +485,30 @@
 				DDCDB8F22741129E007B9634 /* PersonsListController.swift in Sources */,
 				DDCDB91D274123FE007B9634 /* PersonsListView.swift in Sources */,
 				DDCDB8D9273D71FA007B9634 /* Pattern.swift in Sources */,
+				63B1CE31274D1B02007AE5CB /* MyPatternsListPresenterImp.swift in Sources */,
 				DDCDB9242743D675007B9634 /* NetworkService.swift in Sources */,
 				DDCDB8FC27411332007B9634 /* PersonsListPresenterImp.swift in Sources */,
 				DDCDB90A274122D7007B9634 /* PatternsListDisplayManager.swift in Sources */,
+				63B1CE32274D1B02007AE5CB /* MyPatternsListView.swift in Sources */,
 				DDCDB8E7274100F7007B9634 /* PersonsCoordinator.swift in Sources */,
 				DDCDB8F4274112D2007B9634 /* PatternsListPresenter.swift in Sources */,
 				63DEA377270C7F68008108D5 /* SceneDelegate.swift in Sources */,
 				DDCDB92F2743D8F1007B9634 /* GetPatternsResponse.swift in Sources */,
+				63B1CE2E274D1B02007AE5CB /* MyPatternsListDisplayManagerImp.swift in Sources */,
 				DDCDB90327412212007B9634 /* PersonsListPresenterState.swift in Sources */,
 				DDCDB914274123B9007B9634 /* PersonsListDisplayManager.swift in Sources */,
+				63B1CE35274D1B02007AE5CB /* MyPatternsCoordinator.swift in Sources */,
 				DDCDB90C274122EC007B9634 /* PatternsListDisplayManagerImp.swift in Sources */,
 				DDCDB93127448B06007B9634 /* PatternCell.swift in Sources */,
 				DDCDB9292743D705007B9634 /* NetworkServiceError.swift in Sources */,
 				DDCDB8EB2741063E007B9634 /* RootCoordinator.swift in Sources */,
 				DDCDB92127412418007B9634 /* SettingsViewController.swift in Sources */,
+				63B1CE2F274D1B02007AE5CB /* MyPatternsListPresenterState.swift in Sources */,
 				DDCDB9052741226A007B9634 /* PatternsListPresenterState.swift in Sources */,
+				63B1CE34274D1B02007AE5CB /* MyPatternCell.swift in Sources */,
 				DDCDB9272743D6B7007B9634 /* NetworkServiceProtocol.swift in Sources */,
 				DD0DF87A274A8F8300D864B5 /* PersonsDataService.swift in Sources */,
+				63B1CE30274D1B02007AE5CB /* MyPatternsListPresenter.swift in Sources */,
 				DDCDB90127411339007B9634 /* SettingsListPresenterImp.swift in Sources */,
 				DDCDB8E527410088007B9634 /* PatternsCoordinator.swift in Sources */,
 				DDCDB8E22740FDDC007B9634 /* Coordinator.swift in Sources */,

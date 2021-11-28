@@ -10,6 +10,7 @@ import UIKit
 class TabBarController: UITabBarController {
 
     private var patternsCoordinator: PatternsCoordinator!
+    private var myPatternsCoordinator: MyPatternsCoordinator!
     private var personsCoordinator: PersonsCoordinator!
     private var settingsCoordinator: SettingsCoordinator!
     
@@ -19,6 +20,12 @@ class TabBarController: UITabBarController {
                                                                     image: nil,
                                                                     selectedImage: nil)
         self.patternsCoordinator = PatternsCoordinator(navigationController: patternsNavigationController)
+
+        let myPatternsNavigationController = UINavigationController.init()
+        myPatternsNavigationController.tabBarItem = UITabBarItem.init(title: "Избранное",
+                                                                    image: nil,
+                                                                    selectedImage: nil)
+        self.myPatternsCoordinator = MyPatternsCoordinator(navigationController: myPatternsNavigationController)
         
         let personNavigationController = UINavigationController.init()
         personNavigationController.tabBarItem = UITabBarItem.init(title: "Мерки",
@@ -32,7 +39,8 @@ class TabBarController: UITabBarController {
                                                                     selectedImage: nil)
         self.settingsCoordinator = SettingsCoordinator(navigationController: settingsNavigationController)
         
-        viewControllers = [patternsNavigationController,
+        viewControllers = [myPatternsNavigationController,
+                           patternsNavigationController,
                            personNavigationController,
                            settingsNavigationController]
     }
@@ -40,7 +48,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        patternsCoordinator.start()
+        myPatternsCoordinator.start()
     }
 }
 
