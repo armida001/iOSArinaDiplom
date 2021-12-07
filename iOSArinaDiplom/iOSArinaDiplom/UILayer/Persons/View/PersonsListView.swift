@@ -8,5 +8,6 @@
 import Foundation
 
 protocol PersonsListView {
-    
+    func reloadData(_ array: [Person])
+    func showError(_ error: NetworkError)
 }

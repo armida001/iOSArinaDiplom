@@ -10,14 +10,14 @@ import UIKit
 @testable import iOSArinaDiplom
 
 class iOSArinaDiplomTests: XCTestCase {
-    private let service = PatternsNetworkService.init()
+    private let service = PatternsService()
     
     func test() {
-        service.getPatterns(after: nil) { result in
-            XCTAssert(!result.isEmpty, "all right")
-        } errorCompletion: { error in
-            XCTFail(error.message)
-        }
+//        service.getPatterns(after: nil) { result in
+//            XCTAssert(!result.isEmpty, "all right")
+//        } errorCompletion: { error in
+//            XCTFail(error.message)
+//        }
     }
     
     override func setUpWithError() throws {

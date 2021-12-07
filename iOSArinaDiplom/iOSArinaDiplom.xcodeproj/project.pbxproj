@@ -16,7 +16,6 @@
 		63B1CE492753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3C2753EB73007AE5CB /* MyPatternsListPresenter.swift */; };
 		63B1CE4A2753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3C2753EB73007AE5CB /* MyPatternsListPresenter.swift */; };
 		63B1CE4B2753EB73007AE5CB /* MyPatternsListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3D2753EB73007AE5CB /* MyPatternsListPresenterImp.swift */; };
-		63B1CE4C2753EB73007AE5CB /* MyPatternsListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3D2753EB73007AE5CB /* MyPatternsListPresenterImp.swift */; };
 		63B1CE4D2753EB73007AE5CB /* MyPatternsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3F2753EB73007AE5CB /* MyPatternsListView.swift */; };
 		63B1CE4E2753EB73007AE5CB /* MyPatternsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3F2753EB73007AE5CB /* MyPatternsListView.swift */; };
 		63B1CE4F2753EB73007AE5CB /* MyPatternsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE402753EB73007AE5CB /* MyPatternsListController.swift */; };
@@ -30,10 +29,18 @@
 		63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA378270C7F68008108D5 /* TabBarController.swift */; };
 		63DEA37E270C7F6A008108D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37D270C7F6A008108D5 /* Assets.xcassets */; };
 		63DEA381270C7F6A008108D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63DEA37F270C7F6A008108D5 /* LaunchScreen.storyboard */; };
-		DD0DF87A274A8F8300D864B5 /* PersonsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DF879274A8F8200D864B5 /* PersonsDataService.swift */; };
+		DD0DF87A274A8F8300D864B5 /* PersonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DF879274A8F8200D864B5 /* PersonsService.swift */; };
+		DD18054B2754FC3700DDD751 /* DataBaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD18054A2754FC3700DDD751 /* DataBaseServiceProtocol.swift */; };
+		DD27030C275BCA4C002DCB53 /* Patterns.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD27030A275BCA4C002DCB53 /* Patterns.xcdatamodeld */; };
+		DD27030E275BCDE9002DCB53 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27030D275BCDE9002DCB53 /* PersonCell.swift */; };
+		DD270310275E912B002DCB53 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27030F275E912B002DCB53 /* DataBaseService.swift */; };
+		DD270313275E9135002DCB53 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD270311275E9135002DCB53 /* CoreDataStack.swift */; };
+		DD270314275E9135002DCB53 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD270312275E9135002DCB53 /* DIContainer.swift */; };
+		DD270316275F1B9C002DCB53 /* CoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD270315275F1B9C002DCB53 /* CoreDataProtocol.swift */; };
+		DD27031F275F234A002DCB53 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27031D275F2349002DCB53 /* Person+CoreDataClass.swift */; };
+		DD270320275F234A002DCB53 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27031E275F2349002DCB53 /* Person+CoreDataProperties.swift */; };
 		DD6AD6D7274E654000FC3801 /* iOSArinaDiplomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6AD6D6274E654000FC3801 /* iOSArinaDiplomTests.swift */; };
 		DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D2273C101C007B9634 /* PersonParameters.swift */; };
-		DDCDB8D6273C101C007B9634 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D3273C101C007B9634 /* Person.swift */; };
 		DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D4273C101C007B9634 /* Swifty.swift */; };
 		DDCDB8D9273D71FA007B9634 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D8273D71FA007B9634 /* Pattern.swift */; };
 		DDCDB8DB273D7362007B9634 /* PersonPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8DA273D7362007B9634 /* PersonPattern.swift */; };
@@ -101,12 +108,20 @@
 		63DEA37D270C7F6A008108D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63DEA380270C7F6A008108D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63DEA382270C7F6A008108D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD0DF879274A8F8200D864B5 /* PersonsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsDataService.swift; sourceTree = "<group>"; };
+		DD0DF879274A8F8200D864B5 /* PersonsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsService.swift; sourceTree = "<group>"; };
+		DD18054A2754FC3700DDD751 /* DataBaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseServiceProtocol.swift; sourceTree = "<group>"; };
+		DD27030B275BCA4C002DCB53 /* Patterns.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Patterns.xcdatamodel; sourceTree = "<group>"; };
+		DD27030D275BCDE9002DCB53 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		DD27030F275E912B002DCB53 /* DataBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
+		DD270311275E9135002DCB53 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		DD270312275E9135002DCB53 /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		DD270315275F1B9C002DCB53 /* CoreDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocol.swift; sourceTree = "<group>"; };
+		DD27031D275F2349002DCB53 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DD27031E275F2349002DCB53 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DD6AD6D4274E654000FC3801 /* iOSArinaDiplomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSArinaDiplomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6AD6D6274E654000FC3801 /* iOSArinaDiplomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSArinaDiplomTests.swift; sourceTree = "<group>"; };
 		DD6AD6D8274E654000FC3801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCDB8D2273C101C007B9634 /* PersonParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonParameters.swift; sourceTree = "<group>"; };
-		DDCDB8D3273C101C007B9634 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		DDCDB8D4273C101C007B9634 /* Swifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swifty.swift; sourceTree = "<group>"; };
 		DDCDB8D8273D71FA007B9634 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		DDCDB8DA273D7362007B9634 /* PersonPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPattern.swift; sourceTree = "<group>"; };
@@ -240,6 +255,15 @@
 			path = iOSArinaDiplom;
 			sourceTree = "<group>";
 		};
+		DD27031C275F2349002DCB53 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DD27031D275F2349002DCB53 /* Person+CoreDataClass.swift */,
+				DD27031E275F2349002DCB53 /* Person+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		DD6AD6D5274E654000FC3801 /* iOSArinaDiplomTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,13 +288,16 @@
 		DDCDB8D1273C0F89007B9634 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD27031C275F2349002DCB53 /* CoreData */,
+				DD270311275E9135002DCB53 /* CoreDataStack.swift */,
+				DD270312275E9135002DCB53 /* DIContainer.swift */,
 				DDCDB9252743D69B007B9634 /* Responses */,
-				DDCDB8D3273C101C007B9634 /* Person.swift */,
 				DDCDB8D2273C101C007B9634 /* PersonParameters.swift */,
 				DDCDB8D4273C101C007B9634 /* Swifty.swift */,
 				DDCDB8D8273D71FA007B9634 /* Pattern.swift */,
 				DDCDB8DA273D7362007B9634 /* PersonPattern.swift */,
 				DDCDB92A2743D77A007B9634 /* Constants.swift */,
+				DD27030A275BCA4C002DCB53 /* Patterns.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +349,8 @@
 			children = (
 				DDCDB8E12740FDDC007B9634 /* Coordinator.swift */,
 				DDCDB9262743D6B7007B9634 /* NetworkProtocol.swift */,
+				DD18054A2754FC3700DDD751 /* DataBaseServiceProtocol.swift */,
+				DD270315275F1B9C002DCB53 /* CoreDataProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -380,6 +409,7 @@
 			children = (
 				DDCDB91C274123FE007B9634 /* PersonsListView.swift */,
 				DDCDB8F12741129E007B9634 /* PersonsListController.swift */,
+				DD27030D275BCDE9002DCB53 /* PersonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -414,7 +444,8 @@
 		DDCDB9222743D664007B9634 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DD0DF879274A8F8200D864B5 /* PersonsDataService.swift */,
+				DD27030F275E912B002DCB53 /* DataBaseService.swift */,
+				DD0DF879274A8F8200D864B5 /* PersonsService.swift */,
 				DDCDB9232743D675007B9634 /* Network.swift */,
 				DDCDB932274490AA007B9634 /* PatternsService.swift */,
 			);
@@ -531,12 +562,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD27031F275F234A002DCB53 /* Person+CoreDataClass.swift in Sources */,
 				DDCDB8F7274112EE007B9634 /* PatternsListPresenterImp.swift in Sources */,
-				DDCDB8D6273C101C007B9634 /* Person.swift in Sources */,
 				DDCDB8E92741010B007B9634 /* SettingsCoordinator.swift in Sources */,
 				DDCDB91A274123D1007B9634 /* SettingsListDisplayManager.swift in Sources */,
 				DDCDB92D2743D858007B9634 /* AuthorizeResponse.swift in Sources */,
 				DDCDB933274490AA007B9634 /* PatternsService.swift in Sources */,
+				DD270314275E9135002DCB53 /* DIContainer.swift in Sources */,
+				DD270310275E912B002DCB53 /* DataBaseService.swift in Sources */,
 				DDCDB915274123B9007B9634 /* PersonsListDisplayManagerImp.swift in Sources */,
 				DDCDB919274123D1007B9634 /* SettingsListDisplayManagerImp.swift in Sources */,
 				DDCDB90F27412314007B9634 /* PatternsListView.swift in Sources */,
@@ -545,6 +578,7 @@
 				DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */,
 				63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */,
 				63B1CE432753EB73007AE5CB /* MyPatternsListDisplayManager.swift in Sources */,
+				DD27030C275BCA4C002DCB53 /* Patterns.xcdatamodeld in Sources */,
 				DDCDB8F02741128E007B9634 /* PatternsListController.swift in Sources */,
 				DDCDB8DB273D7362007B9634 /* PersonPattern.swift in Sources */,
 				63B1CE4F2753EB73007AE5CB /* MyPatternsListController.swift in Sources */,
@@ -556,6 +590,7 @@
 				DDCDB8F22741129E007B9634 /* PersonsListController.swift in Sources */,
 				DDCDB91D274123FE007B9634 /* PersonsListView.swift in Sources */,
 				DDCDB8D9273D71FA007B9634 /* Pattern.swift in Sources */,
+				DD270313275E9135002DCB53 /* CoreDataStack.swift in Sources */,
 				63B1CE4B2753EB73007AE5CB /* MyPatternsListPresenterImp.swift in Sources */,
 				DDCDB9242743D675007B9634 /* Network.swift in Sources */,
 				DDCDB8FC27411332007B9634 /* PersonsListPresenterImp.swift in Sources */,
@@ -567,6 +602,8 @@
 				DDCDB92F2743D8F1007B9634 /* GetPatternsResponse.swift in Sources */,
 				63B1CE452753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift in Sources */,
 				DDCDB90327412212007B9634 /* PersonsListPresenterState.swift in Sources */,
+				DD270316275F1B9C002DCB53 /* CoreDataProtocol.swift in Sources */,
+				DD18054B2754FC3700DDD751 /* DataBaseServiceProtocol.swift in Sources */,
 				DDCDB914274123B9007B9634 /* PersonsListDisplayManager.swift in Sources */,
 				63B1CE532753EB73007AE5CB /* MyPatternsCoordinator.swift in Sources */,
 				DDCDB90C274122EC007B9634 /* PatternsListDisplayManagerImp.swift in Sources */,
@@ -578,8 +615,10 @@
 				DDCDB9052741226A007B9634 /* PatternsListPresenterState.swift in Sources */,
 				63B1CE512753EB73007AE5CB /* MyPatternCell.swift in Sources */,
 				DDCDB9272743D6B7007B9634 /* NetworkProtocol.swift in Sources */,
-				DD0DF87A274A8F8300D864B5 /* PersonsDataService.swift in Sources */,
+				DD270320275F234A002DCB53 /* Person+CoreDataProperties.swift in Sources */,
+				DD0DF87A274A8F8300D864B5 /* PersonsService.swift in Sources */,
 				63B1CE492753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */,
+				DD27030E275BCDE9002DCB53 /* PersonCell.swift in Sources */,
 				DDCDB90127411339007B9634 /* SettingsListPresenterImp.swift in Sources */,
 				DDCDB8E527410088007B9634 /* PatternsCoordinator.swift in Sources */,
 				DDCDB8E22740FDDC007B9634 /* Coordinator.swift in Sources */,
@@ -594,7 +633,6 @@
 				63B1CE542753EB73007AE5CB /* MyPatternsCoordinator.swift in Sources */,
 				63B1CE4E2753EB73007AE5CB /* MyPatternsListView.swift in Sources */,
 				63B1CE522753EB73007AE5CB /* MyPatternCell.swift in Sources */,
-				63B1CE4C2753EB73007AE5CB /* MyPatternsListPresenterImp.swift in Sources */,
 				DD6AD6D7274E654000FC3801 /* iOSArinaDiplomTests.swift in Sources */,
 				63B1CE4A2753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */,
 				63B1CE482753EB73007AE5CB /* MyPatternsListPresenterState.swift in Sources */,
@@ -854,6 +892,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DD27030A275BCA4C002DCB53 /* Patterns.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DD27030B275BCA4C002DCB53 /* Patterns.xcdatamodel */,
+			);
+			currentVersion = DD27030B275BCA4C002DCB53 /* Patterns.xcdatamodel */;
+			path = Patterns.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 63DEA369270C7F68008108D5 /* Project object */;
 }

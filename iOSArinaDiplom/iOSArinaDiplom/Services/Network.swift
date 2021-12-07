@@ -17,6 +17,7 @@ enum BaseKey: String {
 }
 
 class Network {
+    static let shared = Network()
     private let session: URLSession = .shared
     private let decoder: JSONDecoder = {
         $0.keyDecodingStrategy = .convertFromSnakeCase

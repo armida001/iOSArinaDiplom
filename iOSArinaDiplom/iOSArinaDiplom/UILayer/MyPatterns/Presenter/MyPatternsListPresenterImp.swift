@@ -10,7 +10,7 @@ import UIKit
 final class MyPatternsListPresenterImp: MyPatternsListPresenter {
     internal var state: MyPatternsListPresenterState
     private var view: MyPatternsListView?
-    private var service: PatternsServiceProtocol?
+    private var service: PatternsProtocol?
     
     
     init(state: MyPatternsListPresenterState) {
@@ -23,13 +23,13 @@ final class MyPatternsListPresenterImp: MyPatternsListPresenter {
     }
     
     func reloadData() {
-        service?.getPatterns(after: "", completion: { [weak self] array in
+        service?.loadData(completionHandler: { [weak self] array in
             DispatchQueue.main.async {
                 self?.view?.reloadData(array)
             }
         }, errorCompletion: { [weak self] error in
             DispatchQueue.main.async {
-                self?.view?.showError(error)
+                self?.view?.showError(error as? NetworkError ?? NetworkError.unknown)
             }
         })
     }

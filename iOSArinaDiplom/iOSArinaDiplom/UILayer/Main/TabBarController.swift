@@ -39,8 +39,8 @@ class TabBarController: UITabBarController {
                                                                     selectedImage: nil)
         self.settingsCoordinator = SettingsCoordinator(navigationController: settingsNavigationController)
         
-        viewControllers = [myPatternsNavigationController,
-                           patternsNavigationController,
+        viewControllers = [patternsNavigationController,
+                           myPatternsNavigationController,
                            personNavigationController,
                            settingsNavigationController]
     }
@@ -48,7 +48,10 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        patternsCoordinator.start()
         myPatternsCoordinator.start()
+        personsCoordinator.start()
+        settingsCoordinator.start()
     }
 }
 

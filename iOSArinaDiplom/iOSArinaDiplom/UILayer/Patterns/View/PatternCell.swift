@@ -14,7 +14,6 @@ struct PatternCellItem {
 }
 
 final class PatternCell: UICollectionViewCell {
-    
     private var nameLabel: UILabel!
     private var imageView: UIImageView!
     private var value: PatternCellItem!
@@ -22,9 +21,7 @@ final class PatternCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupConstraints()
-        self.baseConfig()
         self.labelConfig()
-        self.imageConfig()
     }
     
     required init?(coder: NSCoder) {
@@ -32,24 +29,24 @@ final class PatternCell: UICollectionViewCell {
     }
     
     func setupConstraints() {
-        self.nameLabel = UILabel()
-        self.contentView.addSubview(self.nameLabel)
-        self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         self.imageView = UIImageView()
         self.contentView.addSubview(self.imageView)
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
         
+        self.nameLabel = UILabel()
+        self.contentView.addSubview(self.nameLabel)
+        self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 3),
-            self.imageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 3),
-            self.imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -3),
-            self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor),
+            self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            self.imageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            self.imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            self.imageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             
-            self.nameLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 5),
-            self.nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 5),
-            self.nameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -5),
-            self.nameLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5)
+            self.nameLabel.heightAnchor.constraint(equalToConstant: 50),
+            self.nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            self.nameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            self.nameLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
         ])
     }
     
@@ -69,16 +66,7 @@ final class PatternCell: UICollectionViewCell {
         self.nameLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.semibold)
         self.nameLabel.textAlignment = NSTextAlignment.center
         self.nameLabel.textColor = UIColor.black.withAlphaComponent(0.9)
+        self.nameLabel.backgroundColor = UIColor.white.withAlphaComponent(0.9)
     }
     
-    private func imageConfig() {
-        self.imageView.layer.cornerRadius = 8
-        self.imageView.clipsToBounds = true
-    }
-    
-    private func baseConfig() {
-        self.contentView.layer.cornerRadius = 12
-        self.contentView.layer.borderWidth = 0.5
-        self.contentView.layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
-    }
 }

@@ -14,5 +14,11 @@ class PersonsListController: UITableViewController {
 }
 
 extension PersonsListController: PersonsListView {
+    func reloadData(_ array: [Person]) {
+        
+    }
     
+    func showError(_ error: NetworkError) {
+        
+    }
 }

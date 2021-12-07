@@ -10,7 +10,7 @@ import UIKit
 class PersonsListPresenterImp: PersonsListPresenter {
     internal var state: PersonsListPresenterState
     private var view: PersonsListView?
-    private var service: PersonsDataServiceProtocol?
+    private var service: PersonsDataService?
     
     
     init(state: PersonsListPresenterState) {
@@ -22,6 +22,15 @@ class PersonsListPresenterImp: PersonsListPresenter {
         self.view = view
     }
     
-    func reloadData() {        
+    func reloadData() {
+        service?.loadData(completionHandler: { [weak self] array in
+            DispatchQueue.main.async {
+                self?.view?.reloadData(array)
+            }
+        }, errorCompletion: { [weak self] error in
+            DispatchQueue.main.async {
+                self?.view?.showError(error as? NetworkError ?? NetworkError.unknown)
+            }
+        })
     }
 }

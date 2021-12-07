@@ -14,7 +14,7 @@ class MyPatternsListDisplayManagerImp: NSObject {
     
     func configure(collectionView: UICollectionView) {
         self.collectionView = collectionView
-        self.collectionView?.register(MyPatternCell.self, forCellWithReuseIdentifier: "PatternCell")
+        self.collectionView?.register(MyPatternCell.self, forCellWithReuseIdentifier: "MyPatternCell")
         collectionView.delegate = self
         collectionView.dataSource = self        
     }
@@ -40,7 +40,7 @@ extension MyPatternsListDisplayManagerImp: UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PatternCell", for: indexPath) as? MyPatternCell else { return PatternCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPatternCell", for: indexPath) as? MyPatternCell else { return MyPatternCell() }
         let pattern = array[indexPath.row]
         let imageUrl = pattern.image?.url
         let width = pattern.image?.width
