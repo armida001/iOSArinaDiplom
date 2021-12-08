@@ -8,15 +8,19 @@
 import UIKit
 
 final class MyPatternsListController: UICollectionViewController {
-    private var displayManager: MyPatternsListDisplayManager = MyPatternsListDisplayManagerImp()
+    private var displayManager: MyPatternsListDisplayManager!
     private var presenter: MyPatternsListPresenter!
     
-    static func create() -> MyPatternsListController {
+    static func create(showPattern: @escaping (PatternCellItem) -> Void) -> MyPatternsListController {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-        layout.minimumLineSpacing = 0
-        let width = UIScreen.main.bounds.size.width
-        layout.itemSize = CGSize.init(width: width, height: width)
+
+        let width = UIScreen.main.bounds.size.width / 2 - 30
+        let height = width / 10 * 2 + width
+        layout.itemSize = CGSize.init(width: width, height: height)
+        layout.sectionInset = UIEdgeInsets.init(top: 20, left: 20, bottom: 10, right: 20)
+        
         let controller = MyPatternsListController.init(collectionViewLayout: layout)
+        controller.displayManager = MyPatternsListDisplayManagerImp(showPattern: showPattern)
         return controller
     }
     
@@ -36,7 +40,7 @@ extension MyPatternsListController: MyPatternsListView {
         
     }
     
-    func reloadData(_ data: [Pattern]) {
+    func reloadData(_ data: [PatternCellItem]) {
         self.displayManager.array = data
         self.collectionView.reloadData()
     }

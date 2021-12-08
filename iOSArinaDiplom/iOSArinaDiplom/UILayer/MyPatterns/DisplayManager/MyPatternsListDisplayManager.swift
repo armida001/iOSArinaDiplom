@@ -10,5 +10,6 @@ import UIKit
 
 protocol MyPatternsListDisplayManager {
     func configure(collectionView: UICollectionView)
-    var array: [Pattern] { get set }
+    var array: [PatternCellItem] { get set }
+    var showPattern: ((PatternCellItem) -> Void) { get set }
 }

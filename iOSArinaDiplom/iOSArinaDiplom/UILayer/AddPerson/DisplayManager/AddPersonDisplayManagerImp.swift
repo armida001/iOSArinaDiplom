@@ -7,16 +7,13 @@
 
 import UIKit
 
-class PersonsListDisplayManagerImp: NSObject {
-    var array: [PersonCellItem]
+class AddPersonDisplayManagerImp: NSObject {
+    var person: PersonCellItem?
     private var tableView: UITableView?
-    
-    init(array: [PersonCellItem] = [PersonCellItem]()) {
-        self.array = array
-    }
+    var savePerson: ((PersonCellItem) -> Void)?
 }
 
-extension PersonsListDisplayManagerImp: PersonsListDisplayManager {
+extension AddPersonDisplayManagerImp: AddPersonDisplayManager {
     func configure(tableView: UITableView) {
         self.tableView = tableView
         self.tableView?.register(PersonCell.self, forCellReuseIdentifier: "PersonCell")
@@ -27,9 +24,9 @@ extension PersonsListDisplayManagerImp: PersonsListDisplayManager {
     }
 }
 
-extension PersonsListDisplayManagerImp: UITableViewDataSource, UITableViewDelegate {
+extension AddPersonDisplayManagerImp: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        array.count
+        0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,14 +34,13 @@ extension PersonsListDisplayManagerImp: UITableViewDataSource, UITableViewDelega
                                                        for: indexPath) as? PersonCell else {
             return UITableViewCell()
         }
-        let person = array[indexPath.row]
-        cell.textLabel?.text = person.title
-        cell.detailTextLabel?.text = person.detail
+        cell.textLabel?.text = person?.title
+        cell.detailTextLabel?.text = person?.title
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

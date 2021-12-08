@@ -8,6 +8,6 @@
 import Foundation
 
 protocol PatternsListView: NSObjectProtocol {
-    func reloadData(_ data: [Pattern])
+    func reloadData(_ data: [PatternCellItem])
     func showError(_ error: NetworkError)
 }

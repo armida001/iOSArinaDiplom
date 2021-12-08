@@ -59,6 +59,61 @@ enum PatternType: String, Decodable {
     case tshirt
     ///жилет
     case waistcoat
+    
+    func title() -> String {
+        switch self {
+        case .blouse:
+            return "Блуза"
+        case .bikini:
+            return "Бикини"
+        case .cardigan:
+            return "Кардиган"
+        case .coat:
+            return "Пиджак"
+        case .costume:
+            return "Костюм"
+        case .dress:
+            return "Платье"
+        case .gloves:
+            return "Перчатки"
+        case .hat:
+            return "Шляпа"
+        case .hoodie:
+            return "Толстовка с копюшоном"
+        case .jacket:
+            return "Жакет"
+        case .jeans:
+            return "Джинсы"
+        case .jumper:
+            return "Джемпер"
+        case .overcoat:
+            return "Пальто"
+        case .polo:
+            return "Водолазка"
+        case .scarf:
+            return "Шарф"
+        case .skirt:
+            return "Юбка"
+        case .shirt:
+            return "Рубашка"
+        case .shorts:
+            return "Шорты"
+        case .sweater:
+            return "Свитер"
+        case .swimsuit:
+            return "Купальник"
+        case .tie:
+            return "Гастук"
+        case .track:
+            return "Спортивный костюм"
+        case .tshirt:
+            return "Футболка"
+        case .trousers:
+            return "Брюки"
+        case .waistcoat:
+            return "Жилет"
+        }
+    }
 }
 
 struct Pattern {
@@ -67,4 +122,22 @@ struct Pattern {
     let instruction: String!
     let image: GetPatternsImageResponse?
     let type: PatternType!
+    
+    func convertToPatternCellItem() -> PatternCellItem {
+        let imageUrl = self.image?.url
+        let width = self.image?.width
+        let height = self.image?.height
+        
+        var imageInfo: (url: String, width: Int?, height: Int?)? = nil
+        if let url = imageUrl {
+            imageInfo = (url: url, width: width, height: height)
+        }
+        
+        return PatternCellItem(id: self.id,
+                               title: self.name,
+                               detail: self.instruction,
+                               imageInfo: imageInfo,
+                               isLiked: false,
+                               patternTypeName: type.title())
+    }
 }

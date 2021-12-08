@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 
 class PatternsListDisplayManagerImp: NSObject {
-    var array: [Pattern]
     private var collectionView: UICollectionView?
+    
+    var array: [PatternCellItem]
+    var showPattern: ((PatternCellItem) -> Void)
     
     func configure(collectionView: UICollectionView) {
         self.collectionView = collectionView
@@ -19,13 +21,13 @@ class PatternsListDisplayManagerImp: NSObject {
         collectionView.dataSource = self        
     }
     
-    init(array:  [Pattern] = [Pattern]()) {
+    init(array:  [PatternCellItem] = [PatternCellItem](), showPattern: @escaping ((PatternCellItem) -> Void)) {
         self.array = array
+        self.showPattern = showPattern
     }
 }
 
 extension PatternsListDisplayManagerImp: PatternsListDisplayManager {
-    
 }
 
 extension PatternsListDisplayManagerImp: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -42,16 +44,20 @@ extension PatternsListDisplayManagerImp: UICollectionViewDelegate, UICollectionV
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PatternCell", for: indexPath) as? PatternCell else { return PatternCell() }
         let pattern = array[indexPath.row]
-        let imageUrl = pattern.image?.url
-        let width = pattern.image?.width
-        let height = pattern.image?.height
-                
-        var imageInfo: (url: String, width: Int?, height: Int?)? = nil
-        if let url = imageUrl {
-            imageInfo = (url: url, width: width, height: height)
-        }
-        cell.configure(with: PatternCellItem(title: pattern.name,
-                                             imageInfo: imageInfo))
+        
+        cell.configure(with: pattern, nDelegate: self)
         return cell
-    }        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pattern = array[indexPath.row]
+        self.showPattern(pattern)
+    }
+}
+extension PatternsListDisplayManagerImp: PatternCellDelegate {
+    func clickLikePattern(pattern: PatternCellItem) {
+        if let index = array.firstIndex(where: { $0.id == pattern.id }) {
+            array[index] = pattern
+        }
+    }
 }

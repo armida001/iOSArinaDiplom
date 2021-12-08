@@ -24,6 +24,22 @@
 		63B1CE522753EB73007AE5CB /* MyPatternCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE412753EB73007AE5CB /* MyPatternCell.swift */; };
 		63B1CE532753EB73007AE5CB /* MyPatternsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE422753EB73007AE5CB /* MyPatternsCoordinator.swift */; };
 		63B1CE542753EB73007AE5CB /* MyPatternsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE422753EB73007AE5CB /* MyPatternsCoordinator.swift */; };
+		63B1CE63275F9449007AE5CB /* PatternController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE58275F9449007AE5CB /* PatternController.swift */; };
+		63B1CE64275F9449007AE5CB /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE59275F9449007AE5CB /* PatternView.swift */; };
+		63B1CE65275F9449007AE5CB /* PatternIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE5A275F9449007AE5CB /* PatternIconView.swift */; };
+		63B1CE66275F9449007AE5CB /* PatternPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE5C275F9449007AE5CB /* PatternPresenterState.swift */; };
+		63B1CE67275F9449007AE5CB /* PatterntPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE5D275F9449007AE5CB /* PatterntPresenter.swift */; };
+		63B1CE68275F9449007AE5CB /* PatternPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE5E275F9449007AE5CB /* PatternPresenterImp.swift */; };
+		63B1CE69275F9449007AE5CB /* PatternDisplayManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE60275F9449007AE5CB /* PatternDisplayManagerImp.swift */; };
+		63B1CE6A275F9449007AE5CB /* PatternDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE61275F9449007AE5CB /* PatternDisplayManager.swift */; };
+		63B1CE7A2760F0D5007AE5CB /* AddPersonDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE702760F0D5007AE5CB /* AddPersonDisplayManager.swift */; };
+		63B1CE7B2760F0D5007AE5CB /* AddPersonDisplayManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE712760F0D5007AE5CB /* AddPersonDisplayManagerImp.swift */; };
+		63B1CE7C2760F0D5007AE5CB /* AddPersonPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE732760F0D5007AE5CB /* AddPersonPresenterImp.swift */; };
+		63B1CE7D2760F0D5007AE5CB /* AddPersonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE742760F0D5007AE5CB /* AddPersonPresenter.swift */; };
+		63B1CE7E2760F0D5007AE5CB /* AddPersonPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE752760F0D5007AE5CB /* AddPersonPresenterState.swift */; };
+		63B1CE7F2760F0D5007AE5CB /* ParameterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE772760F0D5007AE5CB /* ParameterCell.swift */; };
+		63B1CE802760F0D5007AE5CB /* AddPersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE782760F0D5007AE5CB /* AddPersonController.swift */; };
+		63B1CE812760F0D5007AE5CB /* AddPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE792760F0D5007AE5CB /* AddPersonView.swift */; };
 		63DEA375270C7F68008108D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA374270C7F68008108D5 /* AppDelegate.swift */; };
 		63DEA377270C7F68008108D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA376270C7F68008108D5 /* SceneDelegate.swift */; };
 		63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA378270C7F68008108D5 /* TabBarController.swift */; };
@@ -101,6 +117,22 @@
 		63B1CE402753EB73007AE5CB /* MyPatternsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListController.swift; sourceTree = "<group>"; };
 		63B1CE412753EB73007AE5CB /* MyPatternCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternCell.swift; sourceTree = "<group>"; };
 		63B1CE422753EB73007AE5CB /* MyPatternsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsCoordinator.swift; sourceTree = "<group>"; };
+		63B1CE58275F9449007AE5CB /* PatternController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternController.swift; sourceTree = "<group>"; };
+		63B1CE59275F9449007AE5CB /* PatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
+		63B1CE5A275F9449007AE5CB /* PatternIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternIconView.swift; sourceTree = "<group>"; };
+		63B1CE5C275F9449007AE5CB /* PatternPresenterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternPresenterState.swift; sourceTree = "<group>"; };
+		63B1CE5D275F9449007AE5CB /* PatterntPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatterntPresenter.swift; sourceTree = "<group>"; };
+		63B1CE5E275F9449007AE5CB /* PatternPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternPresenterImp.swift; sourceTree = "<group>"; };
+		63B1CE60275F9449007AE5CB /* PatternDisplayManagerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternDisplayManagerImp.swift; sourceTree = "<group>"; };
+		63B1CE61275F9449007AE5CB /* PatternDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternDisplayManager.swift; sourceTree = "<group>"; };
+		63B1CE702760F0D5007AE5CB /* AddPersonDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonDisplayManager.swift; sourceTree = "<group>"; };
+		63B1CE712760F0D5007AE5CB /* AddPersonDisplayManagerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonDisplayManagerImp.swift; sourceTree = "<group>"; };
+		63B1CE732760F0D5007AE5CB /* AddPersonPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonPresenterImp.swift; sourceTree = "<group>"; };
+		63B1CE742760F0D5007AE5CB /* AddPersonPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonPresenter.swift; sourceTree = "<group>"; };
+		63B1CE752760F0D5007AE5CB /* AddPersonPresenterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonPresenterState.swift; sourceTree = "<group>"; };
+		63B1CE772760F0D5007AE5CB /* ParameterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterCell.swift; sourceTree = "<group>"; };
+		63B1CE782760F0D5007AE5CB /* AddPersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonController.swift; sourceTree = "<group>"; };
+		63B1CE792760F0D5007AE5CB /* AddPersonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonView.swift; sourceTree = "<group>"; };
 		63DEA371270C7F68008108D5 /* iOSArinaDiplom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSArinaDiplom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DEA374270C7F68008108D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63DEA376270C7F68008108D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +252,84 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		63B1CE55275F93BB007AE5CB /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE5F275F9449007AE5CB /* DisplayManager */,
+				63B1CE5B275F9449007AE5CB /* Presenter */,
+				63B1CE57275F9449007AE5CB /* View */,
+			);
+			path = Pattern;
+			sourceTree = "<group>";
+		};
+		63B1CE57275F9449007AE5CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE58275F9449007AE5CB /* PatternController.swift */,
+				63B1CE59275F9449007AE5CB /* PatternView.swift */,
+				63B1CE5A275F9449007AE5CB /* PatternIconView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63B1CE5B275F9449007AE5CB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE5C275F9449007AE5CB /* PatternPresenterState.swift */,
+				63B1CE5D275F9449007AE5CB /* PatterntPresenter.swift */,
+				63B1CE5E275F9449007AE5CB /* PatternPresenterImp.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		63B1CE5F275F9449007AE5CB /* DisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE60275F9449007AE5CB /* PatternDisplayManagerImp.swift */,
+				63B1CE61275F9449007AE5CB /* PatternDisplayManager.swift */,
+			);
+			path = DisplayManager;
+			sourceTree = "<group>";
+		};
+		63B1CE6E2760F0D5007AE5CB /* AddPerson */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE6F2760F0D5007AE5CB /* DisplayManager */,
+				63B1CE722760F0D5007AE5CB /* Presenter */,
+				63B1CE762760F0D5007AE5CB /* View */,
+			);
+			path = AddPerson;
+			sourceTree = "<group>";
+		};
+		63B1CE6F2760F0D5007AE5CB /* DisplayManager */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE702760F0D5007AE5CB /* AddPersonDisplayManager.swift */,
+				63B1CE712760F0D5007AE5CB /* AddPersonDisplayManagerImp.swift */,
+			);
+			path = DisplayManager;
+			sourceTree = "<group>";
+		};
+		63B1CE722760F0D5007AE5CB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE732760F0D5007AE5CB /* AddPersonPresenterImp.swift */,
+				63B1CE742760F0D5007AE5CB /* AddPersonPresenter.swift */,
+				63B1CE752760F0D5007AE5CB /* AddPersonPresenterState.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		63B1CE762760F0D5007AE5CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63B1CE772760F0D5007AE5CB /* ParameterCell.swift */,
+				63B1CE782760F0D5007AE5CB /* AddPersonController.swift */,
+				63B1CE792760F0D5007AE5CB /* AddPersonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		63DEA368270C7F68008108D5 = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +386,8 @@
 		DDCDB8D0273C0F57007B9634 /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
+				63B1CE6E2760F0D5007AE5CB /* AddPerson */,
+				63B1CE55275F93BB007AE5CB /* Pattern */,
 				63B1CE362753EB73007AE5CB /* MyPatterns */,
 				DDCDB8DF273D7DB1007B9634 /* Main */,
 				DDCDB8DC273D7D84007B9634 /* Patterns */,
@@ -563,18 +675,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD27031F275F234A002DCB53 /* Person+CoreDataClass.swift in Sources */,
+				63B1CE7C2760F0D5007AE5CB /* AddPersonPresenterImp.swift in Sources */,
 				DDCDB8F7274112EE007B9634 /* PatternsListPresenterImp.swift in Sources */,
 				DDCDB8E92741010B007B9634 /* SettingsCoordinator.swift in Sources */,
 				DDCDB91A274123D1007B9634 /* SettingsListDisplayManager.swift in Sources */,
 				DDCDB92D2743D858007B9634 /* AuthorizeResponse.swift in Sources */,
 				DDCDB933274490AA007B9634 /* PatternsService.swift in Sources */,
+				63B1CE64275F9449007AE5CB /* PatternView.swift in Sources */,
 				DD270314275E9135002DCB53 /* DIContainer.swift in Sources */,
+				63B1CE812760F0D5007AE5CB /* AddPersonView.swift in Sources */,
 				DD270310275E912B002DCB53 /* DataBaseService.swift in Sources */,
 				DDCDB915274123B9007B9634 /* PersonsListDisplayManagerImp.swift in Sources */,
 				DDCDB919274123D1007B9634 /* SettingsListDisplayManagerImp.swift in Sources */,
 				DDCDB90F27412314007B9634 /* PatternsListView.swift in Sources */,
+				63B1CE68275F9449007AE5CB /* PatternPresenterImp.swift in Sources */,
 				DDCDB90027411339007B9634 /* SettingsListPresenter.swift in Sources */,
 				DDCDB92B2743D77A007B9634 /* Constants.swift in Sources */,
+				63B1CE7A2760F0D5007AE5CB /* AddPersonDisplayManager.swift in Sources */,
 				DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */,
 				63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */,
 				63B1CE432753EB73007AE5CB /* MyPatternsListDisplayManager.swift in Sources */,
@@ -585,34 +702,44 @@
 				DDCDB8FB27411332007B9634 /* PersonsListPresenter.swift in Sources */,
 				DDCDB91F27412407007B9634 /* SettingsListView.swift in Sources */,
 				DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */,
+				63B1CE69275F9449007AE5CB /* PatternDisplayManagerImp.swift in Sources */,
 				DDCDB90727412273007B9634 /* SettingsListPresenterState.swift in Sources */,
+				63B1CE65275F9449007AE5CB /* PatternIconView.swift in Sources */,
 				63DEA375270C7F68008108D5 /* AppDelegate.swift in Sources */,
 				DDCDB8F22741129E007B9634 /* PersonsListController.swift in Sources */,
 				DDCDB91D274123FE007B9634 /* PersonsListView.swift in Sources */,
 				DDCDB8D9273D71FA007B9634 /* Pattern.swift in Sources */,
 				DD270313275E9135002DCB53 /* CoreDataStack.swift in Sources */,
+				63B1CE7D2760F0D5007AE5CB /* AddPersonPresenter.swift in Sources */,
 				63B1CE4B2753EB73007AE5CB /* MyPatternsListPresenterImp.swift in Sources */,
 				DDCDB9242743D675007B9634 /* Network.swift in Sources */,
 				DDCDB8FC27411332007B9634 /* PersonsListPresenterImp.swift in Sources */,
 				DDCDB90A274122D7007B9634 /* PatternsListDisplayManager.swift in Sources */,
 				63B1CE4D2753EB73007AE5CB /* MyPatternsListView.swift in Sources */,
 				DDCDB8E7274100F7007B9634 /* PersonsCoordinator.swift in Sources */,
+				63B1CE67275F9449007AE5CB /* PatterntPresenter.swift in Sources */,
 				DDCDB8F4274112D2007B9634 /* PatternsListPresenter.swift in Sources */,
 				63DEA377270C7F68008108D5 /* SceneDelegate.swift in Sources */,
 				DDCDB92F2743D8F1007B9634 /* GetPatternsResponse.swift in Sources */,
 				63B1CE452753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift in Sources */,
 				DDCDB90327412212007B9634 /* PersonsListPresenterState.swift in Sources */,
 				DD270316275F1B9C002DCB53 /* CoreDataProtocol.swift in Sources */,
+				63B1CE66275F9449007AE5CB /* PatternPresenterState.swift in Sources */,
 				DD18054B2754FC3700DDD751 /* DataBaseServiceProtocol.swift in Sources */,
 				DDCDB914274123B9007B9634 /* PersonsListDisplayManager.swift in Sources */,
+				63B1CE6A275F9449007AE5CB /* PatternDisplayManager.swift in Sources */,
 				63B1CE532753EB73007AE5CB /* MyPatternsCoordinator.swift in Sources */,
 				DDCDB90C274122EC007B9634 /* PatternsListDisplayManagerImp.swift in Sources */,
 				DDCDB93127448B06007B9634 /* PatternCell.swift in Sources */,
+				63B1CE802760F0D5007AE5CB /* AddPersonController.swift in Sources */,
+				63B1CE7E2760F0D5007AE5CB /* AddPersonPresenterState.swift in Sources */,
 				DDCDB9292743D705007B9634 /* NetworkError.swift in Sources */,
+				63B1CE63275F9449007AE5CB /* PatternController.swift in Sources */,
 				DDCDB8EB2741063E007B9634 /* RootCoordinator.swift in Sources */,
 				DDCDB92127412418007B9634 /* SettingsViewController.swift in Sources */,
 				63B1CE472753EB73007AE5CB /* MyPatternsListPresenterState.swift in Sources */,
 				DDCDB9052741226A007B9634 /* PatternsListPresenterState.swift in Sources */,
+				63B1CE7F2760F0D5007AE5CB /* ParameterCell.swift in Sources */,
 				63B1CE512753EB73007AE5CB /* MyPatternCell.swift in Sources */,
 				DDCDB9272743D6B7007B9634 /* NetworkProtocol.swift in Sources */,
 				DD270320275F234A002DCB53 /* Person+CoreDataProperties.swift in Sources */,
@@ -621,6 +748,7 @@
 				DD27030E275BCDE9002DCB53 /* PersonCell.swift in Sources */,
 				DDCDB90127411339007B9634 /* SettingsListPresenterImp.swift in Sources */,
 				DDCDB8E527410088007B9634 /* PatternsCoordinator.swift in Sources */,
+				63B1CE7B2760F0D5007AE5CB /* AddPersonDisplayManagerImp.swift in Sources */,
 				DDCDB8E22740FDDC007B9634 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,12 +9,13 @@ import UIKit
 
 struct PersonCellItem {
     let title: String
-    let imageInfo: (url: String, width: Int?, height: Int?)?
+    let detail: String
+    let parameters: [PersonParameterType : NSNumber]?
 }
 
 final class PersonCell: UITableViewCell {
     private var nameLabel: UILabel!
-    private var logoImageView: UIImageView!
+    private var detailLabel: UILabel!
     private var value: PersonCellItem!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,44 +29,43 @@ final class PersonCell: UITableViewCell {
     }
     
     func setupConstraints() {
-        logoImageView = UIImageView()
-        contentView.addSubview(logoImageView)
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        detailLabel = UILabel()
+        contentView.addSubview(detailLabel)
+        detailLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        self.nameLabel = UILabel()
-        self.contentView.addSubview(nameLabel)
-        self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel = UILabel()
+        contentView.addSubview(nameLabel)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            logoImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            logoImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            logoImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            detailLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            detailLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            detailLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            detailLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             
-            self.nameLabel.heightAnchor.constraint(equalToConstant: 50),
-            self.nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            self.nameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            self.nameLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
+            nameLabel.heightAnchor.constraint(equalToConstant: 50),
+            nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            nameLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
         ])
     }
     
     public func configure(with info: PersonCellItem) {
         value = info
         nameLabel.text = value.title
-        if let url = self.value.imageInfo?.url {
-            PersonsDataService.loadImage(image: url) { [weak self] image in
-                DispatchQueue.main.async { [weak self] in
-                    self?.logoImageView.image = image
-                }
-            }
-        }
+        detailTextLabel?.text  = value.detail
     }
     
     private func labelConfig() {
-        nameLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.semibold)
-        nameLabel.textAlignment = NSTextAlignment.center
-        nameLabel.textColor = UIColor.black.withAlphaComponent(0.9)
-        nameLabel.backgroundColor = UIColor.white.withAlphaComponent(0.9)
+        nameLabel.font = UIFont.systemFont(ofSize: 19, weight: UIFont.Weight.semibold)
+        nameLabel.textAlignment = NSTextAlignment.left
+        nameLabel.textColor = UIColor.black
+    }
+    
+    private func detailLabelConfig() {
+        detailLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.regular)
+        detailLabel.textAlignment = NSTextAlignment.left
+        detailLabel.textColor = UIColor.black.withAlphaComponent(0.8)
     }
     
 }

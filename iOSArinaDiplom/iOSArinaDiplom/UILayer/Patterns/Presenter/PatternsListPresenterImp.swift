@@ -25,11 +25,11 @@ final class PatternsListPresenterImp: PatternsListPresenter {
     func reloadData() {
         service?.loadData(completionHandler: { [weak self] array in
             DispatchQueue.main.async {
-                self?.view?.reloadData(array)
+                self?.view?.reloadData(array.compactMap({ $0.convertToPatternCellItem() }))
             }
         }, errorCompletion: { [weak self] error in
             DispatchQueue.main.async {
-                self?.view?.showError(error as? NetworkError ?? NetworkError.unknown)
+                self?.view?.showError(error)
             }
         })
     }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct PersonsListPresenterState {
-    var array: [PersonCellItem]
+struct AddPersonPresenterState {
+    var person: Person?
 }

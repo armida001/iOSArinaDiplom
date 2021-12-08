@@ -25,7 +25,9 @@ class PersonsListPresenterImp: PersonsListPresenter {
     func reloadData() {
         service?.loadData(completionHandler: { [weak self] array in
             DispatchQueue.main.async {
-                self?.view?.reloadData(array)
+                self?.view?.reloadData(array.compactMap({ person in
+                    return PersonCellItem(title: person.name ?? "", detail: person.comment ?? "", parameters: nil)
+                }))
             }
         }, errorCompletion: { [weak self] error in
             DispatchQueue.main.async {

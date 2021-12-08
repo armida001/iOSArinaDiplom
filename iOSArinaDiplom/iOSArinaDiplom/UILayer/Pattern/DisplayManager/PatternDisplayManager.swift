@@ -5,9 +5,10 @@
 //  Created by Арина Зимонина on 14.11.2021.
 //
 
+import Foundation
 import UIKit
 
-protocol PersonsListDisplayManager {
+protocol PatternDisplayManager {
     func configure(tableView: UITableView)
-    var array: [PersonCellItem] { get set }
+    var pattern: PatternCellItem { get set }
 }

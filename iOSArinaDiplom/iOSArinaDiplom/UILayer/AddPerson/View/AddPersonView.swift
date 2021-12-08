@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MyPatternsListView: NSObjectProtocol {
-    func reloadData(_ data: [PatternCellItem])
+protocol AddPersonView {
+    func reloadData(_ person: PersonCellItem)
     func showError(_ error: NetworkError)
 }
