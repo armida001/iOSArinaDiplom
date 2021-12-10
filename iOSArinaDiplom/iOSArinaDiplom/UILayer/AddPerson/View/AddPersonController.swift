@@ -16,6 +16,15 @@ final class AddPersonController: UITableViewController {
         controller.presenter = AddPersonPresenterImp(state: AddPersonPresenterState())
         controller.displayManager = AddPersonDisplayManagerImp()
         controller.displayManager.savePerson = savePerson
+        
+        controller.title = "Мерки людей"
+        
+        let icon = UIImage(named: "plus")
+        let barItem = UIBarButtonItem(image: icon, style: UIBarButtonItem.Style.plain, target: self, action: #selector(addPerson))
+        barItem.imageInsets = UIEdgeInsets(top: 4, left: 20, bottom: -4, right: -5)
+        controller.navigationItem.rightBarButtonItems = [barItem]
+        controller.navigationController?.navigationItem.rightBarButtonItem?.title = "+"
+        
         return controller
     }
     
@@ -29,17 +38,8 @@ final class AddPersonController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        let icon = UIImage(named: "plus")
-        let barItem = UIBarButtonItem(image: icon, style: UIBarButtonItem.Style.plain, target: self, action: #selector(addPerson))
-        barItem.imageInsets = UIEdgeInsets(top: 4, left: 20, bottom: -4, right: -5)
-        navigationItem.rightBarButtonItems = [barItem]
-        navigationController?.navigationItem.rightBarButtonItem?.title = "+"
-        
         navigationItem.backBarButtonItem?.tintColor = UIColor.black
         navigationController?.navigationBar.tintColor = UIColor.black
-        
-        title = "Мерки людей"
         tableView.reloadData()
     }
     

@@ -39,7 +39,7 @@ final class MyPatternCell: UICollectionViewCell {
             self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 3),
             self.imageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 3),
             self.imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -3),
-            self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor),
+            self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor, constant: -30),
             
             self.nameLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 5),
             self.nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 5),

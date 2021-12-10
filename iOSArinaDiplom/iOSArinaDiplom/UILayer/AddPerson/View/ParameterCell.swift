@@ -10,7 +10,6 @@ import UIKit
 final class ParameterCell: UITableViewCell {
     private var nameLabel: UILabel!
     private var textField: UITextField!
-    private var value: PersonCellItem!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,25 +31,27 @@ final class ParameterCell: UITableViewCell {
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            nameLabel.bottomAnchor.constraint(equalTo: textField.bottomAnchor),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 12),
+            nameLabel.heightAnchor.constraint(equalToConstant: 20),
+            nameLabel.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -5),
             
-            textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            textField.heightAnchor.constraint(equalToConstant: 20),
+            textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 12),
             textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
     }
     
-    public func configure(with info: PersonCellItem) {
-        value = info
-        nameLabel.text = value.title        
+    public func configure(with title: String, value: String) {
+        nameLabel.text = title
+        textField.text = value
     }
     
     private func labelConfig() {
         nameLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.semibold)
-        nameLabel.textAlignment = NSTextAlignment.center
+        nameLabel.textAlignment = NSTextAlignment.left
         nameLabel.textColor = UIColor.black.withAlphaComponent(0.9)
         nameLabel.backgroundColor = UIColor.white.withAlphaComponent(0.9)
     }

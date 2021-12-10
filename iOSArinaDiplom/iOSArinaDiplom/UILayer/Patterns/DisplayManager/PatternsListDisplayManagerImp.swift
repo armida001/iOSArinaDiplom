@@ -58,6 +58,7 @@ extension PatternsListDisplayManagerImp: PatternCellDelegate {
     func clickLikePattern(pattern: PatternCellItem) {
         if let index = array.firstIndex(where: { $0.id == pattern.id }) {
             array[index] = pattern
+            UserDefaults.standard.setValue(pattern.isLiked, forKey: pattern.id)
         }
     }
 }

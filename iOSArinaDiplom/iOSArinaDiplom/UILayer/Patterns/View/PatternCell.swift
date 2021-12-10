@@ -14,7 +14,7 @@ struct PatternCellItem {
     let detail: String
     let imageInfo: (url: String, width: Int?, height: Int?)?
     var isLiked: Bool
-    let patternTypeName: String
+    let patternTypeName: String    
 }
 
 protocol PatternCellDelegate: NSObjectProtocol {

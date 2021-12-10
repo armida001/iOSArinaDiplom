@@ -15,28 +15,34 @@ class TabBarController: UITabBarController {
     private var settingsCoordinator: SettingsCoordinator!
     
     func configure() {
+        let little = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         let patternsNavigationController = UINavigationController.init()
         patternsNavigationController.tabBarItem = UITabBarItem.init(title: "Выкройки",
-                                                                    image: nil,
+                                                                    image: UIImage(named: "list"),
                                                                     selectedImage: nil)
+        patternsNavigationController.tabBarItem.imageInsets = little
+        selectedIndex = 0
         self.patternsCoordinator = PatternsCoordinator(navigationController: patternsNavigationController)
 
         let myPatternsNavigationController = UINavigationController.init()
         myPatternsNavigationController.tabBarItem = UITabBarItem.init(title: "Избранное",
-                                                                    image: nil,
+                                                                    image:  UIImage(named: "heart"),
                                                                     selectedImage: nil)
+        myPatternsNavigationController.tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         self.myPatternsCoordinator = MyPatternsCoordinator(navigationController: myPatternsNavigationController)
         
         let personNavigationController = UINavigationController.init()
         personNavigationController.tabBarItem = UITabBarItem.init(title: "Мерки",
-                                                                    image: nil,
+                                                                    image:  UIImage(named: "people"),
                                                                     selectedImage: nil)
+        personNavigationController.tabBarItem.imageInsets = little
         self.personsCoordinator = PersonsCoordinator(navigationController: personNavigationController)
         
         let settingsNavigationController = UINavigationController.init()
         settingsNavigationController.tabBarItem = UITabBarItem.init(title: "Настройки",
-                                                                    image: nil,
+                                                                    image:  UIImage(named: "settings"),
                                                                     selectedImage: nil)
+        settingsNavigationController.tabBarItem.imageInsets = little
         self.settingsCoordinator = SettingsCoordinator(navigationController: settingsNavigationController)
         
         viewControllers = [patternsNavigationController,

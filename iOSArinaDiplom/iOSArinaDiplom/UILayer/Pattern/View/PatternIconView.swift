@@ -36,7 +36,7 @@ final class PatternIconView: UITableViewHeaderFooterView {
             self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             self.imageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             self.imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor),
+            self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor, constant: -30),
             self.imageView.bottomAnchor.constraint(equalTo: self.nameLabel.bottomAnchor),                        
                         
             self.nameLabel.heightAnchor.constraint(equalToConstant: 50),

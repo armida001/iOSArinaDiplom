@@ -11,7 +11,18 @@ class SettingsCoordinator: Coordinator {
     private var navigationController: UINavigationController?
     
     func start() {
-        self.navigationController?.pushViewController(SettingsViewController.create(), animated: true)
+        let controller = AddPersonController.create(savePerson: { person in
+            if let params = person.parameters {
+                for key in params.keys {
+                    UserDefaults.standard.setValue(params[key], forKeyPath: key.rawValue)
+                }
+            }
+        })
+        
+        controller.title = "Мои параметры"
+        controller.navigationItem.rightBarButtonItems = []
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     required init(navigationController: UINavigationController) {
