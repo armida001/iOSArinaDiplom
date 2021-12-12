@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol AddPersonDisplayManager {
+protocol EditPersonDisplayManager {
     func configure(tableView: UITableView)
-    var person: PersonCellItem? { get set }
+    var person: PersonCellItem { get set }
     var savePerson: ((PersonCellItem) -> Void)? { get set }
 }

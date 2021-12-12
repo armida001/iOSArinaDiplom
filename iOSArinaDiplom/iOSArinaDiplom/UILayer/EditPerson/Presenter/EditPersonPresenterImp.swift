@@ -7,18 +7,18 @@
 
 import UIKit
 
-class AddPersonPresenterImp: AddPersonPresenter {
-    internal var state: AddPersonPresenterState
-    private var view: AddPersonView?
+class EditPersonPresenterImp: EditPersonPresenter {
+    internal var state: EditPersonPresenterState
+    private var view: EditPersonView?
     private var service: PersonsDataService?
     
     
-    init(state: AddPersonPresenterState) {
+    init(state: EditPersonPresenterState) {
         self.state = state
         self.service = PersonsDataService()
     }
     
-    func configure(view: AddPersonView) {
+    func configure(view: EditPersonView) {
         self.view = view
     }
     

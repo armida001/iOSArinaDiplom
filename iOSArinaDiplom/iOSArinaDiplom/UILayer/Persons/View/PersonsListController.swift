@@ -12,6 +12,7 @@ class PersonsListController: UITableViewController {
     private var presenter: PersonsListPresenter!
     
     var showAddPerson: (() -> Void)?
+    var savePerson: ((PersonCellItem) -> Void)?
     
     static func create(showAddPerson: @escaping () -> Void) -> PersonsListController {
         let controller = PersonsListController()

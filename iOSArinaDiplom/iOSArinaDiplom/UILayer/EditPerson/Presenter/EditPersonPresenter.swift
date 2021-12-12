@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AddPersonPresenter {
-    var state: AddPersonPresenterState { get set }
-    func configure(view: AddPersonView)    
+protocol EditPersonPresenter {
+    var state: EditPersonPresenterState { get set }
+    func configure(view: EditPersonView)    
 }

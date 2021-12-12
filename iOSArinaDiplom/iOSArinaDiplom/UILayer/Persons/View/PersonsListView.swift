@@ -11,4 +11,5 @@ protocol PersonsListView {
     func reloadData(_ array: [PersonCellItem])
     func showError(_ error: NetworkError)
     var showAddPerson: (() -> Void)? { get set }
+    var savePerson: ((PersonCellItem) -> Void)?  { get set }
 }

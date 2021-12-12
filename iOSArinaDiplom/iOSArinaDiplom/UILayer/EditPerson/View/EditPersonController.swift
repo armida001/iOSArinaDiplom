@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class AddPersonController: UITableViewController {
-    private var displayManager: AddPersonDisplayManager!
-    private var presenter: AddPersonPresenter!
+final class EditPersonController: UITableViewController {
+    private var displayManager: EditPersonDisplayManager!
+    private var presenter: EditPersonPresenter!
     
-    static func create(savePerson: @escaping ((PersonCellItem) -> Void)) -> AddPersonController {
-        let controller = AddPersonController.init()
-        controller.presenter = AddPersonPresenterImp(state: AddPersonPresenterState())
-        controller.displayManager = AddPersonDisplayManagerImp()
+    static func create( savePerson: @escaping ((PersonCellItem) -> Void)) -> EditPersonController {
+        let controller = EditPersonController.init()
+        controller.presenter = EditPersonPresenterImp(state: EditPersonPresenterState())
+        controller.displayManager = EditPersonDisplayManagerImp(person: PersonCellItem(title: "", detail: "", parameters: [PersonParameterType : NSNumber]()))
         controller.displayManager.savePerson = savePerson
         
         controller.title = "Мерки людей"
@@ -48,7 +48,7 @@ final class AddPersonController: UITableViewController {
     }
 }
 
-extension AddPersonController: AddPersonView {
+extension EditPersonController: EditPersonView {
     func reloadData(_ person: PersonCellItem) {
         tableView.reloadData()
     }

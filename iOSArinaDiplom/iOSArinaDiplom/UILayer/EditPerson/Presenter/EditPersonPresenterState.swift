@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct AddPersonPresenterState {
+struct EditPersonPresenterState {
     var person: Person?
 }

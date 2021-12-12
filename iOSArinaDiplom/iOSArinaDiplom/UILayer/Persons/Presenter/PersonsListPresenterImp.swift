@@ -35,4 +35,8 @@ class PersonsListPresenterImp: PersonsListPresenter {
             }
         })
     }
+    
+    func addPerson(_: PersonCellItem) {
+//        service?.
+    }
 }

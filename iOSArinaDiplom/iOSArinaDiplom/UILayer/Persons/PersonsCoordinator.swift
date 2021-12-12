@@ -10,12 +10,11 @@ import UIKit
 class PersonsCoordinator: Coordinator {
     
     private var navigationController: UINavigationController?
+    private var currentAddedPerson: PersonCellItem?
     
     func start() {
         let controller = PersonsListController.create { [weak self] in
-            self?.showAddPerson { person in
-                
-            }
+            self?.showAddPerson()
         }
         self.navigationController?.pushViewController(controller, animated: true)
     }
@@ -24,9 +23,9 @@ class PersonsCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    func showAddPerson(completion: @escaping (PersonCellItem) -> Void ) {
-        self.navigationController?.present(AddPersonController.create(savePerson: { person in
-            completion(person)
+    func showAddPerson() {
+        self.navigationController?.present(EditPersonController.create(savePerson: { [weak self] person in
+            self?.currentAddedPerson = person            
         }), animated: true, completion: nil)
     }
 }

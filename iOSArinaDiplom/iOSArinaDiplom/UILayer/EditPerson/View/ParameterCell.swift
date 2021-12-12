@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct ParameterCellItem {
+    let key: String
+    let title: String
+    let value: String
+}
+
 final class ParameterCell: UITableViewCell {
     private var nameLabel: UILabel!
     private var textField: UITextField!
@@ -44,16 +50,15 @@ final class ParameterCell: UITableViewCell {
         ])
     }
     
-    public func configure(with title: String, value: String) {
-        nameLabel.text = title
-        textField.text = value
+    public func configure(with value: ParameterCellItem) {
+        nameLabel.text = value.title
+        textField.text = value.value
     }
     
     private func labelConfig() {
-        nameLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.semibold)
+        nameLabel.font = UIFont.systemFont(ofSize: 19, weight: UIFont.Weight.semibold)
         nameLabel.textAlignment = NSTextAlignment.left
         nameLabel.textColor = UIColor.black.withAlphaComponent(0.9)
-        nameLabel.backgroundColor = UIColor.white.withAlphaComponent(0.9)
     }
     
 }

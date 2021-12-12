@@ -11,4 +11,5 @@ protocol PersonsListPresenter {
     var state: PersonsListPresenterState { get set }
     func configure(view: PersonsListView)
     func reloadData()
+    func addPerson(_: PersonCellItem)
 }

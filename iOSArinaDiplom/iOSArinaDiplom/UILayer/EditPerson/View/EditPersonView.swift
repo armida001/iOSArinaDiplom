@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AddPersonView {
+protocol EditPersonView {
     func reloadData(_ person: PersonCellItem)
     func showError(_ error: NetworkError)
 }

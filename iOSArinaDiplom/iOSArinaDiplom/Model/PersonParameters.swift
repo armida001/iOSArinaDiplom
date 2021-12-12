@@ -17,4 +17,17 @@ enum PersonParameterType: String {
     case chestGirth
     ///Рост
     case height
+    
+    func title() -> String {
+        switch self {
+        case .waistGirth:
+            return "Обхват талии"
+        case .hipGirth:
+            return "Обхват бёдер"
+        case .chestGirth:
+            return "Обхват груди"
+        case .height:
+            return "Рост"
+        }
+    }
 }
