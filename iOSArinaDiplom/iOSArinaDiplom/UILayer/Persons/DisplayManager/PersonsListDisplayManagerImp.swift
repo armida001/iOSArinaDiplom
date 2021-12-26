@@ -33,7 +33,7 @@ extension PersonsListDisplayManagerImp: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "",
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell",
                                                        for: indexPath) as? PersonCell else {
             return UITableViewCell()
         }

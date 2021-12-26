@@ -53,6 +53,7 @@ class PersonsListController: UITableViewController {
 
 extension PersonsListController: PersonsListView {
     func reloadData(_ array: [PersonCellItem]) {
+        displayManager.array = array
         tableView.reloadData()
     }
     

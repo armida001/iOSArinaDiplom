@@ -83,7 +83,10 @@ extension EditPersonDisplayManagerImp: UITableViewDataSource, UITableViewDelegat
         guard let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ButtonFooterView") as? ButtonFooterView else { return ButtonFooterView() }
         footerView.configure(with: "Сохранить") { [weak self] in
             guard let self = self else { return }
-            self.savePerson?(self.person)
+            self.savePerson?(PersonCellItem(id: "",
+                                            title: "Name",
+                                            detail: "Comment",
+                                            parameters: nil))
         }
         return footerView
     }

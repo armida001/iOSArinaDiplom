@@ -8,6 +8,7 @@
 import UIKit
 
 struct PersonCellItem {
+    let id: String
     let title: String
     let detail: String
     let parameters: [PersonParameterType : NSNumber]?

@@ -9,5 +9,6 @@ import Foundation
 
 protocol EditPersonPresenter {
     var state: EditPersonPresenterState { get set }
-    func configure(view: EditPersonView)    
+    func configure(view: EditPersonView)
+    func addPerson(person: PersonCellItem)
 }

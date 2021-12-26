@@ -33,4 +33,19 @@ class EditPersonPresenterImp: EditPersonPresenter {
 //            }
 //        })
     }
+    
+    func addPerson(person: PersonCellItem) {
+            service?.addPerson(person, completionHandler: { [weak self] in
+//                if let data = person.baseParameters {
+//                    do {
+//                        let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [PersonParameterType : NSNumber]
+//                        self?.view?.reloadData(PersonCellItem(id: person.id?.uuidString ?? "",  title: person.name ?? "", detail: person.comment ?? "", parameters: person.parametersDictionary))
+//                    } catch {
+//                        print("Something went wrong")
+//                    }
+//                }
+            }, errorCompletion: { error in
+                
+            })
+    }
 }

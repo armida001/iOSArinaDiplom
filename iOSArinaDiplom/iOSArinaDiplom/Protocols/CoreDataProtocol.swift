@@ -11,4 +11,5 @@ import CoreData
 protocol CoreDataProtocol {
     func deleteAll<T: NSFetchRequestResult>(dataType: T.Type)
     func loadData<T: NSFetchRequestResult>(dataType: T.Type) -> [T]
+    func addData<T: NSFetchRequestResult>(dataType: T.Type, object: T) -> Error?
 }

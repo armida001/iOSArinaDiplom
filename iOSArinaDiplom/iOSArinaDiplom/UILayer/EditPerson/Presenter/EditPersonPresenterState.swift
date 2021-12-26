@@ -8,5 +8,5 @@
 import Foundation
 
 struct EditPersonPresenterState {
-    var person: Person?
+    var person: PersonCellItem?
 }

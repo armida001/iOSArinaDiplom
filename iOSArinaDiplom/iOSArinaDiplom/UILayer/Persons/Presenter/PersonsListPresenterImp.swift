@@ -26,7 +26,7 @@ class PersonsListPresenterImp: PersonsListPresenter {
         service?.loadData(completionHandler: { [weak self] array in
             DispatchQueue.main.async {
                 self?.view?.reloadData(array.compactMap({ person in
-                    return PersonCellItem(title: person.name ?? "", detail: person.comment ?? "", parameters: nil)
+                    return PersonCellItem(id: person.id?.uuidString ?? "", title: person.name ?? "", detail: person.comment ?? "", parameters: person.parametersDictionary)
                 }))
             }
         }, errorCompletion: { [weak self] error in

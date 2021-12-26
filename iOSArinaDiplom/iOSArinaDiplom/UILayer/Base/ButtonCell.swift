@@ -30,22 +30,28 @@ final class ButtonFooterView: UITableViewHeaderFooterView {
         NSLayoutConstraint.activate([
             button.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
+            button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             button.heightAnchor.constraint(equalToConstant: 44),
             button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
         ])
     }
     
     public func configure(with title: String, completion: @escaping () -> Void) {
-        button.titleLabel?.text = title
+        button.setTitle(title, for: UIControl.State.normal)
+        button.setTitle(title, for: UIControl.State.selected)
         clickHandle = completion
+        contentView.backgroundColor = UIColor.white
     }
     
     private func buttonConfig() {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: UIFont.Weight.semibold)
-        button.titleLabel?.textAlignment = NSTextAlignment.left
-        button.titleLabel?.textColor = UIColor.black.withAlphaComponent(0.9)
-        button.backgroundColor = UIColor.white
+        button.titleLabel?.textAlignment = NSTextAlignment.center
+        button.titleLabel?.textColor = UIColor.white
+        button.backgroundColor = UIColor.blue.withAlphaComponent(0.7)
+        button.addTarget(self, action: #selector(click), for: UIControl.Event.touchUpInside)
     }
     
+    @objc private func click() {
+        clickHandle()
+    }
 }

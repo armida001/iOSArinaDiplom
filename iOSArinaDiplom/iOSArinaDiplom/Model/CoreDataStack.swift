@@ -77,6 +77,15 @@ final class CoreData: CoreDataProtocol {
         return [T]()
     }
 
+    func addData<T: NSFetchRequestResult>(dataType: T.Type, object: T) -> Error? {
+        do {
+            backgroundContext.insert(object as! NSManagedObject)
+            try backgroundContext.save()
+        } catch let error {
+            return error
+        }
+        return nil
+    }
 }
 
 extension CoreData {

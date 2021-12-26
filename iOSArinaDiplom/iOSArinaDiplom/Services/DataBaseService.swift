@@ -10,18 +10,41 @@ import CoreData
 import UIKit
 
 final class DataBaseService {
-
-	private let coreData: CoreDataProtocol
-
-	init(coreData: CoreDataProtocol) {
-        self.coreData = coreData
-	}
+	
+    private let coreDataStack = Container.shared.coreDataStack
 }
 
 extension DataBaseService {
     func loadPersons(completionHandler: @escaping ([Person]) -> Void,
                      errorCompletion: @escaping (Error) -> Void) {
-        completionHandler(coreData.loadData(dataType: Person.self))
+        completionHandler(coreDataStack.loadData(dataType: Person.self))
+    }
+    
+    func addPerson(_ name: String,
+                   detail: String,
+                   completionHandler: @escaping () -> Void,
+                     errorCompletion: @escaping (Error) -> Void) {
+        
+        coreDataStack.mainContext.performAndWait {
+            do {
+            let entity = NSEntityDescription.entity(forEntityName: "Person", in: coreDataStack.mainContext)
+            let card = Person(context: coreDataStack.mainContext)
+            card.name = name
+            card.comment = detail
+            
+                try coreDataStack.mainContext.save()
+                completionHandler()
+            } catch let error {
+                errorCompletion(error)
+            }
+        }
+        
+//        if let error = coreData.addData(dataType: Person.self,
+//                                        object: person) {
+//            errorCompletion(error)
+//        } else {
+//            completionHandler()
+//        }
     }
 }
 

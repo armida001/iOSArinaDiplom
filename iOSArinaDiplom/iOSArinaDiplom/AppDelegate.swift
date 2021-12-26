@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               let navigationController = storyboard.instantiateViewController(withIdentifier: "MainNavigation") as? UINavigationController
         else { return true }
         
+        let stack = Container.shared.coreDataStack
+        stack.load()
+        
         navigationController.setViewControllers([tabBarController], animated: true)
         self.window?.rootViewController = navigationController
         

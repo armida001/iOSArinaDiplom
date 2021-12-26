@@ -13,19 +13,28 @@ final class EditPersonController: UITableViewController {
     
     static func create( savePerson: @escaping ((PersonCellItem) -> Void)) -> EditPersonController {
         let controller = EditPersonController.init()
-        controller.presenter = EditPersonPresenterImp(state: EditPersonPresenterState())
-        controller.displayManager = EditPersonDisplayManagerImp(person: PersonCellItem(title: "", detail: "", parameters: [PersonParameterType : NSNumber]()))
-        controller.displayManager.savePerson = savePerson
+        var presenterState = EditPersonPresenterState()
+        let person = PersonCellItem(id: "", title: "", detail: "", parameters: [PersonParameterType : NSNumber]())
+        presenterState.person = person
+        controller.presenter = EditPersonPresenterImp(state: presenterState)
+        controller.displayManager = EditPersonDisplayManagerImp(person: person)
+        controller.configure()
         
         controller.title = "Мерки людей"
-        
-        let icon = UIImage(named: "plus")
-        let barItem = UIBarButtonItem(image: icon, style: UIBarButtonItem.Style.plain, target: self, action: #selector(addPerson))
-        barItem.imageInsets = UIEdgeInsets(top: 4, left: 20, bottom: -4, right: -5)
-        controller.navigationItem.rightBarButtonItems = [barItem]
-        controller.navigationController?.navigationItem.rightBarButtonItem?.title = "+"
+//
+//        let icon = UIImage(named: "plus")
+//        let barItem = UIBarButtonItem(image: icon, style: UIBarButtonItem.Style.plain, target: self, action: #selector(addPerson))
+//        barItem.imageInsets = UIEdgeInsets(top: 4, left: 20, bottom: -4, right: -5)
+//        controller.navigationItem.rightBarButtonItems = [barItem]
+//        controller.navigationController?.navigationItem.rightBarButtonItem?.title = "+"
         
         return controller
+    }
+    
+    private func configure() {
+        self.displayManager.savePerson = { [weak self] person in
+            self?.presenter.addPerson(person: person)
+        }
     }
     
     override func viewDidLoad() {
@@ -43,9 +52,9 @@ final class EditPersonController: UITableViewController {
         tableView.reloadData()
     }
     
-    @objc private func addPerson() {
-        
-    }
+//    @objc private func addPerson() {
+//        presenter.addPerson()
+//    }
 }
 
 extension EditPersonController: EditPersonView {
