@@ -10,17 +10,19 @@ import UIKit
 
 class PatternDisplayManagerImp: NSObject {
     private var tableView: UITableView?
-    
+    private var topInset: CGFloat = 0
     var pattern: PatternCellItem
     
     func configure(tableView: UITableView) {
         self.tableView = tableView
-        tableView.register(PatternIconView.self, forHeaderFooterViewReuseIdentifier: "PatternIconView")
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        topInset = tableView.contentInset.top
+        tableView.register(PatternHeaderCell.self, forCellReuseIdentifier: "PatternHeaderCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none        
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.sectionHeaderHeight = 14
+        tableView.tableHeaderView = RoundedHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 14))
     }
     
     init(pattern: PatternCellItem) {
@@ -44,24 +46,17 @@ extension PatternDisplayManagerImp: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PatternHeaderCell", for: indexPath) as? PatternHeaderCell else {
+            return PatternHeaderCell()
+        }
         
-        cell.textLabel?.text = pattern.title
-        cell.detailTextLabel?.text = pattern.detail
-        
-        cell.textLabel?.font = UIFont
-            .systemFont(ofSize: 19, weight: UIFont.Weight.semibold)
-        cell.detailTextLabel?.font = UIFont
-            .systemFont(ofSize: 17, weight: UIFont.Weight.regular)
+        cell.configure(title: pattern.title, subTitle: pattern.patternTypeName)
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "PatternIconView") as? PatternIconView else { return nil }
-        
-        header.configure(with: pattern.imageInfo?.url, title: pattern.patternTypeName)
-        return header
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -70,5 +65,11 @@ extension PatternDisplayManagerImp: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         0
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {        
+        if scrollView.contentOffset.y < -topInset {
+            scrollView.contentOffset = CGPoint(x: 0, y: -topInset)
+        }
     }
 }

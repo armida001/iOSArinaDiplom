@@ -25,7 +25,7 @@ class PersonsCoordinator: Coordinator {
     
     func showAddPerson() {
         self.navigationController?.present(EditPersonController.create(savePerson: { [weak self] person in
-            self?.currentAddedPerson = person            
+            self?.currentAddedPerson = person
         }), animated: true, completion: nil)
     }
 }

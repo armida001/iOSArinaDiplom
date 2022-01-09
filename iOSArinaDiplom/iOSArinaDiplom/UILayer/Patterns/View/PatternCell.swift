@@ -14,7 +14,7 @@ struct PatternCellItem {
     let detail: String
     let imageInfo: (url: String, width: Int?, height: Int?)?
     var isLiked: Bool
-    let patternTypeName: String    
+    let patternTypeName: String
 }
 
 protocol PatternCellDelegate: NSObjectProtocol {
@@ -22,8 +22,8 @@ protocol PatternCellDelegate: NSObjectProtocol {
 }
 
 final class PatternCell: UICollectionViewCell {
-    private var nameLabel: UILabel!
     private var imageView: UIImageView!
+    private var shadowView: UIView!
     private var value: PatternCellItem!
     private var likeButton: UIButton!
     private var delegate: PatternCellDelegate?
@@ -31,8 +31,9 @@ final class PatternCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
-        labelConfig()
+        imageViewConfig()
         buttonConfig()
+        shadowView.greyShadow()
     }
     
     required init?(coder: NSCoder) {
@@ -40,39 +41,40 @@ final class PatternCell: UICollectionViewCell {
     }
     
     private func setupConstraints() {
+        shadowView = UIView()
+        shadowView.backgroundColor = UIColor.white
+        contentView.addSubview(shadowView)
+        shadowView.translatesAutoresizingMaskIntoConstraints = false
+        shadowView.clipsToBounds = false
+        
         imageView = UIImageView()
         contentView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        nameLabel = UILabel()
-        contentView.addSubview(nameLabel)
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
                 
         likeButton = UIButton()
         contentView.addSubview(likeButton)
         likeButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            shadowView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 17),
+            shadowView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 17),
+            shadowView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
+            shadowView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -17),
             
-            likeButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            likeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            
+            likeButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 5),
+            likeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -5),
             likeButton.heightAnchor.constraint(equalTo: likeButton.widthAnchor),
-            likeButton.heightAnchor.constraint(equalToConstant: 24),
-            
-            nameLabel.heightAnchor.constraint(equalToConstant: 50),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            likeButton.heightAnchor.constraint(equalToConstant: 24)
         ])
     }
     
     public func configure(with info: PatternCellItem, nDelegate: PatternCellDelegate?) {
         value = info
-        nameLabel.text = value.title
         if let url = value.imageInfo?.url {
             PatternsService.loadImage(image: url) { [weak self] image in
                 DispatchQueue.main.async { [weak self] in
@@ -83,17 +85,10 @@ final class PatternCell: UICollectionViewCell {
         delegate = nDelegate
         likeButton.isSelected = info.isLiked
     }
-    
-    private func labelConfig() {
-        nameLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.semibold)
-        nameLabel.textAlignment = NSTextAlignment.center
-        nameLabel.textColor = UIColor.black.withAlphaComponent(0.8)
-        nameLabel.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-    }
-    
+   
     private func buttonConfig() {
-        likeButton.setImage(UIImage(named: "heart"), for: UIControl.State.normal)
-        likeButton.setImage(UIImage(named: "red_heart"), for: UIControl.State.selected)
+        likeButton.setImage(UIImage(named: "heart")?.withTintColor(UIColor.purple), for: UIControl.State.normal)
+        likeButton.setImage(UIImage(named: "red_heart")?.withTintColor(UIColor.purple), for: UIControl.State.selected)
         likeButton.addTarget(self, action: #selector(likeClick), for: UIControl.Event.touchUpInside)
     }
     
@@ -101,5 +96,10 @@ final class PatternCell: UICollectionViewCell {
         likeButton.isSelected = !likeButton.isSelected
         value.isLiked = likeButton.isSelected
         delegate?.clickLikePattern(pattern: value)
+    }
+    
+    private func imageViewConfig() {
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
     }
 }

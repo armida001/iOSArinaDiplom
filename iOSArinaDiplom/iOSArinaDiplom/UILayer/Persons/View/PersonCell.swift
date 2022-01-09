@@ -39,15 +39,15 @@ final class PersonCell: UITableViewCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            detailLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            detailLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            detailLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            detailLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            detailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+            detailLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            detailLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            detailLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            detailLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            nameLabel.heightAnchor.constraint(equalToConstant: 50),
-            nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            nameLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
     
@@ -58,15 +58,15 @@ final class PersonCell: UITableViewCell {
     }
     
     private func labelConfig() {
-        nameLabel.font = UIFont.systemFont(ofSize: 19, weight: UIFont.Weight.semibold)
+        nameLabel.font = UIFont.title
         nameLabel.textAlignment = NSTextAlignment.left
         nameLabel.textColor = UIColor.black
     }
     
     private func detailLabelConfig() {
-        detailLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.regular)
+        detailLabel.font = UIFont.detail
         detailLabel.textAlignment = NSTextAlignment.left
-        detailLabel.textColor = UIColor.black.withAlphaComponent(0.8)
+        detailLabel.textColor = UIColor.baseText
     }
     
 }

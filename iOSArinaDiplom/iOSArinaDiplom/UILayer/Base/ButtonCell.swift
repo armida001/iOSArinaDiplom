@@ -23,35 +23,39 @@ final class ButtonFooterView: UITableViewHeaderFooterView {
     }
     
     func setupConstraints() {
+        contentView.backgroundColor = UIColor.white
+        
         button = UIButton()
         contentView.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            button.heightAnchor.constraint(equalToConstant: 44),
-            button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
+            button.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constant.leading),
+            button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constant.trailing),
+            button.heightAnchor.constraint(equalToConstant: Constant.buttonHeight),
+            button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
     }
     
     public func configure(with title: String, completion: @escaping () -> Void) {
+        button.titleLabel?.text = title
+        clickHandle = completion
         button.setTitle(title, for: UIControl.State.normal)
         button.setTitle(title, for: UIControl.State.selected)
-        clickHandle = completion
-        contentView.backgroundColor = UIColor.white
     }
     
     private func buttonConfig() {
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: UIFont.Weight.semibold)
-        button.titleLabel?.textAlignment = NSTextAlignment.center
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.semibold)
+        button.titleLabel?.textAlignment = NSTextAlignment.left
         button.titleLabel?.textColor = UIColor.white
-        button.backgroundColor = UIColor.blue.withAlphaComponent(0.7)
-        button.addTarget(self, action: #selector(click), for: UIControl.Event.touchUpInside)
+        button.layer.cornerRadius = CGFloat.buttonBorderRadius
+        button.clipsToBounds = true
+        button.backgroundColor = UIColor.purple
+        button.addTarget(self, action: #selector(buttonClick), for: UIControl.Event.touchUpInside)
     }
     
-    @objc private func click() {
+    @objc func buttonClick() {
         clickHandle()
     }
 }

@@ -25,7 +25,7 @@ final class PatternPresenterImp: PatternPresenter {
     func reloadData() {
 //        service?.loadData(completionHandler: { [weak self] array in
 //            DispatchQueue.main.async {
-//                self?.view?.reloadData(array)
+        self.view?.reloadData(state.object)
 //            }
 //        }, errorCompletion: { [weak self] error in
 //            DispatchQueue.main.async {

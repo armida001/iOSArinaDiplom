@@ -33,7 +33,8 @@ final class EditPersonController: UITableViewController {
     
     private func configure() {
         self.displayManager.savePerson = { [weak self] person in
-            self?.presenter.addPerson(person: person)
+            self?.presenter.addPerson(person: person)            
+            self?.dismiss(animated: true, completion: nil)
         }
     }
     

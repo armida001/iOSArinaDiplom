@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6334AB2E278B243700A1658A /* RoundedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334AB2D278B243700A1658A /* RoundedHeaderView.swift */; };
+		6334AB30278B383400A1658A /* PatternHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334AB2F278B383400A1658A /* PatternHeaderCell.swift */; };
+		636D49B6276638D300F1EFC4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636D49B5276638D300F1EFC4 /* Colors.xcassets */; };
+		636D49B827788C6200F1EFC4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49B727788C6200F1EFC4 /* UIColor+Extension.swift */; };
+		636D49BA2778969100F1EFC4 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49B92778969100F1EFC4 /* CGFloat+Extension.swift */; };
+		636D49BC277897F400F1EFC4 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49BB277897F400F1EFC4 /* NSLayoutConstraint+Extension.swift */; };
+		636D49BE277B3F5000F1EFC4 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49BD277B3F4F00F1EFC4 /* UIFont+Extension.swift */; };
+		636D49C027847B6600F1EFC4 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49BF27847B6600F1EFC4 /* UINavigationController+Extension.swift */; };
+		636D49C227847EC300F1EFC4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49C127847EC300F1EFC4 /* UIView+Extension.swift */; };
 		63B1CE432753EB73007AE5CB /* MyPatternsListDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE382753EB73007AE5CB /* MyPatternsListDisplayManager.swift */; };
 		63B1CE442753EB73007AE5CB /* MyPatternsListDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE382753EB73007AE5CB /* MyPatternsListDisplayManager.swift */; };
 		63B1CE452753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE392753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift */; };
@@ -109,6 +118,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6334AB2D278B243700A1658A /* RoundedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedHeaderView.swift; sourceTree = "<group>"; };
+		6334AB2F278B383400A1658A /* PatternHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternHeaderCell.swift; sourceTree = "<group>"; };
+		636D49B5276638D300F1EFC4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		636D49B727788C6200F1EFC4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		636D49B92778969100F1EFC4 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		636D49BB277897F400F1EFC4 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
+		636D49BD277B3F4F00F1EFC4 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		636D49BF27847B6600F1EFC4 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		636D49C127847EC300F1EFC4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		63B1CE382753EB73007AE5CB /* MyPatternsListDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListDisplayManager.swift; sourceTree = "<group>"; };
 		63B1CE392753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListDisplayManagerImp.swift; sourceTree = "<group>"; };
 		63B1CE3B2753EB73007AE5CB /* MyPatternsListPresenterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListPresenterState.swift; sourceTree = "<group>"; };
@@ -270,6 +288,7 @@
 				63B1CE58275F9449007AE5CB /* PatternController.swift */,
 				63B1CE59275F9449007AE5CB /* PatternView.swift */,
 				63B1CE5A275F9449007AE5CB /* PatternIconView.swift */,
+				6334AB2F278B383400A1658A /* PatternHeaderCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -363,6 +382,7 @@
 				DDCDB8EC27410A18007B9634 /* Main.storyboard */,
 				63DEA37F270C7F6A008108D5 /* LaunchScreen.storyboard */,
 				63DEA382270C7F6A008108D5 /* Info.plist */,
+				636D49B5276638D300F1EFC4 /* Colors.xcassets */,
 			);
 			path = iOSArinaDiplom;
 			sourceTree = "<group>";
@@ -380,6 +400,13 @@
 			isa = PBXGroup;
 			children = (
 				DD2703222763A0D5002DCB53 /* ButtonCell.swift */,
+				636D49B727788C6200F1EFC4 /* UIColor+Extension.swift */,
+				636D49B92778969100F1EFC4 /* CGFloat+Extension.swift */,
+				636D49BB277897F400F1EFC4 /* NSLayoutConstraint+Extension.swift */,
+				636D49BD277B3F4F00F1EFC4 /* UIFont+Extension.swift */,
+				636D49BF27847B6600F1EFC4 /* UINavigationController+Extension.swift */,
+				636D49C127847EC300F1EFC4 /* UIView+Extension.swift */,
+				6334AB2D278B243700A1658A /* RoundedHeaderView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -666,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDCDB8EE27410A18007B9634 /* Main.storyboard in Resources */,
+				636D49B6276638D300F1EFC4 /* Colors.xcassets in Resources */,
 				63DEA381270C7F6A008108D5 /* LaunchScreen.storyboard in Resources */,
 				63DEA37E270C7F6A008108D5 /* Assets.xcassets in Resources */,
 			);
@@ -703,6 +731,7 @@
 				DDCDB90027411339007B9634 /* SettingsListPresenter.swift in Sources */,
 				DDCDB92B2743D77A007B9634 /* Constants.swift in Sources */,
 				63B1CE7A2760F0D5007AE5CB /* EditPersonDisplayManager.swift in Sources */,
+				636D49BC277897F400F1EFC4 /* NSLayoutConstraint+Extension.swift in Sources */,
 				DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */,
 				63DEA379270C7F68008108D5 /* TabBarController.swift in Sources */,
 				63B1CE432753EB73007AE5CB /* MyPatternsListDisplayManager.swift in Sources */,
@@ -710,10 +739,12 @@
 				DDCDB8F02741128E007B9634 /* PatternsListController.swift in Sources */,
 				DDCDB8DB273D7362007B9634 /* PersonPattern.swift in Sources */,
 				63B1CE4F2753EB73007AE5CB /* MyPatternsListController.swift in Sources */,
+				636D49B827788C6200F1EFC4 /* UIColor+Extension.swift in Sources */,
 				DDCDB8FB27411332007B9634 /* PersonsListPresenter.swift in Sources */,
 				DDCDB91F27412407007B9634 /* SettingsListView.swift in Sources */,
 				DDCDB8D7273C101C007B9634 /* Swifty.swift in Sources */,
 				63B1CE69275F9449007AE5CB /* PatternDisplayManagerImp.swift in Sources */,
+				636D49BA2778969100F1EFC4 /* CGFloat+Extension.swift in Sources */,
 				DDCDB90727412273007B9634 /* SettingsListPresenterState.swift in Sources */,
 				63B1CE65275F9449007AE5CB /* PatternIconView.swift in Sources */,
 				63DEA375270C7F68008108D5 /* AppDelegate.swift in Sources */,
@@ -742,11 +773,14 @@
 				63B1CE6A275F9449007AE5CB /* PatternDisplayManager.swift in Sources */,
 				63B1CE532753EB73007AE5CB /* MyPatternsCoordinator.swift in Sources */,
 				DDCDB90C274122EC007B9634 /* PatternsListDisplayManagerImp.swift in Sources */,
+				636D49BE277B3F5000F1EFC4 /* UIFont+Extension.swift in Sources */,
 				DDCDB93127448B06007B9634 /* PatternCell.swift in Sources */,
 				63B1CE802760F0D5007AE5CB /* EditPersonController.swift in Sources */,
+				6334AB2E278B243700A1658A /* RoundedHeaderView.swift in Sources */,
 				63B1CE7E2760F0D5007AE5CB /* EditPersonPresenterState.swift in Sources */,
 				DDCDB9292743D705007B9634 /* NetworkError.swift in Sources */,
 				63B1CE63275F9449007AE5CB /* PatternController.swift in Sources */,
+				6334AB30278B383400A1658A /* PatternHeaderCell.swift in Sources */,
 				DDCDB8EB2741063E007B9634 /* RootCoordinator.swift in Sources */,
 				DDCDB92127412418007B9634 /* SettingsViewController.swift in Sources */,
 				63B1CE472753EB73007AE5CB /* MyPatternsListPresenterState.swift in Sources */,
@@ -759,9 +793,11 @@
 				63B1CE492753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */,
 				DD27030E275BCDE9002DCB53 /* PersonCell.swift in Sources */,
 				DDCDB90127411339007B9634 /* SettingsListPresenterImp.swift in Sources */,
+				636D49C227847EC300F1EFC4 /* UIView+Extension.swift in Sources */,
 				DDCDB8E527410088007B9634 /* PatternsCoordinator.swift in Sources */,
 				63B1CE7B2760F0D5007AE5CB /* EditPersonDisplayManagerImp.swift in Sources */,
 				DDCDB8E22740FDDC007B9634 /* Coordinator.swift in Sources */,
+				636D49C027847B6600F1EFC4 /* UINavigationController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

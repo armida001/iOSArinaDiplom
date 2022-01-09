@@ -22,33 +22,51 @@ class TabBarController: UITabBarController {
                                                                     selectedImage: nil)
         patternsNavigationController.tabBarItem.imageInsets = little
         selectedIndex = 0
-        self.patternsCoordinator = PatternsCoordinator(navigationController: patternsNavigationController)
+        patternsNavigationController.baseConfigure()
+        patternsCoordinator = PatternsCoordinator(navigationController: patternsNavigationController)
 
         let myPatternsNavigationController = UINavigationController.init()
         myPatternsNavigationController.tabBarItem = UITabBarItem.init(title: "Избранное",
-                                                                    image:  UIImage(named: "heart"),
+                                                                    image: UIImage(named: "heart"),
                                                                     selectedImage: nil)
         myPatternsNavigationController.tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        self.myPatternsCoordinator = MyPatternsCoordinator(navigationController: myPatternsNavigationController)
+        myPatternsNavigationController.baseConfigure()
+        myPatternsCoordinator = MyPatternsCoordinator(navigationController: myPatternsNavigationController)
         
         let personNavigationController = UINavigationController.init()
         personNavigationController.tabBarItem = UITabBarItem.init(title: "Мерки",
                                                                     image:  UIImage(named: "people"),
                                                                     selectedImage: nil)
         personNavigationController.tabBarItem.imageInsets = little
-        self.personsCoordinator = PersonsCoordinator(navigationController: personNavigationController)
+        personNavigationController.baseConfigure()
+        personsCoordinator = PersonsCoordinator(navigationController: personNavigationController)
         
         let settingsNavigationController = UINavigationController.init()
         settingsNavigationController.tabBarItem = UITabBarItem.init(title: "Настройки",
                                                                     image:  UIImage(named: "settings"),
                                                                     selectedImage: nil)
         settingsNavigationController.tabBarItem.imageInsets = little
-        self.settingsCoordinator = SettingsCoordinator(navigationController: settingsNavigationController)
+        settingsNavigationController.baseConfigure()
+        settingsCoordinator = SettingsCoordinator(navigationController: settingsNavigationController)
         
         viewControllers = [patternsNavigationController,
                            myPatternsNavigationController,
                            personNavigationController,
                            settingsNavigationController]
+        tabBar.tintColor = UIColor.purple
+        tabBar.barTintColor = UIColor.white
+        
+        tabBar.backgroundImage = UIImage()
+        tabBar.shadowImage = UIImage()
+        tabBar.backgroundColor = UIColor.white.withAlphaComponent(0.75)
+        tabBar.clipsToBounds = false
+        tabBar.layer.borderWidth = 0
+        tabBar.layer.borderColor = UIColor.clear.cgColor
+        
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+        tabBar.layer.shadowRadius = 5
+        tabBar.layer.shadowColor = UIColor.white.cgColor
+        tabBar.layer.shadowOpacity = 1.0        
     }
     
     override func viewDidLoad() {

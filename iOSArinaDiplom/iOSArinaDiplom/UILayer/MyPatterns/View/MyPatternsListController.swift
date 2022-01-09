@@ -15,9 +15,9 @@ final class MyPatternsListController: UICollectionViewController {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
 
         let width = UIScreen.main.bounds.size.width / 2 - 30
-        let height = width//width / 10 * 2 + 
+        let height = width / 10 * 2 + width
         layout.itemSize = CGSize.init(width: width, height: height)
-        layout.sectionInset = UIEdgeInsets.init(top: 20, left: 20, bottom: 10, right: 20)
+        layout.sectionInset = UIEdgeInsets.init(top: 7, left: 20, bottom: 10, right: 20)
         
         let controller = MyPatternsListController.init(collectionViewLayout: layout)
         controller.displayManager = MyPatternsListDisplayManagerImp(showPattern: showPattern)

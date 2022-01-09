@@ -11,14 +11,17 @@ import UIKit
 final class MyPatternCell: UICollectionViewCell {
     
     private var nameLabel: UILabel!
+    private var detailLabel: UILabel!
+    private var typeLabel: UILabel!
     private var imageView: UIImageView!
     private var value: PatternCellItem!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupConstraints()
-        self.baseConfig()
         self.labelConfig()
+        self.detailLabelConfig()
+        self.typeLabelConfig()
         self.imageConfig()
     }
     
@@ -27,31 +30,53 @@ final class MyPatternCell: UICollectionViewCell {
     }
     
     func setupConstraints() {
-        self.nameLabel = UILabel()
-        self.contentView.addSubview(self.nameLabel)
-        self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel = UILabel()
+        contentView.addSubview(nameLabel)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        self.imageView = UIImageView()
-        self.contentView.addSubview(self.imageView)
-        self.imageView.translatesAutoresizingMaskIntoConstraints = false
+        detailLabel = UILabel()
+        contentView.addSubview(detailLabel)
+        detailLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        typeLabel = UILabel()
+        contentView.addSubview(typeLabel)
+        typeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        imageView = UIImageView()
+        contentView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 3),
-            self.imageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 3),
-            self.imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -3),
-            self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor, constant: -30),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 3),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -3),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, constant: -50),
             
-            self.nameLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 5),
-            self.nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 5),
-            self.nameLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -5),
-            self.nameLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5)
+            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            nameLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            detailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+            detailLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            detailLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            detailLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            typeLabel.topAnchor.constraint(equalTo: detailLabel.bottomAnchor),
+            typeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            typeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            typeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            typeLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
     public func configure(with info: PatternCellItem) {
-        self.value = info
-        self.nameLabel.text = self.value.title
-        if let url = self.value.imageInfo?.url {
+        value = info
+        nameLabel.text = value.title
+        detailLabel.text = value.detail
+        typeLabel.text = value.patternTypeName
+        
+        if let url = value.imageInfo?.url {
             PatternsService.loadImage(image: url) { [weak self] image in
                 DispatchQueue.main.async { [weak self] in
                     self?.imageView.image = image
@@ -61,19 +86,25 @@ final class MyPatternCell: UICollectionViewCell {
     }
     
     private func labelConfig() {
-        self.nameLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.semibold)
-        self.nameLabel.textAlignment = NSTextAlignment.center
-        self.nameLabel.textColor = UIColor.black.withAlphaComponent(0.9)
+        nameLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.semibold)
+        nameLabel.textAlignment = NSTextAlignment.left
+        nameLabel.textColor = UIColor.black.withAlphaComponent(0.9)
+    }
+    
+    private func detailLabelConfig() {
+        detailLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
+        detailLabel.textAlignment = NSTextAlignment.left
+        detailLabel.textColor = UIColor.black.withAlphaComponent(0.6)
+    }
+    
+    private func typeLabelConfig() {
+        typeLabel.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.regular)
+        typeLabel.textAlignment = NSTextAlignment.left
+        typeLabel.textColor = UIColor.purple
     }
     
     private func imageConfig() {
-        self.imageView.layer.cornerRadius = 8
-        self.imageView.clipsToBounds = true
-    }
-    
-    private func baseConfig() {
-        self.contentView.layer.cornerRadius = 12
-        self.contentView.layer.borderWidth = 0.5
-        self.contentView.layer.borderColor = UIColor.black.withAlphaComponent(0.3).cgColor
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
     }
 }

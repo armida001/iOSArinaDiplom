@@ -36,10 +36,8 @@ extension PersonsListDisplayManagerImp: UITableViewDataSource, UITableViewDelega
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell",
                                                        for: indexPath) as? PersonCell else {
             return UITableViewCell()
-        }
-        let person = array[indexPath.row]
-        cell.textLabel?.text = person.title
-        cell.detailTextLabel?.text = person.detail
+        }        
+        cell.configure(with: array[indexPath.row])
         return cell
     }
     
