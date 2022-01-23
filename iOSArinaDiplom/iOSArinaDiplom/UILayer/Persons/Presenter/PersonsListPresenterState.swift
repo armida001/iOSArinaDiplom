@@ -8,5 +8,5 @@
 import Foundation
 
 struct PersonsListPresenterState {
-    var array: [PersonCellItem]
+    var array: [Person]
 }

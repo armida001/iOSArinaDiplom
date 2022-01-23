@@ -8,6 +8,6 @@
 import Foundation
 
 protocol EditPersonView {
-    func reloadData(_ person: PersonCellItem)
+    func reloadData(_ person: Person)
     func showError(_ error: NetworkError)
 }

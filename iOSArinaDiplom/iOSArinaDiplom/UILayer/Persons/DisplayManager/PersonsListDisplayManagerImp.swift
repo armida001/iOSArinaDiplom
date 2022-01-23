@@ -8,10 +8,10 @@
 import UIKit
 
 class PersonsListDisplayManagerImp: NSObject {
-    var array: [PersonCellItem]
+    var array: [Person]
     private var tableView: UITableView?
     
-    init(array: [PersonCellItem] = [PersonCellItem]()) {
+    init(array: [Person] = [Person]()) {
         self.array = array
     }
 }

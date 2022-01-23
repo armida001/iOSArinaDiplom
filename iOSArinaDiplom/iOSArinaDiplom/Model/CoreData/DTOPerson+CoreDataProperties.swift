@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Person {
+extension DTOPerson {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Person> {
-        return NSFetchRequest<Person>(entityName: "Person")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<DTOPerson> {
+        return NSFetchRequest<DTOPerson>(entityName: "DTOPerson")
     }
 
     @NSManaged public var baseParameters: Data?
@@ -23,6 +23,6 @@ extension Person {
 
 }
 
-extension Person : Identifiable {
+extension DTOPerson : Identifiable {
 
 }

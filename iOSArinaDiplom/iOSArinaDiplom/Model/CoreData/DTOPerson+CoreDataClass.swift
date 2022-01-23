@@ -9,22 +9,28 @@
 import Foundation
 import CoreData
 
+struct Person {
+    let title: String
+    let detail: String
+    let parameters: [Parameter]?
+}
+
 @objc(Person)
-public class Person: NSManagedObject {
-    private var _parametersDictionary: [PersonParameterType : NSNumber]?
-    var parametersDictionary: [PersonParameterType : NSNumber] {
+public class DTOPerson: NSManagedObject {
+    private var _parametersDictionary: [DTOParameter]?
+    var parametersDictionary: [DTOParameter] {
         get {
             if _parametersDictionary == nil {
                 if let data = self.baseParameters {
                     do {
-                        let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [PersonParameterType : NSNumber]
+                        let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [DTOParameter]
                         _parametersDictionary = json
                     } catch {
                         print("Something went wrong")
                     }
                 }
             }
-            return _parametersDictionary ?? [PersonParameterType : NSNumber]()
+            return _parametersDictionary ?? [DTOParameter]()
         }
     }
     

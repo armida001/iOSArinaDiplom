@@ -34,6 +34,19 @@ final class PatternsListController: UICollectionViewController {
         self.presenter.reloadData()
         title = "Список выкроек"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let needReload = UserDefaults.standard.value(forKey: "PatternsNeedReload") as? Bool, needReload {
+            self.displayManager.array = self.displayManager.array.compactMap { pattern in
+                if let patternIsSelected = UserDefaults.standard.value(forKey: pattern.id) as? Bool {
+                    return PatternCellItem(id: pattern.id, title: pattern.title, detail: pattern.detail, imageInfo: pattern.imageInfo, isLiked: patternIsSelected, patternTypeName: pattern.patternTypeName)
+                }
+                return pattern
+            }
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension PatternsListController: PatternsListView {

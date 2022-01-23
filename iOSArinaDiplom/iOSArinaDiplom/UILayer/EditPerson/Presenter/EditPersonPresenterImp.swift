@@ -34,7 +34,7 @@ class EditPersonPresenterImp: EditPersonPresenter {
 //        })
     }
     
-    func addPerson(person: PersonCellItem) {
+    func addPerson(person: Person) {
             service?.addPerson(person, completionHandler: { [weak self] in
                 
 //                if let data = person.baseParameters {

@@ -141,3 +141,12 @@ struct Pattern {
                                patternTypeName: type.title())
     }
 }
+
+struct PatternCellItem {
+    let id: String
+    let title: String
+    let detail: String
+    let imageInfo: (url: String, width: Int?, height: Int?)?
+    var isLiked: Bool
+    let patternTypeName: String
+}

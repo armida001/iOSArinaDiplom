@@ -8,8 +8,8 @@
 import Foundation
 
 protocol PersonsListView {
-    func reloadData(_ array: [PersonCellItem])
+    func reloadData(_ array: [Person])
     func showError(_ error: NetworkError)
     var showAddPerson: (() -> Void)? { get set }
-    var savePerson: ((PersonCellItem) -> Void)?  { get set }
+    var savePerson: ((Person) -> Void)?  { get set }
 }

@@ -9,6 +9,6 @@ import UIKit
 
 protocol EditPersonDisplayManager {
     func configure(tableView: UITableView)
-    var person: PersonCellItem { get set }
-    var savePerson: ((PersonCellItem) -> Void)? { get set }
+    var person: Person { get set }
+    var savePerson: ((Person) -> Void)? { get set }
 }

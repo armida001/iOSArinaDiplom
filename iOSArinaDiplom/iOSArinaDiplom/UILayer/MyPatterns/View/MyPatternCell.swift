@@ -14,7 +14,9 @@ final class MyPatternCell: UICollectionViewCell {
     private var detailLabel: UILabel!
     private var typeLabel: UILabel!
     private var imageView: UIImageView!
+    private var likeButton: UIButton!
     private var value: PatternCellItem!
+    private var delegate: PatternCellDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +25,7 @@ final class MyPatternCell: UICollectionViewCell {
         self.detailLabelConfig()
         self.typeLabelConfig()
         self.imageConfig()
+        self.buttonConfig()
     }
     
     required init?(coder: NSCoder) {
@@ -46,6 +49,10 @@ final class MyPatternCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
+        likeButton = UIButton()
+        contentView.addSubview(likeButton)
+        likeButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 3),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3),
@@ -66,15 +73,22 @@ final class MyPatternCell: UICollectionViewCell {
             typeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             typeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             typeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            typeLabel.heightAnchor.constraint(equalToConstant: 20)
+            typeLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            likeButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 5),
+            likeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -5),
+            likeButton.heightAnchor.constraint(equalTo: likeButton.widthAnchor),
+            likeButton.heightAnchor.constraint(equalToConstant: 24)
         ])
     }
     
-    public func configure(with info: PatternCellItem) {
+    public func configure(with info: PatternCellItem, nDelegate: PatternCellDelegate?) {
         value = info
         nameLabel.text = value.title
         detailLabel.text = value.detail
         typeLabel.text = value.patternTypeName
+        delegate = nDelegate
+        likeButton.isSelected = true
         
         if let url = value.imageInfo?.url {
             PatternsService.loadImage(image: url) { [weak self] image in
@@ -106,5 +120,17 @@ final class MyPatternCell: UICollectionViewCell {
     private func imageConfig() {
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
+    }
+    
+    private func buttonConfig() {
+        likeButton.setImage(UIImage(named: "heart")?.withTintColor(UIColor.purple), for: UIControl.State.normal)
+        likeButton.setImage(UIImage(named: "red_heart")?.withTintColor(UIColor.purple), for: UIControl.State.selected)
+        likeButton.addTarget(self, action: #selector(likeClick), for: UIControl.Event.touchUpInside)
+    }
+    
+    @objc private func likeClick() {
+        likeButton.isSelected = !likeButton.isSelected
+        value.isLiked = likeButton.isSelected
+        delegate?.clickLikePattern(pattern: value)
     }
 }

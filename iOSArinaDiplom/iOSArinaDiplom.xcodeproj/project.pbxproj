@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6334AB2E278B243700A1658A /* RoundedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334AB2D278B243700A1658A /* RoundedHeaderView.swift */; };
 		6334AB30278B383400A1658A /* PatternHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334AB2F278B383400A1658A /* PatternHeaderCell.swift */; };
+		6334AB32278EFE7700A1658A /* SettingsParamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334AB31278EFE7700A1658A /* SettingsParamsCell.swift */; };
+		6334AB34278EFF5D00A1658A /* ParamInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334AB33278EFF5D00A1658A /* ParamInfoView.swift */; };
 		636D49B6276638D300F1EFC4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636D49B5276638D300F1EFC4 /* Colors.xcassets */; };
 		636D49B827788C6200F1EFC4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49B727788C6200F1EFC4 /* UIColor+Extension.swift */; };
 		636D49BA2778969100F1EFC4 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49B92778969100F1EFC4 /* CGFloat+Extension.swift */; };
@@ -62,8 +64,8 @@
 		DD270313275E9135002DCB53 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD270311275E9135002DCB53 /* CoreDataStack.swift */; };
 		DD270314275E9135002DCB53 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD270312275E9135002DCB53 /* DIContainer.swift */; };
 		DD270316275F1B9C002DCB53 /* CoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD270315275F1B9C002DCB53 /* CoreDataProtocol.swift */; };
-		DD27031F275F234A002DCB53 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27031D275F2349002DCB53 /* Person+CoreDataClass.swift */; };
-		DD270320275F234A002DCB53 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27031E275F2349002DCB53 /* Person+CoreDataProperties.swift */; };
+		DD27031F275F234A002DCB53 /* DTOPerson+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27031D275F2349002DCB53 /* DTOPerson+CoreDataClass.swift */; };
+		DD270320275F234A002DCB53 /* DTOPerson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27031E275F2349002DCB53 /* DTOPerson+CoreDataProperties.swift */; };
 		DD2703232763A0D5002DCB53 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2703222763A0D5002DCB53 /* ButtonCell.swift */; };
 		DD6AD6D7274E654000FC3801 /* iOSArinaDiplomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6AD6D6274E654000FC3801 /* iOSArinaDiplomTests.swift */; };
 		DDCDB8D5273C101C007B9634 /* PersonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCDB8D2273C101C007B9634 /* PersonParameters.swift */; };
@@ -120,6 +122,8 @@
 /* Begin PBXFileReference section */
 		6334AB2D278B243700A1658A /* RoundedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedHeaderView.swift; sourceTree = "<group>"; };
 		6334AB2F278B383400A1658A /* PatternHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternHeaderCell.swift; sourceTree = "<group>"; };
+		6334AB31278EFE7700A1658A /* SettingsParamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsParamsCell.swift; sourceTree = "<group>"; };
+		6334AB33278EFF5D00A1658A /* ParamInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamInfoView.swift; sourceTree = "<group>"; };
 		636D49B5276638D300F1EFC4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		636D49B727788C6200F1EFC4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		636D49B92778969100F1EFC4 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
@@ -167,8 +171,8 @@
 		DD270311275E9135002DCB53 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		DD270312275E9135002DCB53 /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		DD270315275F1B9C002DCB53 /* CoreDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocol.swift; sourceTree = "<group>"; };
-		DD27031D275F2349002DCB53 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DD27031E275F2349002DCB53 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD27031D275F2349002DCB53 /* DTOPerson+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DTOPerson+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DD27031E275F2349002DCB53 /* DTOPerson+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DTOPerson+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DD2703222763A0D5002DCB53 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		DD6AD6D4274E654000FC3801 /* iOSArinaDiplomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSArinaDiplomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6AD6D6274E654000FC3801 /* iOSArinaDiplomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSArinaDiplomTests.swift; sourceTree = "<group>"; };
@@ -390,8 +394,8 @@
 		DD27031C275F2349002DCB53 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				DD27031D275F2349002DCB53 /* Person+CoreDataClass.swift */,
-				DD27031E275F2349002DCB53 /* Person+CoreDataProperties.swift */,
+				DD27031D275F2349002DCB53 /* DTOPerson+CoreDataClass.swift */,
+				DD27031E275F2349002DCB53 /* DTOPerson+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -587,6 +591,8 @@
 			children = (
 				DDCDB91E27412407007B9634 /* SettingsListView.swift */,
 				DDCDB92027412418007B9634 /* SettingsViewController.swift */,
+				6334AB31278EFE7700A1658A /* SettingsParamsCell.swift */,
+				6334AB33278EFF5D00A1658A /* ParamInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -713,7 +719,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD27031F275F234A002DCB53 /* Person+CoreDataClass.swift in Sources */,
+				DD27031F275F234A002DCB53 /* DTOPerson+CoreDataClass.swift in Sources */,
 				63B1CE7C2760F0D5007AE5CB /* EditPersonPresenterImp.swift in Sources */,
 				DDCDB8F7274112EE007B9634 /* PatternsListPresenterImp.swift in Sources */,
 				DDCDB8E92741010B007B9634 /* SettingsCoordinator.swift in Sources */,
@@ -727,6 +733,7 @@
 				DDCDB915274123B9007B9634 /* PersonsListDisplayManagerImp.swift in Sources */,
 				DDCDB919274123D1007B9634 /* SettingsListDisplayManagerImp.swift in Sources */,
 				DDCDB90F27412314007B9634 /* PatternsListView.swift in Sources */,
+				6334AB32278EFE7700A1658A /* SettingsParamsCell.swift in Sources */,
 				63B1CE68275F9449007AE5CB /* PatternPresenterImp.swift in Sources */,
 				DDCDB90027411339007B9634 /* SettingsListPresenter.swift in Sources */,
 				DDCDB92B2743D77A007B9634 /* Constants.swift in Sources */,
@@ -768,6 +775,7 @@
 				DDCDB90327412212007B9634 /* PersonsListPresenterState.swift in Sources */,
 				DD270316275F1B9C002DCB53 /* CoreDataProtocol.swift in Sources */,
 				63B1CE66275F9449007AE5CB /* PatternPresenterState.swift in Sources */,
+				6334AB34278EFF5D00A1658A /* ParamInfoView.swift in Sources */,
 				DD18054B2754FC3700DDD751 /* DataBaseServiceProtocol.swift in Sources */,
 				DDCDB914274123B9007B9634 /* PersonsListDisplayManager.swift in Sources */,
 				63B1CE6A275F9449007AE5CB /* PatternDisplayManager.swift in Sources */,
@@ -788,7 +796,7 @@
 				63B1CE7F2760F0D5007AE5CB /* ParameterCell.swift in Sources */,
 				63B1CE512753EB73007AE5CB /* MyPatternCell.swift in Sources */,
 				DDCDB9272743D6B7007B9634 /* NetworkProtocol.swift in Sources */,
-				DD270320275F234A002DCB53 /* Person+CoreDataProperties.swift in Sources */,
+				DD270320275F234A002DCB53 /* DTOPerson+CoreDataProperties.swift in Sources */,
 				DD0DF87A274A8F8300D864B5 /* PersonsService.swift in Sources */,
 				63B1CE492753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */,
 				DD27030E275BCDE9002DCB53 /* PersonCell.swift in Sources */,

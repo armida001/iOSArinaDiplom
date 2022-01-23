@@ -9,5 +9,5 @@ import UIKit
 
 protocol PersonsListDisplayManager {
     func configure(tableView: UITableView)
-    var array: [PersonCellItem] { get set }
+    var array: [Person] { get set }
 }

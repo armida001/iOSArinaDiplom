@@ -11,10 +11,10 @@ final class EditPersonController: UITableViewController {
     private var displayManager: EditPersonDisplayManager!
     private var presenter: EditPersonPresenter!
     
-    static func create( savePerson: @escaping ((PersonCellItem) -> Void)) -> EditPersonController {
+    static func create( savePerson: @escaping ((Person) -> Void)) -> EditPersonController {
         let controller = EditPersonController.init()
         var presenterState = EditPersonPresenterState()
-        let person = PersonCellItem(id: "", title: "", detail: "", parameters: [PersonParameterType : NSNumber]())
+        let person = Person(title: "", detail: "", parameters: nil)
         presenterState.person = person
         controller.presenter = EditPersonPresenterImp(state: presenterState)
         controller.displayManager = EditPersonDisplayManagerImp(person: person)
@@ -59,7 +59,7 @@ final class EditPersonController: UITableViewController {
 }
 
 extension EditPersonController: EditPersonView {
-    func reloadData(_ person: PersonCellItem) {
+    func reloadData(_ person: Person) {
         tableView.reloadData()
     }
     

@@ -10,7 +10,7 @@ import UIKit
 class PersonsCoordinator: Coordinator {
     
     private var navigationController: UINavigationController?
-    private var currentAddedPerson: PersonCellItem?
+    private var currentAddedPerson: Person?
     
     func start() {
         let controller = PersonsListController.create { [weak self] in

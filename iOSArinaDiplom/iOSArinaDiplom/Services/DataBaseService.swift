@@ -15,9 +15,9 @@ final class DataBaseService {
 }
 
 extension DataBaseService {
-    func loadPersons(completionHandler: @escaping ([Person]) -> Void,
+    func loadPersons(completionHandler: @escaping ([DTOPerson]) -> Void,
                      errorCompletion: @escaping (Error) -> Void) {
-        completionHandler(coreDataStack.loadData(dataType: Person.self))
+        completionHandler(coreDataStack.loadData(dataType: DTOPerson.self))
     }
     
     func addPerson(_ name: String,
@@ -27,8 +27,8 @@ extension DataBaseService {
         
         coreDataStack.mainContext.performAndWait {
             do {
-            let entity = NSEntityDescription.entity(forEntityName: "Person", in: coreDataStack.mainContext)
-            let card = Person(context: coreDataStack.mainContext)
+            let entity = NSEntityDescription.entity(forEntityName: "DTOPerson", in: coreDataStack.mainContext)
+            let card = DTOPerson(context: coreDataStack.mainContext)
             card.name = name
             card.comment = detail
             

@@ -7,12 +7,6 @@
 
 import UIKit
 
-struct ParameterCellItem {
-    let key: String
-    let title: String
-    let value: String
-}
-
 final class ParameterCell: UITableViewCell {
     private var nameLabel: UILabel!
     private var textField: UITextField!
@@ -52,8 +46,8 @@ final class ParameterCell: UITableViewCell {
         ])
     }
     
-    public func configure(with value: ParameterCellItem) {
-        nameLabel.text = value.title
+    public func configure(with value: Parameter) {
+        nameLabel.text = value.type.title()
         textField.text = value.value
         contentView.backgroundColor = UIColor.white
     }

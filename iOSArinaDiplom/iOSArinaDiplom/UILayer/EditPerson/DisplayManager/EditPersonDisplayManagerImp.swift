@@ -8,14 +8,14 @@
 import UIKit
 
 class EditPersonDisplayManagerImp: NSObject {
-    var person: PersonCellItem
+    var person: Person
     private var tableView: UITableView?
-    var savePerson: ((PersonCellItem) -> Void)?
-    private var parameterKeysArray: [PersonParameterType] = [PersonParameterType]()
-    init(person: PersonCellItem) {
+    var savePerson: ((Person) -> Void)?
+    private var parametersArray: [Parameter] = [Parameter]()
+    init(person: Person) {
         self.person = person
-        if let params = person.parameters?.keys.sorted(by: { $0.rawValue > $1.rawValue } ) {
-            self.parameterKeysArray = params
+        if let params = person.parameters?.sorted(by: { $0.type.rawValue > $1.type.rawValue } ) {
+            self.parametersArray = params
         }
     }
 }
@@ -34,7 +34,7 @@ extension EditPersonDisplayManagerImp: EditPersonDisplayManager {
 
 extension EditPersonDisplayManagerImp: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        parameterKeysArray.count + 1
+        parametersArray.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,16 +44,10 @@ extension EditPersonDisplayManagerImp: UITableViewDataSource, UITableViewDelegat
         }
         
         if indexPath.row == 0 {
-            cell.configure(with: ParameterCellItem(key: "name", title: "Имя", value: person.title))
+            cell.configure(with: Parameter(type: PersonParameterType.name, value: person.title))
         } else {
-            let key = parameterKeysArray[indexPath.row]
-            if let parameterValue = person.parameters?[key]?.stringValue {
-                cell.configure(with: ParameterCellItem(key: key.rawValue,
-                                                       title: key.title(),
-                                                       value: parameterValue))
-            } else {
-                cell.configure(with: ParameterCellItem(key: "detail", title: "Описание", value: person.detail))
-            }
+            let parameter = parametersArray[indexPath.row]
+            cell.configure(with: parameter)
         }
         
         return cell
@@ -67,10 +61,9 @@ extension EditPersonDisplayManagerImp: UITableViewDataSource, UITableViewDelegat
         guard let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ButtonFooterView") as? ButtonFooterView else { return ButtonFooterView() }
         footerView.configure(with: "Сохранить") { [weak self] in
             guard let self = self else { return }
-            self.savePerson?(PersonCellItem(id: "",
-                                            title: "Name",
-                                            detail: "Comment",
-                                            parameters: nil))
+            self.savePerson?(Person(title: self.person.title,
+                                    detail: self.person.detail,
+                                    parameters: self.parametersArray))
         }
         return footerView
     }

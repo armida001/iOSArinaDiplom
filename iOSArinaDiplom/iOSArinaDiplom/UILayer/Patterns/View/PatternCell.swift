@@ -8,15 +8,6 @@
 import Foundation
 import UIKit
 
-struct PatternCellItem {
-    let id: String
-    let title: String
-    let detail: String
-    let imageInfo: (url: String, width: Int?, height: Int?)?
-    var isLiked: Bool
-    let patternTypeName: String
-}
-
 protocol PatternCellDelegate: NSObjectProtocol {
     func clickLikePattern(pattern: PatternCellItem)
 }
@@ -66,8 +57,8 @@ final class PatternCell: UICollectionViewCell {
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             
-            likeButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 5),
-            likeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -5),
+            likeButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 15),
+            likeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -15),
             likeButton.heightAnchor.constraint(equalTo: likeButton.widthAnchor),
             likeButton.heightAnchor.constraint(equalToConstant: 24)
         ])

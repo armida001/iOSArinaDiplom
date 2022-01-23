@@ -7,17 +7,10 @@
 
 import UIKit
 
-struct PersonCellItem {
-    let id: String
-    let title: String
-    let detail: String
-    let parameters: [PersonParameterType : NSNumber]?
-}
-
 final class PersonCell: UITableViewCell {
     private var nameLabel: UILabel!
     private var detailLabel: UILabel!
-    private var value: PersonCellItem!
+    private var value: Person!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -51,7 +44,7 @@ final class PersonCell: UITableViewCell {
         ])
     }
     
-    public func configure(with info: PersonCellItem) {
+    public func configure(with info: Person) {
         value = info
         nameLabel.text = value.title
         detailTextLabel?.text  = value.detail

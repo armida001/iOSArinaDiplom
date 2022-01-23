@@ -12,13 +12,13 @@ class PersonsListController: UITableViewController {
     private var presenter: PersonsListPresenter!
     
     var showAddPerson: (() -> Void)?
-    var savePerson: ((PersonCellItem) -> Void)?
+    var savePerson: ((Person) -> Void)?
     
     static func create(showAddPerson: @escaping () -> Void) -> PersonsListController {
         let controller = PersonsListController()
         controller.showAddPerson = showAddPerson
         controller.displayManager = PersonsListDisplayManagerImp()
-        controller.presenter = PersonsListPresenterImp(state: PersonsListPresenterState(array: [PersonCellItem]()))
+        controller.presenter = PersonsListPresenterImp(state: PersonsListPresenterState(array: [Person]()))
         return controller
     }
     
@@ -52,7 +52,7 @@ class PersonsListController: UITableViewController {
 }
 
 extension PersonsListController: PersonsListView {
-    func reloadData(_ array: [PersonCellItem]) {
+    func reloadData(_ array: [Person]) {
         displayManager.array = array
         tableView.reloadData()
     }

@@ -40,7 +40,7 @@ final class PatternController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(animated)        
         if let url = self.displayManager.pattern.imageInfo?.url {
             PatternsService.loadImage(image: url) { [weak self] image in
                 DispatchQueue.main.async { [weak self] in

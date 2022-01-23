@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 enum PersonParameterType: String {
+    ///Имя
+    case name
+    /// Описание
+    case detail
     ///Обхват талии
     case waistGirth
     ///Обхват бёдер
@@ -28,6 +32,21 @@ enum PersonParameterType: String {
             return "Обхват груди"
         case .height:
             return "Рост"
+        case .name:
+            return "Имя"
+        case .detail:
+            return "Описание"
         }
     }
+}
+
+struct DTOParameter {
+    let key: String
+    let title: String
+    let value: String
+}
+
+struct Parameter {
+    let type: PersonParameterType
+    let value: String
 }
