@@ -10,12 +10,12 @@ import UIKit
 final class PatternsListPresenterImp: PatternsListPresenter {
     internal var state: PatternsListPresenterState
     private var view: PatternsListView?
-    private var service: PatternsProtocol?
+    private var service: PatternsService?
     
     
     init(state: PatternsListPresenterState) {
         self.state = state
-        self.service = PatternsService()
+        self.service = PatternsServiceImpl()
     }
     
     func configure(view: PatternsListView) {

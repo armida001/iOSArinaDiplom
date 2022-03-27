@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-protocol PatternsProtocol {
+protocol PatternsService {
     func loadData(completionHandler: @escaping ([Pattern]) -> Void,
                   errorCompletion: @escaping (NetworkError) -> Void)
 }
 
-final class PatternsService: PatternsProtocol {
+final class PatternsServiceImpl: PatternsService {
     private var network = Network()
     
     func loadData(completionHandler: @escaping ([Pattern]) -> Void,

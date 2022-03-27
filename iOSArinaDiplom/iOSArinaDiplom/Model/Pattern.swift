@@ -149,4 +149,8 @@ struct PatternCellItem {
     let imageInfo: (url: String, width: Int?, height: Int?)?
     var isLiked: Bool
     let patternTypeName: String
+    
+    mutating func like(_ value: Bool) {
+        self.isLiked = value
+    }
 }

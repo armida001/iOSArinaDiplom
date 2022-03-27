@@ -22,7 +22,6 @@ class TabBarController: UITabBarController {
                                                                     selectedImage: nil)
         patternsNavigationController.tabBarItem.imageInsets = little
         selectedIndex = 0
-        patternsNavigationController.baseConfigure()
         patternsCoordinator = PatternsCoordinator(navigationController: patternsNavigationController)
 
         let myPatternsNavigationController = UINavigationController.init()
@@ -30,7 +29,6 @@ class TabBarController: UITabBarController {
                                                                     image: UIImage(named: "heart"),
                                                                     selectedImage: nil)
         myPatternsNavigationController.tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        myPatternsNavigationController.baseConfigure()
         myPatternsCoordinator = MyPatternsCoordinator(navigationController: myPatternsNavigationController)
         
         let personNavigationController = UINavigationController.init()
@@ -38,7 +36,6 @@ class TabBarController: UITabBarController {
                                                                     image:  UIImage(named: "people"),
                                                                     selectedImage: nil)
         personNavigationController.tabBarItem.imageInsets = little
-        personNavigationController.baseConfigure()
         personsCoordinator = PersonsCoordinator(navigationController: personNavigationController)
         
         let settingsNavigationController = UINavigationController.init()
@@ -46,7 +43,6 @@ class TabBarController: UITabBarController {
                                                                     image:  UIImage(named: "settings"),
                                                                     selectedImage: nil)
         settingsNavigationController.tabBarItem.imageInsets = little
-        settingsNavigationController.baseConfigure()
         settingsCoordinator = SettingsCoordinator(navigationController: settingsNavigationController)
         
         viewControllers = [patternsNavigationController,

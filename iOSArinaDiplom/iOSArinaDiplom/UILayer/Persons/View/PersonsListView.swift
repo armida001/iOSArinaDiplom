@@ -9,7 +9,5 @@ import Foundation
 
 protocol PersonsListView {
     func reloadData(_ array: [Person])
-    func showError(_ error: NetworkError)
-    var showAddPerson: (() -> Void)? { get set }
-    var savePerson: ((Person) -> Void)?  { get set }
+    func showError(_ error: NetworkError)    
 }

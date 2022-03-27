@@ -8,11 +8,10 @@
 import Foundation
 import UIKit
 
-class PatternsListDisplayManagerImp: NSObject {
+final class PatternsListDisplayManagerImp: NSObject {
     private var collectionView: UICollectionView?
-    
-    var array: [PatternCellItem]
-    var showPattern: ((PatternCellItem) -> Void)
+    private var array: [PatternCellItem]
+    private let showPattern: ((PatternCellItem) -> Void)
     
     func configure(collectionView: UICollectionView) {
         self.collectionView = collectionView
@@ -28,6 +27,19 @@ class PatternsListDisplayManagerImp: NSObject {
 }
 
 extension PatternsListDisplayManagerImp: PatternsListDisplayManager {
+    func update(_ array: [PatternCellItem]) {
+        self.array = array
+    }
+    
+    func reloadData() {
+        array.forEach { pattern in
+            if let patternIsSelected = UserDefaults.standard.value(forKey: pattern.id) as? Bool {
+                var pattern = pattern
+                pattern.like(patternIsSelected)
+            }
+        }
+    }
+    
 }
 
 extension PatternsListDisplayManagerImp: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -51,7 +63,7 @@ extension PatternsListDisplayManagerImp: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pattern = array[indexPath.row]
-        self.showPattern(pattern)
+        showPattern(pattern)
     }
 }
 extension PatternsListDisplayManagerImp: PatternCellDelegate {

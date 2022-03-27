@@ -12,10 +12,15 @@ class PatternsCoordinator: Coordinator {
     private var navigationController: UINavigationController?
     
     func start() {
-        let patternController = PatternsListController.create(showPattern: { [weak self] pattern in
-            self?.showPattern(pattern: pattern)
-        })
-        self.navigationController?.pushViewController(patternController, animated: true)        
+        let patternController = PatternsListController(
+            presenter: PatternsListPresenterImp(state: PatternsListPresenterState(array: [])),
+            displayManager: PatternsListDisplayManagerImp(
+                array: [],
+                showPattern: { [weak self]  pattern in
+                    self?.showPattern(pattern: pattern)
+                })
+        )
+        self.navigationController?.pushViewController(patternController, animated: true)
     }
     
     required init(navigationController: UINavigationController) {
@@ -23,6 +28,9 @@ class PatternsCoordinator: Coordinator {
     }
     
     func showPattern(pattern: PatternCellItem) {
-        self.navigationController?.pushViewController(PatternController.create(pattern: pattern), animated: true)
+        let controller = PatternController.create(
+            presenter: PatternPresenterImp(state: PatternPresenterState(object: pattern)),
+            displayManager: PatternDisplayManagerImp(pattern: pattern))
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

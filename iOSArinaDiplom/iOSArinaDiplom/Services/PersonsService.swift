@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol PersonsProtocol {
+protocol PersonsDataProvider {
     func loadData(completionHandler: @escaping ([Person]) -> Void,
                   errorCompletion: @escaping (Error) -> Void)
     func addPerson(_ person: Person,
@@ -17,7 +17,7 @@ protocol PersonsProtocol {
                    errorCompletion: @escaping (Error) -> Void)
 }
 
-final class PersonsDataService: PersonsProtocol {
+final class PersonsDataProviderImpl: PersonsDataProvider {
     private var dataBase: DataBaseService = DataBaseService()
     
     func addPerson(_ person: Person, completionHandler: @escaping () -> Void, errorCompletion: @escaping (Error) -> Void) {

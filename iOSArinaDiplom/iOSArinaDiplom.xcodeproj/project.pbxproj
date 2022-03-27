@@ -11,6 +11,7 @@
 		6334AB30278B383400A1658A /* PatternHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334AB2F278B383400A1658A /* PatternHeaderCell.swift */; };
 		6334AB32278EFE7700A1658A /* SettingsParamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334AB31278EFE7700A1658A /* SettingsParamsCell.swift */; };
 		6334AB34278EFF5D00A1658A /* ParamInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334AB33278EFF5D00A1658A /* ParamInfoView.swift */; };
+		635FC0A627F049B300BEAD19 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FC0A527F049B300BEAD19 /* UserDefaults+Extension.swift */; };
 		636D49B6276638D300F1EFC4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636D49B5276638D300F1EFC4 /* Colors.xcassets */; };
 		636D49B827788C6200F1EFC4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49B727788C6200F1EFC4 /* UIColor+Extension.swift */; };
 		636D49BA2778969100F1EFC4 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D49B92778969100F1EFC4 /* CGFloat+Extension.swift */; };
@@ -22,13 +23,7 @@
 		63B1CE442753EB73007AE5CB /* MyPatternsListDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE382753EB73007AE5CB /* MyPatternsListDisplayManager.swift */; };
 		63B1CE452753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE392753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift */; };
 		63B1CE462753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE392753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift */; };
-		63B1CE472753EB73007AE5CB /* MyPatternsListPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3B2753EB73007AE5CB /* MyPatternsListPresenterState.swift */; };
-		63B1CE482753EB73007AE5CB /* MyPatternsListPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3B2753EB73007AE5CB /* MyPatternsListPresenterState.swift */; };
-		63B1CE492753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3C2753EB73007AE5CB /* MyPatternsListPresenter.swift */; };
-		63B1CE4A2753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3C2753EB73007AE5CB /* MyPatternsListPresenter.swift */; };
 		63B1CE4B2753EB73007AE5CB /* MyPatternsListPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3D2753EB73007AE5CB /* MyPatternsListPresenterImp.swift */; };
-		63B1CE4D2753EB73007AE5CB /* MyPatternsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3F2753EB73007AE5CB /* MyPatternsListView.swift */; };
-		63B1CE4E2753EB73007AE5CB /* MyPatternsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE3F2753EB73007AE5CB /* MyPatternsListView.swift */; };
 		63B1CE4F2753EB73007AE5CB /* MyPatternsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE402753EB73007AE5CB /* MyPatternsListController.swift */; };
 		63B1CE502753EB73007AE5CB /* MyPatternsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE402753EB73007AE5CB /* MyPatternsListController.swift */; };
 		63B1CE512753EB73007AE5CB /* MyPatternCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1CE412753EB73007AE5CB /* MyPatternCell.swift */; };
@@ -124,6 +119,7 @@
 		6334AB2F278B383400A1658A /* PatternHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternHeaderCell.swift; sourceTree = "<group>"; };
 		6334AB31278EFE7700A1658A /* SettingsParamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsParamsCell.swift; sourceTree = "<group>"; };
 		6334AB33278EFF5D00A1658A /* ParamInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamInfoView.swift; sourceTree = "<group>"; };
+		635FC0A527F049B300BEAD19 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		636D49B5276638D300F1EFC4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		636D49B727788C6200F1EFC4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		636D49B92778969100F1EFC4 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
@@ -133,10 +129,7 @@
 		636D49C127847EC300F1EFC4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		63B1CE382753EB73007AE5CB /* MyPatternsListDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListDisplayManager.swift; sourceTree = "<group>"; };
 		63B1CE392753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListDisplayManagerImp.swift; sourceTree = "<group>"; };
-		63B1CE3B2753EB73007AE5CB /* MyPatternsListPresenterState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListPresenterState.swift; sourceTree = "<group>"; };
-		63B1CE3C2753EB73007AE5CB /* MyPatternsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListPresenter.swift; sourceTree = "<group>"; };
 		63B1CE3D2753EB73007AE5CB /* MyPatternsListPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListPresenterImp.swift; sourceTree = "<group>"; };
-		63B1CE3F2753EB73007AE5CB /* MyPatternsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListView.swift; sourceTree = "<group>"; };
 		63B1CE402753EB73007AE5CB /* MyPatternsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsListController.swift; sourceTree = "<group>"; };
 		63B1CE412753EB73007AE5CB /* MyPatternCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternCell.swift; sourceTree = "<group>"; };
 		63B1CE422753EB73007AE5CB /* MyPatternsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPatternsCoordinator.swift; sourceTree = "<group>"; };
@@ -236,6 +229,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		635FC0A427F0497A00BEAD19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				635FC0A527F049B300BEAD19 /* UserDefaults+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		63B1CE362753EB73007AE5CB /* MyPatterns */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,8 +260,6 @@
 		63B1CE3A2753EB73007AE5CB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				63B1CE3B2753EB73007AE5CB /* MyPatternsListPresenterState.swift */,
-				63B1CE3C2753EB73007AE5CB /* MyPatternsListPresenter.swift */,
 				63B1CE3D2753EB73007AE5CB /* MyPatternsListPresenterImp.swift */,
 			);
 			path = Presenter;
@@ -269,7 +268,6 @@
 		63B1CE3E2753EB73007AE5CB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				63B1CE3F2753EB73007AE5CB /* MyPatternsListView.swift */,
 				63B1CE402753EB73007AE5CB /* MyPatternsListController.swift */,
 				63B1CE412753EB73007AE5CB /* MyPatternCell.swift */,
 			);
@@ -442,6 +440,7 @@
 		DDCDB8D1273C0F89007B9634 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				635FC0A427F0497A00BEAD19 /* Extensions */,
 				DD27031C275F2349002DCB53 /* CoreData */,
 				DD270311275E9135002DCB53 /* CoreDataStack.swift */,
 				DD270312275E9135002DCB53 /* DIContainer.swift */,
@@ -733,6 +732,7 @@
 				DDCDB915274123B9007B9634 /* PersonsListDisplayManagerImp.swift in Sources */,
 				DDCDB919274123D1007B9634 /* SettingsListDisplayManagerImp.swift in Sources */,
 				DDCDB90F27412314007B9634 /* PatternsListView.swift in Sources */,
+				635FC0A627F049B300BEAD19 /* UserDefaults+Extension.swift in Sources */,
 				6334AB32278EFE7700A1658A /* SettingsParamsCell.swift in Sources */,
 				63B1CE68275F9449007AE5CB /* PatternPresenterImp.swift in Sources */,
 				DDCDB90027411339007B9634 /* SettingsListPresenter.swift in Sources */,
@@ -765,7 +765,6 @@
 				DDCDB8FC27411332007B9634 /* PersonsListPresenterImp.swift in Sources */,
 				DDCDB90A274122D7007B9634 /* PatternsListDisplayManager.swift in Sources */,
 				DD2703232763A0D5002DCB53 /* ButtonCell.swift in Sources */,
-				63B1CE4D2753EB73007AE5CB /* MyPatternsListView.swift in Sources */,
 				DDCDB8E7274100F7007B9634 /* PersonsCoordinator.swift in Sources */,
 				63B1CE67275F9449007AE5CB /* PatterntPresenter.swift in Sources */,
 				DDCDB8F4274112D2007B9634 /* PatternsListPresenter.swift in Sources */,
@@ -791,14 +790,12 @@
 				6334AB30278B383400A1658A /* PatternHeaderCell.swift in Sources */,
 				DDCDB8EB2741063E007B9634 /* RootCoordinator.swift in Sources */,
 				DDCDB92127412418007B9634 /* SettingsViewController.swift in Sources */,
-				63B1CE472753EB73007AE5CB /* MyPatternsListPresenterState.swift in Sources */,
 				DDCDB9052741226A007B9634 /* PatternsListPresenterState.swift in Sources */,
 				63B1CE7F2760F0D5007AE5CB /* ParameterCell.swift in Sources */,
 				63B1CE512753EB73007AE5CB /* MyPatternCell.swift in Sources */,
 				DDCDB9272743D6B7007B9634 /* NetworkProtocol.swift in Sources */,
 				DD270320275F234A002DCB53 /* DTOPerson+CoreDataProperties.swift in Sources */,
 				DD0DF87A274A8F8300D864B5 /* PersonsService.swift in Sources */,
-				63B1CE492753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */,
 				DD27030E275BCDE9002DCB53 /* PersonCell.swift in Sources */,
 				DDCDB90127411339007B9634 /* SettingsListPresenterImp.swift in Sources */,
 				636D49C227847EC300F1EFC4 /* UIView+Extension.swift in Sources */,
@@ -815,11 +812,8 @@
 			files = (
 				63B1CE502753EB73007AE5CB /* MyPatternsListController.swift in Sources */,
 				63B1CE542753EB73007AE5CB /* MyPatternsCoordinator.swift in Sources */,
-				63B1CE4E2753EB73007AE5CB /* MyPatternsListView.swift in Sources */,
 				63B1CE522753EB73007AE5CB /* MyPatternCell.swift in Sources */,
 				DD6AD6D7274E654000FC3801 /* iOSArinaDiplomTests.swift in Sources */,
-				63B1CE4A2753EB73007AE5CB /* MyPatternsListPresenter.swift in Sources */,
-				63B1CE482753EB73007AE5CB /* MyPatternsListPresenterState.swift in Sources */,
 				63B1CE462753EB73007AE5CB /* MyPatternsListDisplayManagerImp.swift in Sources */,
 				63B1CE442753EB73007AE5CB /* MyPatternsListDisplayManager.swift in Sources */,
 			);

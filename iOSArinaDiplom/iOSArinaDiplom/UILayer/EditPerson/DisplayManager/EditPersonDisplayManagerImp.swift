@@ -12,8 +12,10 @@ class EditPersonDisplayManagerImp: NSObject {
     private var tableView: UITableView?
     var savePerson: ((Person) -> Void)?
     private var parametersArray: [Parameter] = [Parameter]()
-    init(person: Person) {
+    init(person: Person,
+         savePerson: @escaping ((Person) -> Void)) {
         self.person = person
+        self.savePerson = savePerson
         if let params = person.parameters?.sorted(by: { $0.type.rawValue > $1.type.rawValue } ) {
             self.parametersArray = params
         }

@@ -7,19 +7,24 @@
 
 import UIKit
 
-class PersonsListController: UITableViewController {
+final class PersonsListController: UITableViewController {
     private var displayManager: PersonsListDisplayManager!
     private var presenter: PersonsListPresenter!
+    internal var addNewPerson: (() -> Void)!
     
-    var showAddPerson: (() -> Void)?
-    var savePerson: ((Person) -> Void)?
+    init(
+        presenter: PersonsListPresenter,
+        displayManager: PersonsListDisplayManager,
+        addNewPerson: @escaping () -> Void
+    ) {
+        self.presenter = presenter
+        self.displayManager = displayManager
+        self.addNewPerson = addNewPerson
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    static func create(showAddPerson: @escaping () -> Void) -> PersonsListController {
-        let controller = PersonsListController()
-        controller.showAddPerson = showAddPerson
-        controller.displayManager = PersonsListDisplayManagerImp()
-        controller.presenter = PersonsListPresenterImp(state: PersonsListPresenterState(array: [Person]()))
-        return controller
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -47,7 +52,7 @@ class PersonsListController: UITableViewController {
     }
     
     @objc private func addPersonClick() {
-        showAddPerson?()
+        addNewPerson()
     }
 }
 

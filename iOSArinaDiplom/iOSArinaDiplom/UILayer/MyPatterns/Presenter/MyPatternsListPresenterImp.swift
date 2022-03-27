@@ -7,23 +7,23 @@
 
 import UIKit
 
-final class MyPatternsListPresenterImp: MyPatternsListPresenter {
-    internal var state: MyPatternsListPresenterState
-    private var view: MyPatternsListView?
-    private var service: PatternsProtocol?
+final class MyPatternsListPresenterImp: PatternsListPresenter {
+    internal var state: PatternsListPresenterState
+    private var view: PatternsListView?
+    private var patternsService: PatternsService?
     
     
-    init(state: MyPatternsListPresenterState) {
+    init(state: PatternsListPresenterState) {
         self.state = state
-        self.service = PatternsService()
+        self.patternsService = PatternsServiceImpl()
     }
     
-    func configure(view: MyPatternsListView) {
+    func configure(view: PatternsListView) {
         self.view = view
     }
     
     func reloadData() {
-        service?.loadData(completionHandler: { [weak self] array in
+        patternsService?.loadData(completionHandler: { [weak self] array in
             DispatchQueue.main.async {
                 self?.view?.reloadData(array.compactMap({ $0.convertToPatternCellItem() }))
             }

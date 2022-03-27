@@ -11,17 +11,23 @@ final class PatternsListController: UICollectionViewController {
     private var displayManager: PatternsListDisplayManager!
     private var presenter: PatternsListPresenter!
     
-    static func create(showPattern: @escaping ((PatternCellItem) -> Void)) -> PatternsListController {
+    init(
+        presenter: PatternsListPresenter,
+        displayManager: PatternsListDisplayManager
+    ) {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         
         layout.minimumLineSpacing = 0
         let width = UIScreen.main.bounds.size.width
         layout.itemSize = CGSize.init(width: width, height: width-width/10*2)
         
-        let controller = PatternsListController.init(collectionViewLayout: layout)
-        controller.presenter = PatternsListPresenterImp(state: PatternsListPresenterState.init(array: []))
-        controller.displayManager = PatternsListDisplayManagerImp(showPattern: showPattern)
-        return controller
+        super.init(collectionViewLayout: layout)
+        self.presenter = presenter
+        self.displayManager = displayManager
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -37,13 +43,8 @@ final class PatternsListController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let needReload = UserDefaults.standard.value(forKey: "PatternsNeedReload") as? Bool, needReload {
-            self.displayManager.array = self.displayManager.array.compactMap { pattern in
-                if let patternIsSelected = UserDefaults.standard.value(forKey: pattern.id) as? Bool {
-                    return PatternCellItem(id: pattern.id, title: pattern.title, detail: pattern.detail, imageInfo: pattern.imageInfo, isLiked: patternIsSelected, patternTypeName: pattern.patternTypeName)
-                }
-                return pattern
-            }
+        if let needReload = UserDefaults.value(forKey: UserDefaultsKey.isPatternsNeedReload) as? Bool, needReload {
+           
             self.collectionView.reloadData()
         }
     }
@@ -55,11 +56,17 @@ extension PatternsListController: PatternsListView {
     }
     
     func reloadData(_ data: [PatternCellItem]) {
-        self.displayManager.array = data.compactMap({ object in
-            let pattern = PatternCellItem(id: object.id, title: object.title, detail: object.detail, imageInfo: object.imageInfo, isLiked: UserDefaults.standard.value(forKey: object.id) as? Bool ?? false, patternTypeName: object.patternTypeName)
+        self.displayManager.update(
+            data.compactMap({ object in
+                let pattern = PatternCellItem(id: object.id,
+                                              title: object.title,
+                                              detail: object.detail,
+                                              imageInfo: object.imageInfo,
+                                              isLiked: UserDefaults.standard.value(forKey: object.id) as? Bool ?? false,
+                                              patternTypeName: object.patternTypeName)
             
-            return pattern
-        })
+                return pattern
+            }))
         self.collectionView.reloadData()
     }
 }

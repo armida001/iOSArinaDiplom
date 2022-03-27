@@ -49,7 +49,7 @@ final class PatternIconView: UITableViewHeaderFooterView {
     public func configure(with urlString: String?, title: String) {
         self.nameLabel.text = title
         if let url = urlString {
-            PatternsService.loadImage(image: url) { [weak self] image in
+            PatternsServiceImpl.loadImage(image: url) { [weak self] image in
                 DispatchQueue.main.async { [weak self] in
                     self?.imageView.image = image
                 }

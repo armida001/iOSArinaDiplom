@@ -8,5 +8,5 @@
 import Foundation
 
 struct SettingsListPresenterState {
-    var myData: Person
+    var myData: Person?
 }

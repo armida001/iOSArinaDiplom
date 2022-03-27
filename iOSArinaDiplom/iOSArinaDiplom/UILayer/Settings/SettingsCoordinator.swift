@@ -11,11 +11,20 @@ class SettingsCoordinator: Coordinator {
     private var navigationController: UINavigationController?
     
     func start() {
-        let controller = SettingsViewController.create()
+        let defaultPersonItem = Person()
+        let presenter = SettingsListPresenterImp(state:
+                                                    SettingsListPresenterState(
+                                                        myData: defaultPersonItem),
+                                                        patternService: PatternsServiceImpl(),
+                                                        dataProvider: PersonsDataProviderImpl())
+        let displayManager = SettingsListDisplayManagerImp(person: defaultPersonItem)
+        
+        let controller = SettingsViewController(presenter: presenter,
+                                                displayManager: displayManager)
         controller.title = "Мои параметры"
         controller.navigationItem.rightBarButtonItems = []
         
-        self.navigationController?.pushViewController(controller, animated: true)
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     required init(navigationController: UINavigationController) {

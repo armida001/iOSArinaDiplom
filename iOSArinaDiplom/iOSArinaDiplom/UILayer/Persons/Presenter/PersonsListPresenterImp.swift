@@ -10,12 +10,12 @@ import UIKit
 class PersonsListPresenterImp: PersonsListPresenter {
     internal var state: PersonsListPresenterState
     private var view: PersonsListView?
-    private var service: PersonsDataService?
+    private var service: PersonsDataProvider?
     
     
     init(state: PersonsListPresenterState) {
         self.state = state
-        self.service = PersonsDataService()
+        self.service = PersonsDataProviderImpl()
     }
     
     func configure(view: PersonsListView) {

@@ -7,14 +7,20 @@
 
 import UIKit
 
-class MyPatternsCoordinator: Coordinator {
+final class MyPatternsCoordinator: Coordinator {
     
     private var navigationController: UINavigationController?
     
     func start() {
-        self.navigationController?.pushViewController(MyPatternsListController.create(showPattern: { pattern in
-            self.showPattern(pattern: pattern)
-        }), animated: true)        
+        let patternController = MyPatternsListController(
+            presenter: MyPatternsListPresenterImp(state: PatternsListPresenterState(array: [])),
+            displayManager: MyPatternsListDisplayManagerImp(
+                array: [],
+                showPattern: { [weak self]  pattern in
+                    self?.showPattern(pattern: pattern)
+                })
+        )
+        self.navigationController?.pushViewController(patternController, animated: true)
     }
     
     required init(navigationController: UINavigationController) {
@@ -22,6 +28,9 @@ class MyPatternsCoordinator: Coordinator {
     }
     
     func showPattern(pattern: PatternCellItem) {
-        self.navigationController?.pushViewController(PatternController.create(pattern: pattern), animated: true)
+        let controller = PatternController.create(
+            presenter: PatternPresenterImp(state: PatternPresenterState(object: pattern)),
+            displayManager: PatternDisplayManagerImp(pattern: pattern))
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

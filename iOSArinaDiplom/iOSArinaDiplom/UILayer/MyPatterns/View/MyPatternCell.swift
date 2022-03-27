@@ -91,7 +91,7 @@ final class MyPatternCell: UICollectionViewCell {
         likeButton.isSelected = true
         
         if let url = value.imageInfo?.url {
-            PatternsService.loadImage(image: url) { [weak self] image in
+            PatternsServiceImpl.loadImage(image: url) { [weak self] image in
                 DispatchQueue.main.async { [weak self] in
                     self?.imageView.image = image
                 }

@@ -11,13 +11,11 @@ final class EditPersonController: UITableViewController {
     private var displayManager: EditPersonDisplayManager!
     private var presenter: EditPersonPresenter!
     
-    static func create( savePerson: @escaping ((Person) -> Void)) -> EditPersonController {
-        let controller = EditPersonController.init()
-        var presenterState = EditPersonPresenterState()
-        let person = Person(title: "", detail: "", parameters: nil)
-        presenterState.person = person
-        controller.presenter = EditPersonPresenterImp(state: presenterState)
-        controller.displayManager = EditPersonDisplayManagerImp(person: person)
+    static func create(presenter: EditPersonPresenter,
+                       displayManager: EditPersonDisplayManager) -> EditPersonController {
+        let controller = EditPersonController.init()                
+        controller.presenter = presenter
+        controller.displayManager = displayManager
         controller.configure()
         
         controller.title = "Мерки людей"

@@ -19,6 +19,12 @@ final class PatternCell: UICollectionViewCell {
     private var likeButton: UIButton!
     private var delegate: PatternCellDelegate?
     
+    private enum CellSettings {
+        static let imageInset: CGFloat = 0
+        static let shadowMinInset: CGFloat = 0
+        static let shadowMaxInset: CGFloat = 3
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
@@ -30,6 +36,7 @@ final class PatternCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     private func setupConstraints() {
         shadowView = UIView()
@@ -47,15 +54,15 @@ final class PatternCell: UICollectionViewCell {
         likeButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            shadowView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 17),
-            shadowView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 17),
-            shadowView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-            shadowView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -17),
+            shadowView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: CellSettings.shadowMinInset),
+            shadowView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: CellSettings.shadowMinInset),
+            shadowView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -CellSettings.shadowMaxInset),
+            shadowView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -CellSettings.shadowMinInset),
             
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: CellSettings.imageInset),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: CellSettings.imageInset),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -CellSettings.imageInset),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -CellSettings.imageInset),
             
             likeButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 15),
             likeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -15),
@@ -67,7 +74,7 @@ final class PatternCell: UICollectionViewCell {
     public func configure(with info: PatternCellItem, nDelegate: PatternCellDelegate?) {
         value = info
         if let url = value.imageInfo?.url {
-            PatternsService.loadImage(image: url) { [weak self] image in
+            PatternsServiceImpl.loadImage(image: url) { [weak self] image in
                 DispatchQueue.main.async { [weak self] in
                     self?.imageView.image = image
                 }
@@ -90,7 +97,6 @@ final class PatternCell: UICollectionViewCell {
     }
     
     private func imageViewConfig() {
-        imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
     }
 }

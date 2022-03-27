@@ -9,9 +9,12 @@ import UIKit
 
 final class MyPatternsListController: UICollectionViewController {
     private var displayManager: MyPatternsListDisplayManager!
-    private var presenter: MyPatternsListPresenter!
+    private var presenter: PatternsListPresenter!
     
-    static func create(showPattern: @escaping (PatternCellItem) -> Void) -> MyPatternsListController {
+    init(
+        presenter: PatternsListPresenter,
+        displayManager: MyPatternsListDisplayManager
+    ) {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
 
         let width = UIScreen.main.bounds.size.width / 2 - 30
@@ -19,14 +22,17 @@ final class MyPatternsListController: UICollectionViewController {
         layout.itemSize = CGSize.init(width: width, height: height)
         layout.sectionInset = UIEdgeInsets.init(top: 7, left: 20, bottom: 10, right: 20)
         
-        let controller = MyPatternsListController.init(collectionViewLayout: layout)
-        controller.displayManager = MyPatternsListDisplayManagerImp(showPattern: showPattern)
-        return controller
+        super.init(collectionViewLayout: layout)
+        self.presenter = presenter
+        self.displayManager = displayManager
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter = MyPatternsListPresenterImp(state: MyPatternsListPresenterState.init(array: []))
         self.presenter.configure(view: self)
         self.collectionView.backgroundColor = UIColor.white
         self.view.backgroundColor = UIColor.white
@@ -40,7 +46,7 @@ final class MyPatternsListController: UICollectionViewController {
     }
 }
 
-extension MyPatternsListController: MyPatternsListView {
+extension MyPatternsListController: PatternsListView {
     func showError(_ error: NetworkError) {
         
     }

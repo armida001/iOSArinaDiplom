@@ -13,10 +13,11 @@ final class PatternController: UIViewController {
     private var tableView: UITableView!
     private var imageView: UIImageView!
     
-    static func create(pattern: PatternCellItem) -> PatternController {
+    static func create(presenter: PatternPresenter,
+                       displayManager: PatternDisplayManager) -> PatternController {
         let controller = PatternController()
-        controller.presenter = PatternPresenterImp(state: PatternPresenterState.init(object: pattern))
-        controller.displayManager = PatternDisplayManagerImp(pattern: pattern)
+        controller.presenter = presenter
+        controller.displayManager = displayManager
         return controller
     }
     
@@ -42,7 +43,7 @@ final class PatternController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)        
         if let url = self.displayManager.pattern.imageInfo?.url {
-            PatternsService.loadImage(image: url) { [weak self] image in
+            PatternsServiceImpl.loadImage(image: url) { [weak self] image in
                 DispatchQueue.main.async { [weak self] in
                     self?.imageView.image = image
                 }

@@ -13,6 +13,14 @@ struct Person {
     let title: String
     let detail: String
     let parameters: [Parameter]?
+    
+    init(title: String = "",
+         detail: String = "",
+         parameters: [Parameter]? = nil) {
+        self.title = title
+        self.detail = detail
+        self.parameters = parameters
+    }
 }
 
 @objc(Person)

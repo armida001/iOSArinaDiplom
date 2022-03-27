@@ -10,12 +10,12 @@ import UIKit
 class EditPersonPresenterImp: EditPersonPresenter {
     internal var state: EditPersonPresenterState
     private var view: EditPersonView?
-    private var service: PersonsDataService?
+    private var personsDataProvider: PersonsDataProvider?
     
     
     init(state: EditPersonPresenterState) {
         self.state = state
-        self.service = PersonsDataService()
+        self.personsDataProvider = PersonsDataProviderImpl()
     }
     
     func configure(view: EditPersonView) {
@@ -35,7 +35,7 @@ class EditPersonPresenterImp: EditPersonPresenter {
     }
     
     func addPerson(person: Person) {
-            service?.addPerson(person, completionHandler: { [weak self] in
+        personsDataProvider?.addPerson(person, completionHandler: { [weak self] in
                 
 //                if let data = person.baseParameters {
 //                    do {
