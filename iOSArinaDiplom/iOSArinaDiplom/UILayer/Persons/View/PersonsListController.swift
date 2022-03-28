@@ -32,7 +32,7 @@ final class PersonsListController: UITableViewController {
         self.presenter.configure(view: self)
         self.tableView.backgroundColor = UIColor.white
         self.view.backgroundColor = UIColor.white
-        self.displayManager.configure(tableView: self.tableView)
+        self.displayManager.configure(tableView: tableView)
         self.presenter.reloadData()
     }
     

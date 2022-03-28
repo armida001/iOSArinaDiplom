@@ -46,10 +46,14 @@ extension EditPersonDisplayManagerImp: UITableViewDataSource, UITableViewDelegat
         }
         
         if indexPath.row == 0 {
-            cell.configure(with: Parameter(type: PersonParameterType.name, value: person.title))
+            cell.configure(with: Parameter(type: PersonParameterType.name, value: person.title)) { [weak self] nValue in
+                self?.person.title = nValue
+            }
         } else {
             let parameter = parametersArray[indexPath.row]
-            cell.configure(with: parameter)
+            cell.configure(with: parameter) { [weak self] nValue in
+                self?.parametersArray[indexPath.row].value = nValue
+            }
         }
         
         return cell

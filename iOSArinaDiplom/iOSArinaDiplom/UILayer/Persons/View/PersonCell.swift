@@ -40,7 +40,8 @@ final class PersonCell: UITableViewCell {
             
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            nameLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -59,7 +60,7 @@ final class PersonCell: UITableViewCell {
     private func detailLabelConfig() {
         detailLabel.font = UIFont.detail
         detailLabel.textAlignment = NSTextAlignment.left
-        detailLabel.textColor = UIColor.baseText
+        detailLabel.textColor = UIColor.black
     }
     
 }

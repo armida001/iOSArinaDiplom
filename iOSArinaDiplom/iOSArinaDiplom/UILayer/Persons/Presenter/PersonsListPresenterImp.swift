@@ -33,8 +33,4 @@ class PersonsListPresenterImp: PersonsListPresenter {
             }
         })
     }
-    
-    func addPerson(_: Person) {
-//        service?.
-    }
 }

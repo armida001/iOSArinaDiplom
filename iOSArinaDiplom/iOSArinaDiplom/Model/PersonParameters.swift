@@ -47,6 +47,6 @@ struct DTOParameter {
 }
 
 struct Parameter {
-    let type: PersonParameterType
-    let value: String
+    var type: PersonParameterType
+    var value: String
 }

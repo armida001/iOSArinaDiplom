@@ -14,5 +14,5 @@ final class Container {
 	static let shared = Container()
 	private init() {}
 
-    lazy var coreDataStack = CoreData(modelName: "Patterns")
+    lazy var coreDataStack = CoreData(modelName: CoreData.dbName)
 }

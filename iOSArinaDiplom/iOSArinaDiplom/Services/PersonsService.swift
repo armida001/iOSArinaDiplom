@@ -21,13 +21,16 @@ final class PersonsDataProviderImpl: PersonsDataProvider {
     private var dataBase: DataBaseService = DataBaseService()
     
     func addPerson(_ person: Person, completionHandler: @escaping () -> Void, errorCompletion: @escaping (Error) -> Void) {
-        dataBase.addPerson(person.title, detail: person.detail, completionHandler: completionHandler, errorCompletion: errorCompletion)
+        let dtoPerson = DTOPerson(context: dataBase.context)
+        dtoPerson.name = person.title
+        dtoPerson.comment = person.detail        
+        dataBase.addPerson(dtoPerson, completionHandler: completionHandler, errorCompletion: errorCompletion)
     }
 
     
     func loadData(completionHandler: @escaping ([Person]) -> Void,
                   errorCompletion: @escaping (Error) -> Void) {
-        dataBase.loadPersons(completionHandler: { [weak self] dtoPersons in
+        dataBase.loadPersons(completionHandler: { dtoPersons in
             completionHandler(dtoPersons.compactMap({ person in
                 let params = person.parametersDictionary.compactMap({ Parameter(type: PersonParameterType(rawValue: $0.key) ?? PersonParameterType.name, value: $0.value) })
                 return Person(title: person.name ?? "", detail: person.comment ?? "", parameters: params)

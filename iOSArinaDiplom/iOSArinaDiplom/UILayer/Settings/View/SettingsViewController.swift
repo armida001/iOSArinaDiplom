@@ -18,9 +18,11 @@ final class SettingsViewController: UIViewController {
         presenter: SettingsListPresenter,
         displayManager: SettingsListDisplayManager
     ) {
+        super.init(nibName: nil, bundle: nil)
         self.presenter = presenter
         self.displayManager = displayManager
-        super.init(nibName: nil, bundle: nil)
+        self.imageView = UIImageView()
+        self.tableView = UITableView()
     }
     
     required init?(coder: NSCoder) {
@@ -32,25 +34,20 @@ final class SettingsViewController: UIViewController {
         configure()
         setupConstraints()
         presenter.configure(view: self)
-        displayManager.configure(tableView: tableView)
+        displayManager.configure(tableView: self.tableView)
         presenter.reloadData()
     }
     
     private func configure() {
-        imageView = UIImageView()
         imageView.image = UIImage(named: "user")?.withTintColor(UIColor.purple.withAlphaComponent(0.6))
         imageView.tintColor = UIColor.purple.withAlphaComponent(0.6)
         imageView.contentMode = UIView.ContentMode.scaleAspectFit
-        
-        
-        tableView = UITableView()
-        tableView.backgroundColor = UIColor.clear
-        
+                        
+        tableView.backgroundColor = UIColor.white
         tableView.clipsToBounds = false
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         title = "Список выкроек"
-        tableView.backgroundColor = UIColor.white
         view.backgroundColor = UIColor.white
     }
     

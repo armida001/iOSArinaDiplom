@@ -8,11 +8,14 @@
 import UIKit
 
 final class ParameterCell: UITableViewCell {
-    private var nameLabel: UILabel!
-    private var textField: UITextField!
     static let textFieldPlaceHolder = "Введите значение"
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    private var nameLabel: UILabel!
+    private var textField: UITextField!
+    private var endEditHandler: ((String) -> Void)?
+    
+    override init(style: UITableViewCell.CellStyle,
+                  reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupConstraints()
         self.labelConfig()
@@ -46,9 +49,11 @@ final class ParameterCell: UITableViewCell {
         ])
     }
     
-    public func configure(with value: Parameter) {
-        nameLabel.text = value.type.title()
-        textField.text = value.value
+    public func configure(with value: Parameter,
+                          endEditHandler: @escaping ((String) -> Void)) {
+        self.nameLabel.text = value.type.title()
+        self.textField.text = value.value
+        self.endEditHandler = endEditHandler
         contentView.backgroundColor = UIColor.white
     }
     
@@ -88,6 +93,8 @@ extension ParameterCell: UITextFieldDelegate {
         if textField.text?.isEmpty ?? true {
             textField.text = ParameterCell.textFieldPlaceHolder
             textField.textColor = UIColor.placeholder
+        } else {
+            endEditHandler?(textField.text ?? "")
         }
     }
     

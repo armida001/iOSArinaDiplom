@@ -11,4 +11,5 @@ protocol EditPersonPresenter {
     var state: EditPersonPresenterState { get set }
     func configure(view: EditPersonView)
     func addPerson(person: Person)
+    var editCompletion: (() -> Void)? { get set }
 }

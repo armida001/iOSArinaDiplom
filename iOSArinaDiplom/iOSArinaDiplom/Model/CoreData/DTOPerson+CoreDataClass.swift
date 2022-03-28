@@ -10,21 +10,24 @@ import Foundation
 import CoreData
 
 struct Person {
-    let title: String
-    let detail: String
-    let parameters: [Parameter]?
+    var title: String
+    var detail: String
+    var parameters: [Parameter]?
     
-    init(title: String = "",
-         detail: String = "",
+    init(title: String? = nil,
+         detail: String? = nil,
          parameters: [Parameter]? = nil) {
-        self.title = title
-        self.detail = detail
+        self.title = title ?? ""
+        self.detail = detail ?? ""
         self.parameters = parameters
     }
 }
 
-@objc(Person)
+@objc(DTOPerson)
 public class DTOPerson: NSManagedObject {
+    public class DTOPerson: NSManagedObject {
+    }
+    
     private var _parametersDictionary: [DTOParameter]?
     var parametersDictionary: [DTOParameter] {
         get {
@@ -53,24 +56,4 @@ public class DTOPerson: NSManagedObject {
             return nil;
         }
     }
-    
-//    // Convert from NSData to json object
-//    func nsdataToJSON(data: NSData) -> AnyObject? {
-//        do {
-//            return try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
-//        } catch let myJSONError {
-//            print(myJSONError)
-//        }
-//        return nil
-//    }
-//
-//    // Convert from JSON to nsdata
-//    func jsonToNSData(json: AnyObject) -> NSData?{
-//        do {
-//            return try NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions.PrettyPrinted)
-//        } catch let myJSONError {
-//            print(myJSONError)
-//        }
-//        return nil;
-//    }
 }
